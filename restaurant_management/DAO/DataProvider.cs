@@ -22,7 +22,7 @@ namespace restaurant_management.DAO
 
         private DataProvider() { }
 
-        private string SQL_conection_string = "server=localhost;uid=root;" + "pwd=tHang*Lon258;database=restaurantManagement";
+        private string SQL_conection_string = "server=localhost;uid=root;" + "pwd=;database=restaurantManagement";
 
         public DataTable ExecuteQuery(string query, object[] param = null)
         {
