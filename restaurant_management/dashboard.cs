@@ -24,6 +24,7 @@ namespace restaurant_management
         {
             if (currentChildForm != null)
             {
+                if (currentChildForm.Name == childForm.Name) return;
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
@@ -67,6 +68,18 @@ namespace restaurant_management
         {
             ActivateNavButton((Button)sender);
             OpenChildForm(new bill_managementForm());
+        }
+
+        private void btnCashOut_Click(object sender, EventArgs e)
+        {
+            ActivateNavButton((Button)sender);
+            OpenChildForm(new cashOutForm());
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            ActivateNavButton((Button)sender);
+            OpenChildForm(new user_managementForm());
         }
     }
 }

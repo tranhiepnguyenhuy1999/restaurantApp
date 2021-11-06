@@ -101,6 +101,12 @@
     <Compile Include="bill_managementForm.Designer.cs">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="cash-out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cash-out.Designer.cs">
+      <DependentUpon>cash-out.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\userDAO.cs" />
     <Compile Include="dashboard.cs">
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="bill_managementForm.resx">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cash-out.resx">
+      <DependentUpon>cash-out.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
