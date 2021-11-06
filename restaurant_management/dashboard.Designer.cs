@@ -58,7 +58,7 @@
             this.sideNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideNav.Location = new System.Drawing.Point(0, 0);
             this.sideNav.Name = "sideNav";
-            this.sideNav.Size = new System.Drawing.Size(200, 681);
+            this.sideNav.Size = new System.Drawing.Size(200, 587);
             this.sideNav.TabIndex = 0;
             // 
             // btnExit
@@ -97,6 +97,7 @@
             this.btnEmployees.Text = "Employee Management";
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployees.UseVisualStyleBackColor = false;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnBill
             // 
@@ -134,6 +135,7 @@
             this.btnCashOut.Text = "Cash Out";
             this.btnCashOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCashOut.UseVisualStyleBackColor = false;
+            this.btnCashOut.Click += new System.EventHandler(this.btnCashOut_Click);
             // 
             // btnFood
             // 
@@ -181,7 +183,7 @@
             this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleBar.Location = new System.Drawing.Point(200, 0);
             this.titleBar.Name = "titleBar";
-            this.titleBar.Size = new System.Drawing.Size(1064, 55);
+            this.titleBar.Size = new System.Drawing.Size(848, 55);
             this.titleBar.TabIndex = 1;
             // 
             // title
@@ -193,7 +195,7 @@
             this.title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1064, 55);
+            this.title.Size = new System.Drawing.Size(848, 55);
             this.title.TabIndex = 0;
             this.title.Text = "Home";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,19 +206,20 @@
             this.workspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workspace.Location = new System.Drawing.Point(200, 55);
             this.workspace.Name = "workspace";
-            this.workspace.Size = new System.Drawing.Size(1064, 626);
+            this.workspace.Size = new System.Drawing.Size(848, 532);
             this.workspace.TabIndex = 2;
             // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1048, 587);
             this.Controls.Add(this.workspace);
             this.Controls.Add(this.titleBar);
             this.Controls.Add(this.sideNav);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1280, 720);
+            this.MaximumSize = new System.Drawing.Size(1064, 626);
+            this.MinimumSize = new System.Drawing.Size(1064, 626);
             this.Name = "dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
