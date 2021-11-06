@@ -1,5 +1,5 @@
-DROP DATABASE restaurantManagement
-CREATE DATABASE restaurantManagement
+DROP DATABASE restaurantManagement;
+CREATE DATABASE restaurantManagement;
 USE restaurantManagement;
 
 CREATE TABLE user(
