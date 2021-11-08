@@ -107,7 +107,9 @@
     <Compile Include="cash-out.Designer.cs">
       <DependentUpon>cash-out.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\foodDAO.cs" />
     <Compile Include="DAO\userDAO.cs" />
     <Compile Include="dashboard.cs">
       <SubType>Form</SubType>
@@ -115,7 +117,7 @@
     <Compile Include="dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\user.cs" />
+    <Compile Include="DTO\User.cs" />
     <Compile Include="food-management.cs">
       <SubType>Form</SubType>
     </Compile>

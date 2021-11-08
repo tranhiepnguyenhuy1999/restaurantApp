@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace restaurant_management.DAO
 {
-    class userDAO
+    public class userDAO
     {
         private static userDAO instance;
 
@@ -29,7 +29,7 @@ namespace restaurant_management.DAO
 
         public int insertNewUser(string firstName, string lastName, string birthDay, string createDate) {
             int result = 0;
-            string query = " CALL insertUser ( @first_name , @last_name , @birthday , @create_date )";
+            string query = "insertUser ( @first_name , @last_name , @birthday , @create_date )";
 
             result = DataProvider.Instance.ExecuteNonQuery(query, new object[]{ firstName, lastName, birthDay, createDate});
 
