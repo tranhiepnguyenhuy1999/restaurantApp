@@ -1,4 +1,3 @@
-DROP DATABASE restaurantManagement;
 CREATE DATABASE restaurantManagement;
 USE restaurantManagement;
 
@@ -122,3 +121,4 @@ CALL insertBillDetail (1, 1, 1);
 CALL insertBillDetail (10, 2, 1);
 CALL insertBillDetail (10, 6, 1);
 
+SELECT * FROM kind

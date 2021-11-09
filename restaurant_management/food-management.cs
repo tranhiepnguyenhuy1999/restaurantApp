@@ -1,4 +1,5 @@
-﻿using System;
+﻿using restaurant_management.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,11 @@ namespace restaurant_management
             idTextBox.Text = e.RowIndex.ToString();
             nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void cashOutBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
