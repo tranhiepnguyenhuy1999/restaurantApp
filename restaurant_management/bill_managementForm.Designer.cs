@@ -29,10 +29,10 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ID_Find = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,106 +44,103 @@ namespace restaurant_management
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Date_Find_Button = new System.Windows.Forms.Button();
+            this.Day_Find = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Month_Find = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Year_Find = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(128, 122);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(813, 520);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(85, 79);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersWidth = 62;
+            this.dgv.Size = new System.Drawing.Size(542, 338);
+            this.dgv.TabIndex = 0;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(82, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bill ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 86);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(82, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Bill Type";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // ID_Find
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 14);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(756, 26);
-            this.textBox1.TabIndex = 2;
+            this.ID_Find.Location = new System.Drawing.Point(122, 9);
+            this.ID_Find.Name = "ID_Find";
+            this.ID_Find.Size = new System.Drawing.Size(505, 20);
+            this.ID_Find.TabIndex = 2;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
             this.listBox1.Items.AddRange(new object[] {
             "All",
             "Import",
             "Export"});
-            this.listBox1.Location = new System.Drawing.Point(202, 86);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBox1.Location = new System.Drawing.Point(135, 56);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(193, 24);
+            this.listBox1.Size = new System.Drawing.Size(130, 17);
             this.listBox1.TabIndex = 3;
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
             this.listBox2.Items.AddRange(new object[] {
             "Latest",
             "Oldest",
             "Highest Amount",
             "Lowest Amount"});
-            this.listBox2.Location = new System.Drawing.Point(746, 86);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBox2.Location = new System.Drawing.Point(497, 56);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(193, 24);
+            this.listBox2.Size = new System.Drawing.Size(130, 17);
             this.listBox2.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(666, 86);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(444, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Sort by";
             this.label3.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(996, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(664, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 31);
+            this.button1.Size = new System.Drawing.Size(124, 20);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Find";
+            this.button1.Text = "Find by ID";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(996, 122);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(664, 79);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 74);
+            this.button2.Size = new System.Drawing.Size(124, 48);
             this.button2.TabIndex = 4;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
@@ -151,65 +148,119 @@ namespace restaurant_management
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(996, 252);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(664, 164);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(186, 74);
+            this.button3.Size = new System.Drawing.Size(124, 48);
             this.button3.TabIndex = 4;
             this.button3.Text = "Details";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 658);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(82, 428);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 20);
+            this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Quantity of bills:";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(254, 654);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox3.Location = new System.Drawing.Point(169, 425);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(78, 26);
+            this.textBox3.Size = new System.Drawing.Size(53, 20);
             this.textBox3.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(642, 658);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(428, 428);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Total sum:";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(735, 651);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox4.Location = new System.Drawing.Point(490, 423);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(204, 26);
+            this.textBox4.Size = new System.Drawing.Size(137, 20);
             this.textBox4.TabIndex = 7;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(996, 385);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(664, 250);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(186, 74);
+            this.button4.Size = new System.Drawing.Size(124, 48);
             this.button4.TabIndex = 4;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(82, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Day";
+            // 
+            // Date_Find_Button
+            // 
+            this.Date_Find_Button.Location = new System.Drawing.Point(666, 32);
+            this.Date_Find_Button.Name = "Date_Find_Button";
+            this.Date_Find_Button.Size = new System.Drawing.Size(121, 20);
+            this.Date_Find_Button.TabIndex = 8;
+            this.Date_Find_Button.Text = "Find by Date";
+            this.Date_Find_Button.UseVisualStyleBackColor = true;
+            this.Date_Find_Button.Click += new System.EventHandler(this.Date_Find_Button_Click);
+            // 
+            // Day_Find
+            // 
+            this.Day_Find.Location = new System.Drawing.Point(122, 33);
+            this.Day_Find.Name = "Day_Find";
+            this.Day_Find.Size = new System.Drawing.Size(23, 20);
+            this.Day_Find.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(202, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Month";
+            // 
+            // Month_Find
+            // 
+            this.Month_Find.Location = new System.Drawing.Point(242, 33);
+            this.Month_Find.Name = "Month_Find";
+            this.Month_Find.Size = new System.Drawing.Size(23, 20);
+            this.Month_Find.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(317, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Year";
+            // 
+            // Year_Find
+            // 
+            this.Year_Find.Location = new System.Drawing.Point(357, 33);
+            this.Year_Find.Name = "Year_Find";
+            this.Year_Find.Size = new System.Drawing.Size(23, 20);
+            this.Year_Find.TabIndex = 2;
+            // 
             // bill_managementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 692);
+            this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.Date_Find_Button);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -220,15 +271,20 @@ namespace restaurant_management
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Year_Find);
+            this.Controls.Add(this.Month_Find);
+            this.Controls.Add(this.Day_Find);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.ID_Find);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Controls.Add(this.dgv);
             this.Name = "bill_managementForm";
             this.Text = "bill_managementForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,10 +292,10 @@ namespace restaurant_management
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ID_Find;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label3;
@@ -251,5 +307,12 @@ namespace restaurant_management
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Date_Find_Button;
+        private System.Windows.Forms.TextBox Day_Find;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox Month_Find;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox Year_Find;
     }
 }
