@@ -55,5 +55,10 @@ namespace restaurant_management
             
             PopulateDataGridView();
         }
+
+        private void billDetailsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }

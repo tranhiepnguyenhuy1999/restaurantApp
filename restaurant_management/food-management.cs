@@ -46,5 +46,10 @@ namespace restaurant_management
             nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
+
+        private void foodsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

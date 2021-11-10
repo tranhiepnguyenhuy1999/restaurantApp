@@ -81,5 +81,10 @@ namespace restaurant_management
             ActivateNavButton((Button)sender);
             OpenChildForm(new user_managementForm());
         }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

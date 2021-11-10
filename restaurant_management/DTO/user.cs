@@ -14,7 +14,6 @@ namespace restaurant_management.DTO
         private string last_name;
         private DateTime birthday;
         private DateTime create_date;
-
         public User(DataRow row) {
             this.ID = (int)row["id"];
             this.First_name = row["first_name"].ToString();

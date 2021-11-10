@@ -30,25 +30,25 @@ namespace restaurant_management
         private void InitializeComponent()
         {
             this.tablesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableBillDetailsPanel = new System.Windows.Forms.Panel();
+            this.totalPriceValueLabel = new System.Windows.Forms.Label();
+            this.deleteBillBtn = new System.Windows.Forms.Button();
+            this.printBillBtn = new System.Windows.Forms.Button();
+            this.nameValueLabel = new System.Windows.Forms.Label();
+            this.billDetailsDataGridView = new System.Windows.Forms.DataGridView();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.detailsLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.tableBillLabel = new System.Windows.Forms.Label();
-            this.tableBillDetailsPanel = new System.Windows.Forms.Panel();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.detailsLabel = new System.Windows.Forms.Label();
-            this.totalPriceLabel = new System.Windows.Forms.Label();
-            this.billDetailsDataGridView = new System.Windows.Forms.DataGridView();
-            this.nameValueLabel = new System.Windows.Forms.Label();
-            this.printBillBtn = new System.Windows.Forms.Button();
-            this.deleteBillBtn = new System.Windows.Forms.Button();
-            this.totalPriceValueLabel = new System.Windows.Forms.Label();
             this.tablesFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.titlePanel.SuspendLayout();
             this.tableBillDetailsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billDetailsDataGridView)).BeginInit();
+            this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablesFlowLayoutPanel
@@ -58,27 +58,18 @@ namespace restaurant_management
             this.tablesFlowLayoutPanel.Controls.Add(this.button2);
             this.tablesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.tablesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tablesFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablesFlowLayoutPanel.Name = "tablesFlowLayoutPanel";
-            this.tablesFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.tablesFlowLayoutPanel.Size = new System.Drawing.Size(446, 493);
+            this.tablesFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(15, 15, 0, 15);
+            this.tablesFlowLayoutPanel.Size = new System.Drawing.Size(669, 732);
             this.tablesFlowLayoutPanel.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.tableBillDetailsPanel);
-            this.panel1.Controls.Add(this.titlePanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(445, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 493);
-            this.panel1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.Location = new System.Drawing.Point(19, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 135);
+            this.button1.Size = new System.Drawing.Size(202, 208);
             this.button1.TabIndex = 0;
             this.button1.Text = "Table 1";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,34 +77,26 @@ namespace restaurant_management
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(154, 13);
+            this.button2.Location = new System.Drawing.Point(229, 20);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 135);
+            this.button2.Size = new System.Drawing.Size(202, 208);
             this.button2.TabIndex = 1;
             this.button2.Text = "Table 2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // titlePanel
+            // panel1
             // 
-            this.titlePanel.Controls.Add(this.tableBillLabel);
-            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titlePanel.Location = new System.Drawing.Point(0, 0);
-            this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(387, 55);
-            this.titlePanel.TabIndex = 0;
-            // 
-            // tableBillLabel
-            // 
-            this.tableBillLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableBillLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableBillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableBillLabel.Location = new System.Drawing.Point(0, 0);
-            this.tableBillLabel.Name = "tableBillLabel";
-            this.tableBillLabel.Size = new System.Drawing.Size(387, 55);
-            this.tableBillLabel.TabIndex = 0;
-            this.tableBillLabel.Text = "Table Bill";
-            this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.tableBillDetailsPanel);
+            this.panel1.Controls.Add(this.titlePanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(659, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(580, 732);
+            this.panel1.TabIndex = 1;
             // 
             // tableBillDetailsPanel
             // 
@@ -126,40 +109,57 @@ namespace restaurant_management
             this.tableBillDetailsPanel.Controls.Add(this.detailsLabel);
             this.tableBillDetailsPanel.Controls.Add(this.nameLabel);
             this.tableBillDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableBillDetailsPanel.Location = new System.Drawing.Point(0, 55);
+            this.tableBillDetailsPanel.Location = new System.Drawing.Point(0, 85);
+            this.tableBillDetailsPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableBillDetailsPanel.Name = "tableBillDetailsPanel";
-            this.tableBillDetailsPanel.Size = new System.Drawing.Size(387, 438);
+            this.tableBillDetailsPanel.Size = new System.Drawing.Size(580, 647);
             this.tableBillDetailsPanel.TabIndex = 1;
             // 
-            // nameLabel
+            // totalPriceValueLabel
             // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nameLabel.Location = new System.Drawing.Point(33, 12);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
-            this.nameLabel.TabIndex = 0;
-            this.nameLabel.Text = "Name";
+            this.totalPriceValueLabel.AutoSize = true;
+            this.totalPriceValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.totalPriceValueLabel.Location = new System.Drawing.Point(66, 517);
+            this.totalPriceValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalPriceValueLabel.Name = "totalPriceValueLabel";
+            this.totalPriceValueLabel.Size = new System.Drawing.Size(91, 25);
+            this.totalPriceValueLabel.TabIndex = 7;
+            this.totalPriceValueLabel.Text = "unknown";
             // 
-            // detailsLabel
+            // deleteBillBtn
             // 
-            this.detailsLabel.AutoSize = true;
-            this.detailsLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.detailsLabel.Location = new System.Drawing.Point(33, 51);
-            this.detailsLabel.Name = "detailsLabel";
-            this.detailsLabel.Size = new System.Drawing.Size(39, 13);
-            this.detailsLabel.TabIndex = 1;
-            this.detailsLabel.Text = "Details";
+            this.deleteBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBillBtn.Location = new System.Drawing.Point(354, 578);
+            this.deleteBillBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.deleteBillBtn.Name = "deleteBillBtn";
+            this.deleteBillBtn.Size = new System.Drawing.Size(172, 77);
+            this.deleteBillBtn.TabIndex = 6;
+            this.deleteBillBtn.Text = "Delete";
+            this.deleteBillBtn.UseVisualStyleBackColor = true;
             // 
-            // totalPriceLabel
+            // printBillBtn
             // 
-            this.totalPriceLabel.AutoSize = true;
-            this.totalPriceLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.totalPriceLabel.Location = new System.Drawing.Point(33, 323);
-            this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(57, 13);
-            this.totalPriceLabel.TabIndex = 2;
-            this.totalPriceLabel.Text = "Total price";
+            this.printBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printBillBtn.Location = new System.Drawing.Point(54, 578);
+            this.printBillBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.printBillBtn.Name = "printBillBtn";
+            this.printBillBtn.Size = new System.Drawing.Size(172, 77);
+            this.printBillBtn.TabIndex = 5;
+            this.printBillBtn.Text = "Print";
+            this.printBillBtn.UseVisualStyleBackColor = true;
+            // 
+            // nameValueLabel
+            // 
+            this.nameValueLabel.AutoSize = true;
+            this.nameValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.nameValueLabel.Location = new System.Drawing.Point(66, 38);
+            this.nameValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameValueLabel.Name = "nameValueLabel";
+            this.nameValueLabel.Size = new System.Drawing.Size(98, 25);
+            this.nameValueLabel.TabIndex = 4;
+            this.nameValueLabel.Text = "unknown";
             // 
             // billDetailsDataGridView
             // 
@@ -170,74 +170,92 @@ namespace restaurant_management
             this.billDetailsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.billDetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.billDetailsDataGridView.GridColor = System.Drawing.Color.Black;
-            this.billDetailsDataGridView.Location = new System.Drawing.Point(36, 67);
+            this.billDetailsDataGridView.Location = new System.Drawing.Point(54, 103);
+            this.billDetailsDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.billDetailsDataGridView.MultiSelect = false;
             this.billDetailsDataGridView.Name = "billDetailsDataGridView";
             this.billDetailsDataGridView.RowHeadersVisible = false;
+            this.billDetailsDataGridView.RowHeadersWidth = 62;
             this.billDetailsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.billDetailsDataGridView.Size = new System.Drawing.Size(315, 253);
+            this.billDetailsDataGridView.Size = new System.Drawing.Size(472, 389);
             this.billDetailsDataGridView.TabIndex = 3;
+            this.billDetailsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billDetailsDataGridView_CellContentClick);
             // 
-            // nameValueLabel
+            // totalPriceLabel
             // 
-            this.nameValueLabel.AutoSize = true;
-            this.nameValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nameValueLabel.Location = new System.Drawing.Point(44, 25);
-            this.nameValueLabel.Name = "nameValueLabel";
-            this.nameValueLabel.Size = new System.Drawing.Size(67, 16);
-            this.nameValueLabel.TabIndex = 4;
-            this.nameValueLabel.Text = "unknown";
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.totalPriceLabel.Location = new System.Drawing.Point(50, 497);
+            this.totalPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(82, 20);
+            this.totalPriceLabel.TabIndex = 2;
+            this.totalPriceLabel.Text = "Total price";
             // 
-            // printBillBtn
+            // detailsLabel
             // 
-            this.printBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printBillBtn.Location = new System.Drawing.Point(36, 376);
-            this.printBillBtn.Name = "printBillBtn";
-            this.printBillBtn.Size = new System.Drawing.Size(115, 50);
-            this.printBillBtn.TabIndex = 5;
-            this.printBillBtn.Text = "Print";
-            this.printBillBtn.UseVisualStyleBackColor = true;
+            this.detailsLabel.AutoSize = true;
+            this.detailsLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.detailsLabel.Location = new System.Drawing.Point(50, 78);
+            this.detailsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.detailsLabel.Name = "detailsLabel";
+            this.detailsLabel.Size = new System.Drawing.Size(58, 20);
+            this.detailsLabel.TabIndex = 1;
+            this.detailsLabel.Text = "Details";
             // 
-            // deleteBillBtn
+            // nameLabel
             // 
-            this.deleteBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBillBtn.Location = new System.Drawing.Point(236, 376);
-            this.deleteBillBtn.Name = "deleteBillBtn";
-            this.deleteBillBtn.Size = new System.Drawing.Size(115, 50);
-            this.deleteBillBtn.TabIndex = 6;
-            this.deleteBillBtn.Text = "Delete";
-            this.deleteBillBtn.UseVisualStyleBackColor = true;
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.nameLabel.Location = new System.Drawing.Point(50, 18);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(51, 20);
+            this.nameLabel.TabIndex = 0;
+            this.nameLabel.Text = "Name";
             // 
-            // totalPriceValueLabel
+            // titlePanel
             // 
-            this.totalPriceValueLabel.AutoSize = true;
-            this.totalPriceValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.totalPriceValueLabel.Location = new System.Drawing.Point(44, 336);
-            this.totalPriceValueLabel.Name = "totalPriceValueLabel";
-            this.totalPriceValueLabel.Size = new System.Drawing.Size(60, 16);
-            this.totalPriceValueLabel.TabIndex = 7;
-            this.totalPriceValueLabel.Text = "unknown";
+            this.titlePanel.Controls.Add(this.tableBillLabel);
+            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlePanel.Location = new System.Drawing.Point(0, 0);
+            this.titlePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(580, 85);
+            this.titlePanel.TabIndex = 0;
+            // 
+            // tableBillLabel
+            // 
+            this.tableBillLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableBillLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableBillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableBillLabel.Location = new System.Drawing.Point(0, 0);
+            this.tableBillLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tableBillLabel.Name = "tableBillLabel";
+            this.tableBillLabel.Size = new System.Drawing.Size(580, 85);
+            this.tableBillLabel.TabIndex = 0;
+            this.tableBillLabel.Text = "Table Bill";
+            this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cashOutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(832, 493);
+            this.ClientSize = new System.Drawing.Size(1239, 732);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tablesFlowLayoutPanel);
-            this.MaximumSize = new System.Drawing.Size(848, 532);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1261, 788);
             this.Name = "cashOutForm";
             this.Text = "Cash Out";
             this.Load += new System.EventHandler(this.cashOutForm_Load);
             this.tablesFlowLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.titlePanel.ResumeLayout(false);
             this.tableBillDetailsPanel.ResumeLayout(false);
             this.tableBillDetailsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billDetailsDataGridView)).EndInit();
+            this.titlePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
