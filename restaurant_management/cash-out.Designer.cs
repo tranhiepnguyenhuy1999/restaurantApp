@@ -58,16 +58,18 @@ namespace restaurant_management
             this.tablesFlowLayoutPanel.Controls.Add(this.button2);
             this.tablesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.tablesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tablesFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablesFlowLayoutPanel.Name = "tablesFlowLayoutPanel";
-            this.tablesFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.tablesFlowLayoutPanel.Size = new System.Drawing.Size(446, 493);
+            this.tablesFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(15, 15, 0, 15);
+            this.tablesFlowLayoutPanel.Size = new System.Drawing.Size(669, 732);
             this.tablesFlowLayoutPanel.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.Location = new System.Drawing.Point(19, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 135);
+            this.button1.Size = new System.Drawing.Size(202, 208);
             this.button1.TabIndex = 0;
             this.button1.Text = "Table 1";
             this.button1.UseVisualStyleBackColor = true;
@@ -75,9 +77,10 @@ namespace restaurant_management
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(154, 13);
+            this.button2.Location = new System.Drawing.Point(229, 20);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 135);
+            this.button2.Size = new System.Drawing.Size(202, 208);
             this.button2.TabIndex = 1;
             this.button2.Text = "Table 2";
             this.button2.UseVisualStyleBackColor = true;
@@ -105,9 +108,10 @@ namespace restaurant_management
             this.tableBillDetailsPanel.Controls.Add(this.detailsLabel);
             this.tableBillDetailsPanel.Controls.Add(this.nameLabel);
             this.tableBillDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableBillDetailsPanel.Location = new System.Drawing.Point(0, 55);
+            this.tableBillDetailsPanel.Location = new System.Drawing.Point(0, 85);
+            this.tableBillDetailsPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableBillDetailsPanel.Name = "tableBillDetailsPanel";
-            this.tableBillDetailsPanel.Size = new System.Drawing.Size(387, 438);
+            this.tableBillDetailsPanel.Size = new System.Drawing.Size(580, 647);
             this.tableBillDetailsPanel.TabIndex = 1;
             // 
             // totalPriceValueLabel
@@ -162,13 +166,16 @@ namespace restaurant_management
             this.billDetailsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.billDetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.billDetailsDataGridView.GridColor = System.Drawing.Color.Black;
-            this.billDetailsDataGridView.Location = new System.Drawing.Point(36, 67);
+            this.billDetailsDataGridView.Location = new System.Drawing.Point(54, 103);
+            this.billDetailsDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.billDetailsDataGridView.MultiSelect = false;
             this.billDetailsDataGridView.Name = "billDetailsDataGridView";
             this.billDetailsDataGridView.RowHeadersVisible = false;
+            this.billDetailsDataGridView.RowHeadersWidth = 62;
             this.billDetailsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.billDetailsDataGridView.Size = new System.Drawing.Size(315, 253);
+            this.billDetailsDataGridView.Size = new System.Drawing.Size(472, 389);
             this.billDetailsDataGridView.TabIndex = 3;
+            this.billDetailsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billDetailsDataGridView_CellContentClick);
             // 
             // totalPriceLabel
             // 
@@ -223,13 +230,14 @@ namespace restaurant_management
             // 
             // cashOutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(832, 493);
+            this.ClientSize = new System.Drawing.Size(1239, 732);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tablesFlowLayoutPanel);
-            this.MaximumSize = new System.Drawing.Size(848, 532);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1261, 788);
             this.Name = "cashOutForm";
             this.Text = "Cash Out";
             this.Load += new System.EventHandler(this.cashOutForm_Load);

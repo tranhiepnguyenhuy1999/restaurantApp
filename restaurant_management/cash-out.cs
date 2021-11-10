@@ -55,10 +55,5 @@ namespace restaurant_management
             
             PopulateDataGridView();
         }
-
-        private void printBillBtn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

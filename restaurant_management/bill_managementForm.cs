@@ -1,4 +1,5 @@
-﻿using System;
+﻿using restaurant_management.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,14 @@ namespace restaurant_management
 
         private void label2_Click(object sender, EventArgs e)
         {
+        }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
 
         private void button2_Click(object sender, EventArgs e)

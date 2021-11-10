@@ -110,6 +110,7 @@
     <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\kindDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\detailBillDAO.cs" />
     <Compile Include="DAO\foodDAO.cs" />
     <Compile Include="DAO\userDAO.cs" />
     <Compile Include="dashboard.cs">
@@ -118,6 +119,8 @@
     <Compile Include="dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\DetailBill.cs" />
     <Compile Include="DTO\Kind.cs" />
     <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\User.cs" />
