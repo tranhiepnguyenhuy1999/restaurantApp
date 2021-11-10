@@ -92,10 +92,9 @@ namespace restaurant_management
             this.panel1.Controls.Add(this.tableBillDetailsPanel);
             this.panel1.Controls.Add(this.titlePanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(659, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(445, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 732);
+            this.panel1.Size = new System.Drawing.Size(387, 493);
             this.panel1.TabIndex = 1;
             // 
             // tableBillDetailsPanel
@@ -120,20 +119,18 @@ namespace restaurant_management
             this.totalPriceValueLabel.AutoSize = true;
             this.totalPriceValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalPriceValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.totalPriceValueLabel.Location = new System.Drawing.Point(66, 517);
-            this.totalPriceValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalPriceValueLabel.Location = new System.Drawing.Point(44, 336);
             this.totalPriceValueLabel.Name = "totalPriceValueLabel";
-            this.totalPriceValueLabel.Size = new System.Drawing.Size(91, 25);
+            this.totalPriceValueLabel.Size = new System.Drawing.Size(60, 16);
             this.totalPriceValueLabel.TabIndex = 7;
             this.totalPriceValueLabel.Text = "unknown";
             // 
             // deleteBillBtn
             // 
             this.deleteBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBillBtn.Location = new System.Drawing.Point(354, 578);
-            this.deleteBillBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.deleteBillBtn.Location = new System.Drawing.Point(236, 376);
             this.deleteBillBtn.Name = "deleteBillBtn";
-            this.deleteBillBtn.Size = new System.Drawing.Size(172, 77);
+            this.deleteBillBtn.Size = new System.Drawing.Size(115, 50);
             this.deleteBillBtn.TabIndex = 6;
             this.deleteBillBtn.Text = "Delete";
             this.deleteBillBtn.UseVisualStyleBackColor = true;
@@ -141,23 +138,22 @@ namespace restaurant_management
             // printBillBtn
             // 
             this.printBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printBillBtn.Location = new System.Drawing.Point(54, 578);
-            this.printBillBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.printBillBtn.Location = new System.Drawing.Point(36, 376);
             this.printBillBtn.Name = "printBillBtn";
-            this.printBillBtn.Size = new System.Drawing.Size(172, 77);
+            this.printBillBtn.Size = new System.Drawing.Size(115, 50);
             this.printBillBtn.TabIndex = 5;
             this.printBillBtn.Text = "Print";
             this.printBillBtn.UseVisualStyleBackColor = true;
+            this.printBillBtn.Click += new System.EventHandler(this.printBillBtn_Click);
             // 
             // nameValueLabel
             // 
             this.nameValueLabel.AutoSize = true;
             this.nameValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nameValueLabel.Location = new System.Drawing.Point(66, 38);
-            this.nameValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameValueLabel.Location = new System.Drawing.Point(44, 25);
             this.nameValueLabel.Name = "nameValueLabel";
-            this.nameValueLabel.Size = new System.Drawing.Size(98, 25);
+            this.nameValueLabel.Size = new System.Drawing.Size(67, 16);
             this.nameValueLabel.TabIndex = 4;
             this.nameValueLabel.Text = "unknown";
             // 
@@ -185,10 +181,9 @@ namespace restaurant_management
             // 
             this.totalPriceLabel.AutoSize = true;
             this.totalPriceLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.totalPriceLabel.Location = new System.Drawing.Point(50, 497);
-            this.totalPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalPriceLabel.Location = new System.Drawing.Point(33, 323);
             this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(82, 20);
+            this.totalPriceLabel.Size = new System.Drawing.Size(57, 13);
             this.totalPriceLabel.TabIndex = 2;
             this.totalPriceLabel.Text = "Total price";
             // 
@@ -196,10 +191,9 @@ namespace restaurant_management
             // 
             this.detailsLabel.AutoSize = true;
             this.detailsLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.detailsLabel.Location = new System.Drawing.Point(50, 78);
-            this.detailsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.detailsLabel.Location = new System.Drawing.Point(33, 51);
             this.detailsLabel.Name = "detailsLabel";
-            this.detailsLabel.Size = new System.Drawing.Size(58, 20);
+            this.detailsLabel.Size = new System.Drawing.Size(39, 13);
             this.detailsLabel.TabIndex = 1;
             this.detailsLabel.Text = "Details";
             // 
@@ -207,10 +201,9 @@ namespace restaurant_management
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nameLabel.Location = new System.Drawing.Point(50, 18);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Location = new System.Drawing.Point(33, 12);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(51, 20);
+            this.nameLabel.Size = new System.Drawing.Size(35, 13);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name";
             // 
@@ -219,9 +212,8 @@ namespace restaurant_management
             this.titlePanel.Controls.Add(this.tableBillLabel);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(0, 0);
-            this.titlePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(580, 85);
+            this.titlePanel.Size = new System.Drawing.Size(387, 55);
             this.titlePanel.TabIndex = 0;
             // 
             // tableBillLabel
@@ -230,9 +222,8 @@ namespace restaurant_management
             this.tableBillLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableBillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableBillLabel.Location = new System.Drawing.Point(0, 0);
-            this.tableBillLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tableBillLabel.Name = "tableBillLabel";
-            this.tableBillLabel.Size = new System.Drawing.Size(580, 85);
+            this.tableBillLabel.Size = new System.Drawing.Size(387, 55);
             this.tableBillLabel.TabIndex = 0;
             this.tableBillLabel.Text = "Table Bill";
             this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

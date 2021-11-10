@@ -108,6 +108,7 @@
       <DependentUpon>cash-out.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\billDAO.cs" />
+    <Compile Include="DAO\kindDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\detailBillDAO.cs" />
     <Compile Include="DAO\foodDAO.cs" />
@@ -120,6 +121,8 @@
     </Compile>
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\DetailBill.cs" />
+    <Compile Include="DTO\Kind.cs" />
+    <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="food-management.cs">
       <SubType>Form</SubType>

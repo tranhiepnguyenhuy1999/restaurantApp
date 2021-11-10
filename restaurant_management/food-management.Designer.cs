@@ -176,6 +176,7 @@ namespace restaurant_management
             this.cashOutBtn.TabIndex = 8;
             this.cashOutBtn.Text = "Cash Out";
             this.cashOutBtn.UseVisualStyleBackColor = true;
+            this.cashOutBtn.Click += new System.EventHandler(this.cashOutBtn_Click);
             // 
             // foodInformationPanel
             // 
@@ -212,10 +213,9 @@ namespace restaurant_management
             this.foodDetailsPanel.Controls.Add(this.foodPictureBox);
             this.foodDetailsPanel.Controls.Add(this.foodInformationPanel);
             this.foodDetailsPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.foodDetailsPanel.Location = new System.Drawing.Point(798, 0);
-            this.foodDetailsPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.foodDetailsPanel.Location = new System.Drawing.Point(532, 0);
             this.foodDetailsPanel.Name = "foodDetailsPanel";
-            this.foodDetailsPanel.Size = new System.Drawing.Size(450, 758);
+            this.foodDetailsPanel.Size = new System.Drawing.Size(300, 493);
             this.foodDetailsPanel.TabIndex = 3;
             // 
             // foodManagementForm
