@@ -42,5 +42,17 @@ namespace restaurant_management.DAO
             }
             return listbill;
         }
+        public List<Bill> getListBill()
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "SELECT * FROM bill";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
     }
 }
