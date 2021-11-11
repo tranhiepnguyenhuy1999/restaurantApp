@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
-    public partial class user_managementForm : Form
+    public partial class user_managementF : Form
     {
-        public user_managementForm()
+        public user_managementF()
         {
             InitializeComponent();
         }

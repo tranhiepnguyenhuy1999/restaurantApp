@@ -1,7 +1,10 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace restaurant_management
 {
-    partial class cashOutForm
+    partial class cashOutF
     {
         /// <summary>
         /// Required designer variable.
@@ -240,7 +243,7 @@ namespace restaurant_management
             this.MaximumSize = new System.Drawing.Size(1261, 788);
             this.Name = "cashOutForm";
             this.Text = "Cash Out";
-            this.Load += new System.EventHandler(this.cashOutForm_Load);
+            this.Load += new System.EventHandler(this.cashOutF_Load);
             this.tablesFlowLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableBillDetailsPanel.ResumeLayout(false);
@@ -249,6 +252,16 @@ namespace restaurant_management
             this.titlePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void billDetailsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void printBillBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

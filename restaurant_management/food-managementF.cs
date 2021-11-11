@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
-    public partial class foodManagementForm : Form
+    public partial class foodManagementF : Form
     {
-        public foodManagementForm()
+        public foodManagementF()
         {
             InitializeComponent();
         }
 
-        private void foodManagementForm_Load(object sender, EventArgs e)
+        private void foodManagementF_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
             PopulateDataGridView();

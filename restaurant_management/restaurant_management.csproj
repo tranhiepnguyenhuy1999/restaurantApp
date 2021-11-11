@@ -108,11 +108,11 @@
     <Compile Include="bill_managementForm.Designer.cs">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
     </Compile>
-    <None Include="cash-out.cs">
+    <Compile Include="cashOutF.cs">
       <SubType>Form</SubType>
-    </None>
-    <Compile Include="cash-out.Designer.cs">
-      <DependentUpon>cash-out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cashOutF.Designer.cs">
+      <DependentUpon>cashOutF.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\kindDAO.cs" />
@@ -120,36 +120,39 @@
     <Compile Include="DAO\detailBillDAO.cs" />
     <Compile Include="DAO\foodDAO.cs" />
     <Compile Include="DAO\userDAO.cs" />
-    <None Include="dashboard.cs">
+    <Compile Include="dashboardBar.cs">
       <SubType>Form</SubType>
-    </None>
-    <Compile Include="dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardBar.Designer.cs">
+      <DependentUpon>dashboardBar.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\DetailBill.cs" />
     <Compile Include="DTO\Kind.cs" />
     <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\User.cs" />
-    <None Include="food-management.cs">
+    <Compile Include="food-managementF.cs">
       <SubType>Form</SubType>
-    </None>
-    <Compile Include="food-management.Designer.cs">
-      <DependentUpon>food-management.cs</DependentUpon>
     </Compile>
-    <None Include="loginForm.cs">
+    <Compile Include="food-managementF.Designer.cs">
+      <DependentUpon>food-managementF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="foodManagementForm.cs">
       <SubType>Form</SubType>
-    </None>
-    <Compile Include="loginForm.Designer.cs">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginF.Designer.cs">
+      <DependentUpon>loginF.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="user_managementForm.cs">
+    <Compile Include="user_managementF.cs">
       <SubType>Form</SubType>
-    </None>
-    <Compile Include="user_managementForm.Designer.cs">
-      <DependentUpon>user_managementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_managementF.Designer.cs">
+      <DependentUpon>user_managementF.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="bill_detailForm.resx">
       <DependentUpon>bill_detailForm.cs</DependentUpon>
@@ -157,17 +160,8 @@
     <EmbeddedResource Include="bill_managementForm.resx">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cash-out.resx">
-      <DependentUpon>cash-out.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="dashboard.resx">
-      <DependentUpon>dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="food-management.resx">
-      <DependentUpon>food-management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="loginForm.resx">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <EmbeddedResource Include="food-managementF.resx">
+      <DependentUpon>food-managementF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,9 +172,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="user_managementForm.resx">
-      <DependentUpon>user_managementForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

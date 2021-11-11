@@ -1,5 +1,4 @@
-﻿using restaurant_management.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,16 +10,17 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
-    public partial class dashboard : Form
+    public partial class dashboardBar : Form
     {
+        
         private Button currentNavButton;
         private Form currentChildForm;
-        public dashboard()
+        public dashboardBar()
         {
             InitializeComponent();
         }
 
-        private void OpenChildForm (Form childForm)
+        private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -61,7 +61,7 @@ namespace restaurant_management
         private void btnFood_Click(object sender, EventArgs e)
         {
             ActivateNavButton((Button)sender);
-            OpenChildForm(new foodManagementForm());
+            OpenChildForm(new foodManagementF());
         }
 
         private void btnBill_Click(object sender, EventArgs e)
@@ -73,13 +73,13 @@ namespace restaurant_management
         private void btnCashOut_Click(object sender, EventArgs e)
         {
             ActivateNavButton((Button)sender);
-            OpenChildForm(new cashOutForm());
+            OpenChildForm(new cashOutF());
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             ActivateNavButton((Button)sender);
-            OpenChildForm(new user_managementForm());
+            OpenChildForm(new user_managementF());
         }
 
         private void logo_Click(object sender, EventArgs e)

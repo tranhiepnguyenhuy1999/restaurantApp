@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
-    public partial class cashOutForm : Form
+    public partial class cashOutF : Form
     {
-        public cashOutForm()
+        public cashOutF()
         {
             InitializeComponent();
         }
-        private void cashOutForm_Load(object sender, EventArgs e)
+        private void cashOutF_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
         }
@@ -44,7 +44,7 @@ namespace restaurant_management
         {
             nameValueLabel.Text = button1.Text;
             totalPriceValueLabel.Text = "70000";
-            
+
             PopulateDataGridView();
         }
 
@@ -52,7 +52,7 @@ namespace restaurant_management
         {
             nameValueLabel.Text = button2.Text;
             totalPriceValueLabel.Text = "70000";
-            
+
             PopulateDataGridView();
         }
     }

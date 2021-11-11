@@ -1,7 +1,7 @@
 ﻿
 namespace restaurant_management
 {
-    partial class user_managementForm
+    partial class user_managementF
     {
         /// <summary>
         /// Required designer variable.
