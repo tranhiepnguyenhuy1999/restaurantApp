@@ -160,6 +160,12 @@
     <EmbeddedResource Include="bill_managementForm.resx">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cashOutF.resx">
+      <DependentUpon>cashOutF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardBar.resx">
+      <DependentUpon>dashboardBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="food-managementF.resx">
       <DependentUpon>food-managementF.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +177,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -185,6 +192,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo-uit-300x248.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

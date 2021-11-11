@@ -115,10 +115,13 @@ CALL insertUser('Huy', 'Trần','2019-08-01','2019-12-31');
 INSERT INTO 
 	bill(total_money, total_amount, create_date)
 	VALUES	
-	(610000 , 21, '2021-10-20');
+	(610000 , 21, '2021-10-20'),
+    (500000 , 10, '2021-10-20');
 
 CALL insertBillDetail (1, 1, 1);
 CALL insertBillDetail (10, 2, 1);
 CALL insertBillDetail (10, 6, 1);
+CALL insertBillDetail (1, 5, 2);
+CALL insertBillDetail (2, 3, 2);
 
 SELECT * FROM kind

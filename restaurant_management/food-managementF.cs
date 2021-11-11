@@ -26,19 +26,11 @@ namespace restaurant_management
 
         private void SetupDataGridView()
         {
-            foodsDataGridView.ColumnCount = 2;
-
-            foodsDataGridView.Columns[0].Name = "Name";
-            foodsDataGridView.Columns[1].Name = "Price";
         }
 
         private void PopulateDataGridView()
         {
-            string[] row0 = { "Beef Noodles", "30000" };
-            string[] row1 = { "Tea", "5000" };
-
-            foodsDataGridView.Rows.Add(row0);
-            foodsDataGridView.Rows.Add(row1);
+            foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
         }
 
         private void foodsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
