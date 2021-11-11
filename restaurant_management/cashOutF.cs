@@ -1,4 +1,5 @@
-﻿using System;
+﻿using restaurant_management.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,21 +24,11 @@ namespace restaurant_management
 
         private void SetupDataGridView()
         {
-            billDetailsDataGridView.ColumnCount = 3;
-
-            billDetailsDataGridView.Columns[0].Name = "Name";
-            billDetailsDataGridView.Columns[1].Name = "Price";
-            billDetailsDataGridView.Columns[2].Name = "Quantity";
         }
 
-        private void PopulateDataGridView()
+        private void PopulateDataGridView(int id)
         {
-            billDetailsDataGridView.Rows.Clear();
-            string[] row0 = { "Beef Noodles", "30000", "2" };
-            string[] row1 = { "Tea", "5000", "2" };
-
-            billDetailsDataGridView.Rows.Add(row0);
-            billDetailsDataGridView.Rows.Add(row1);
+            billDetailsDataGridView.DataSource = detailBillDAO.Instance.getListBillById(id);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,7 +36,7 @@ namespace restaurant_management
             nameValueLabel.Text = button1.Text;
             totalPriceValueLabel.Text = "70000";
 
-            PopulateDataGridView();
+            PopulateDataGridView(1);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,7 +44,7 @@ namespace restaurant_management
             nameValueLabel.Text = button2.Text;
             totalPriceValueLabel.Text = "70000";
 
-            PopulateDataGridView();
+            PopulateDataGridView(2);
         }
     }
 }
