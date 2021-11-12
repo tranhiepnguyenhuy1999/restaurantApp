@@ -13,7 +13,7 @@ namespace restaurant_management
 {
     public partial class foodAddingForm : Form
     {
-        public foodAddingForm(int[] foodTypes)
+        public foodAddingForm(List<DTO.Kind> foodTypes)
         {
             InitializeComponent();
             typeComboBox.DataSource = foodTypes;
