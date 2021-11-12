@@ -16,6 +16,7 @@ namespace restaurant_management
     {
         public List<DTO.Kind> TypeList = kindDAO.Instance.getListKind();
         public List<int> TypeIdList = new List<int>();
+        public List<string> TypeNameList = new List<string>();
 
         public foodManagementF()
         {
@@ -32,7 +33,6 @@ namespace restaurant_management
         {
             foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
 
-            var TypeNameList = new List<string>();
             foreach (var type in TypeList)
             {
                 TypeIdList.Add(type.ID);
@@ -59,7 +59,7 @@ namespace restaurant_management
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            foodAddingForm form = new foodAddingForm(TypeList);
+            foodAddingForm form = new foodAddingForm(TypeIdList, TypeNameList);
             form.FormClosed += new FormClosedEventHandler(addingForm_FormClosed);
             form.Show();
         }
