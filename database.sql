@@ -16,7 +16,7 @@ CREATE TABLE food(
 	price FLOAT DEFAULT 0,
     id_kind INT(6),
 	FOREIGN KEY (id_kind) REFERENCES kind(id),
-    create_date DATE NOT NULL,
+    create_date DATETIME NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -70,7 +70,7 @@ CREATE PROCEDURE insertNewFood(
 IN 	food_name NVARCHAR(100),
 IN 	price FLOAT,
 IN  id_kind INT(6),
-IN create_date DATE
+IN create_date DATETIME
 )
 BEGIN
    INSERT INTO 
@@ -141,4 +141,3 @@ BEGIN
 	
 END //
 DELIMITER ;
-

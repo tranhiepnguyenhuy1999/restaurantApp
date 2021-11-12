@@ -23,9 +23,9 @@ namespace restaurant_management.DAO
 
         public int insertNewFood(string name, float price, int id_kind) {
             int result = 0;
-            DateTime create_date = new DateTime();
-            string query = "insertNewFood ( @food_name , @price , @id_kind , @create_date )";
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, price, id_kind, create_date.ToString() });
+            DateTime create_date = DateTime.Today;
+            string query = "call insertNewFood ( @food_name , @price , @id_kind , @create_date )";
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, price, id_kind, create_date.ToString("hh:mm:ss") });
             return result;
         }
 
