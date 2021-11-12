@@ -52,7 +52,7 @@ namespace restaurant_management
             month = int.Parse(Month_Find.Text);
             year = int.Parse(Year_Find.Text);
             DateTime date = new DateTime(year,month,day);
-            dgv.DataSource = billDAO.Instance.getListBillByDate(date);
+            //dgv.DataSource = billDAO.Instance.getListBillByDate(date);
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-DROP DATABASE restaurantManagement;
+DROP DATABASE restaurantManagements;
 CREATE DATABASE restaurantManagement;
 USE restaurantManagement;
 
@@ -16,7 +16,7 @@ CREATE TABLE food(
 	price FLOAT DEFAULT 0,
     id_kind INT(6),
 	FOREIGN KEY (id_kind) REFERENCES kind(id),
-    create_date DATE NOT NULL,
+    create_date DATETIME NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -70,7 +70,7 @@ CREATE PROCEDURE insertNewFood(
 IN 	food_name NVARCHAR(100),
 IN 	price FLOAT,
 IN  id_kind INT(6),
-IN create_date DATE
+IN create_date DATETIME
 )
 BEGIN
    INSERT INTO 
@@ -126,4 +126,61 @@ CALL insertBillDetail (10, 6, 1);
 CALL insertBillDetail (1, 5, 2);
 CALL insertBillDetail (2, 3, 2);
 
-SELECT * FROM kind;
+use restaurantManagement
+
+DELIMITER $$
+CREATE PROCEDURE updateFood(
+IN 	id_in int(6),
+IN 	food_name_in NVARCHAR(100),
+IN 	price_in float,
+IN id_kind_in int(6)
+)
+BEGIN
+   update food
+   set food_name = food_name_in, price = price_in, id_kind = id_kind_in
+   where id = id_in;
+END; $$
+DELIMITER $$
+
+DELIMITER $$
+CREATE PROCEDURE deleteFood(
+IN 	id_in int(6)
+)
+BEGIN
+   delete from bill_detail where id_food=id_in;
+   delete from food where id=id_in;
+END; $$
+DELIMITER $$
+
+DELIMITER $$
+CREATE PROCEDURE insertKindFood(
+    IN id INT,
+    IN kind_name NVARCHAR(100),
+    IN from_age INT,
+    IN to_age INT,
+    IN create_date DATE
+)
+BEGIN
+   INSERT INTO 
+	kind(id, kind_name, from_age, to_age, create_date)
+	VALUES	
+	(id, kind_name,from_age,to_age, create_date);
+END; $$
+DELIMITER ;
+
+
+DELIMITER // -- them ham cap nhap user tren id
+CREATE PROCEDURE updateUser(
+IN id INT,
+IN 	first_name NVARCHAR(100),
+IN 	last_name NVARCHAR(100),
+IN birthday DATE,
+IN  gender INT
+)
+BEGIN
+   update user
+   set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender
+   where id=id;
+	
+END //
+DELIMITER ;

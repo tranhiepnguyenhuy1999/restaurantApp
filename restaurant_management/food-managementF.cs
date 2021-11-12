@@ -16,6 +16,7 @@ namespace restaurant_management
     {
         public List<DTO.Kind> TypeList = kindDAO.Instance.getListKind();
         public List<int> TypeIdList = new List<int>();
+
         public foodManagementF()
         {
             InitializeComponent();
