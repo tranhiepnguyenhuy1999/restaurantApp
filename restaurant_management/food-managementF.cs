@@ -44,8 +44,7 @@ namespace restaurant_management
 
         private void cashOutBtn_Click(object sender, EventArgs e)
         {
-            bool res = testkind.insertKind(1001, "my name", 1, 2, new DateTime());
-            bool b = res;
+           
         }
     }
 }
