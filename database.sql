@@ -42,6 +42,7 @@ CREATE TABLE user(
 	id INT AUTO_INCREMENT , 
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
+    phone CHAR(10) NOT NULL,
 	birthday DATE,
     gender INT DEFAULT 0,
     create_date DATE NOT NULL,
@@ -52,14 +53,15 @@ DELIMITER $$
 CREATE PROCEDURE insertUser(
 IN 	first_name NVARCHAR(100),
 IN 	last_name NVARCHAR(100),
+IN phone CHAR(10),
 IN birthday DATE,
 IN create_date DATE
 )
 BEGIN
    INSERT INTO 
-	user(first_name, last_name, birthday, create_date)
+	user(first_name, last_name, phone, birthday, create_date)
 	VALUES
-	(first_name, last_name, birthday, create_date);
+	(first_name, last_name, phone, birthday, create_date);
 END; $$
 DELIMITER $$
 DROP PROCEDURE IF EXISTS insertNewFood $$
@@ -109,18 +111,20 @@ CALL insertNewFood('Rau câu', 12000, 2, '2021-10-21');
 CALL insertNewFood('Bánh mì Bò Kho', 45000, 1, '2021-10-21');
 CALL insertNewFood('Hủ tiếu mực', 60000, 1, '2021-10-21');
 -- user
-CALL insertUser('Như', 'Trần Thị','2019-05-15','2019-11-20');
-CALL insertUser('Huy', 'Trần','2019-08-01','2019-12-31'); 
-
+CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15','2019-11-20');
+CALL insertUser('Huy', 'Trần','0123456789','2019-08-01','2019-12-31'); 
 -- bill
 INSERT INTO 
 	bill(total_money, total_amount, create_date)
 	VALUES	
-	(610000 , 21, '2021-10-20');
+	(610000 , 21, '2021-10-20'),
+    (500000 , 10, '2021-10-20');
 
 CALL insertBillDetail (1, 1, 1);
 CALL insertBillDetail (10, 2, 1);
 CALL insertBillDetail (10, 6, 1);
+CALL insertBillDetail (1, 5, 2);
+CALL insertBillDetail (2, 3, 2);
 
 DELIMITER // -- them ham cap nhap user tren id
 CREATE PROCEDURE updateUser(
@@ -137,3 +141,4 @@ BEGIN
 	
 END //
 DELIMITER ;
+

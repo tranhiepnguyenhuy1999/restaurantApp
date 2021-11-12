@@ -1,6 +1,8 @@
-﻿namespace restaurant_management
+﻿using System;
+
+namespace restaurant_management
 {
-    partial class loginForm
+    partial class loginF
     {
         /// <summary>
         /// Required designer variable.

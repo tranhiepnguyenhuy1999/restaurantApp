@@ -1,4 +1,5 @@
-﻿using System;
+﻿using restaurant_management.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,14 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
-    public partial class foodManagementForm : Form
+    public partial class foodManagementF : Form
     {
-        public foodManagementForm()
+        public foodManagementF()
         {
             InitializeComponent();
         }
 
-        private void foodManagementForm_Load(object sender, EventArgs e)
+        private void foodManagementF_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
             PopulateDataGridView();
@@ -25,19 +26,11 @@ namespace restaurant_management
 
         private void SetupDataGridView()
         {
-            foodsDataGridView.ColumnCount = 2;
-
-            foodsDataGridView.Columns[0].Name = "Name";
-            foodsDataGridView.Columns[1].Name = "Price";
         }
 
         private void PopulateDataGridView()
         {
-            string[] row0 = { "Beef Noodles", "30000" };
-            string[] row1 = { "Tea", "5000" };
-
-            foodsDataGridView.Rows.Add(row0);
-            foodsDataGridView.Rows.Add(row1);
+            foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
         }
 
         private void foodsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -45,11 +38,6 @@ namespace restaurant_management
             idTextBox.Text = e.RowIndex.ToString();
             nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-        }
-
-        private void foodsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

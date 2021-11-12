@@ -20,7 +20,7 @@ namespace restaurant_management.DAO
         {
             List<DetailBill> list = new List<DetailBill>();
             string Id = id.ToString();
-            string query = "SELECT * FROM bill_detail WHERE id=" + Id;
+            string query = "SELECT * FROM bill_detail WHERE id_bill=" + Id;
             DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in datatb.Rows)
             {

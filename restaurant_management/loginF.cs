@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
-    public partial class loginForm : Form
+    public partial class loginF : Form
     {
-        public loginForm()
+        public loginF()
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            dashboard fr = new dashboard();
-            fr.Show();
+            dashboardBar dash = new dashboardBar();
+            dash.ShowDialog();
         }
     }
 }
