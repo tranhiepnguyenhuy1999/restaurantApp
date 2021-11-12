@@ -13,7 +13,9 @@ namespace restaurant_management
 {
     public partial class foodManagementF : Form
     {
-        DAO.kindDAO testkind = DAO.kindDAO.Instance;
+
+
+        public int[] foodTypes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         public foodManagementF()
         {
@@ -22,12 +24,13 @@ namespace restaurant_management
 
         private void foodManagementF_Load(object sender, EventArgs e)
         {
-            SetupDataGridView();
+            SetupData();
             PopulateDataGridView();
         }
 
-        private void SetupDataGridView()
+        private void SetupData()
         {
+            typeComboBox.DataSource = foodTypes;
         }
 
         private void PopulateDataGridView()
@@ -37,9 +40,26 @@ namespace restaurant_management
 
         private void foodsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            idTextBox.Text = e.RowIndex.ToString();
-            nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            typeComboBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            foodAddingForm form = new foodAddingForm(foodTypes);
+            form.FormClosed += new FormClosedEventHandler(addingForm_FormClosed);
+            form.Show();
+        }
+
+        void addingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            foodDAO.Instance.insertNewFood("a", 1.2f, 1);
         }
 
         private void cashOutBtn_Click(object sender, EventArgs e)

@@ -131,14 +131,17 @@
     <Compile Include="DTO\Kind.cs" />
     <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\User.cs" />
+    <Compile Include="food-addingF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="food-addingF.Designer.cs">
+      <DependentUpon>food-addingF.cs</DependentUpon>
+    </Compile>
     <Compile Include="food-managementF.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="food-managementF.Designer.cs">
       <DependentUpon>food-managementF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="foodManagementForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="loginF.cs">
       <SubType>Form</SubType>
@@ -165,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dashboardBar.resx">
       <DependentUpon>dashboardBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="food-addingF.resx">
+      <DependentUpon>food-addingF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="food-managementF.resx">
       <DependentUpon>food-managementF.cs</DependentUpon>

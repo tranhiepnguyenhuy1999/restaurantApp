@@ -35,14 +35,14 @@
             this.btnCashOut = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.titleBar = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
             this.workspace = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.sideNav.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.titleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.titleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // sideNav
@@ -57,7 +57,7 @@
             this.sideNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideNav.Location = new System.Drawing.Point(0, 0);
             this.sideNav.Name = "sideNav";
-            this.sideNav.Size = new System.Drawing.Size(200, 487);
+            this.sideNav.Size = new System.Drawing.Size(200, 453);
             this.sideNav.TabIndex = 0;
             // 
             // btnExit
@@ -165,39 +165,6 @@
             this.panelLogo.Size = new System.Drawing.Size(200, 100);
             this.panelLogo.TabIndex = 0;
             // 
-            // titleBar
-            // 
-            this.titleBar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.titleBar.Controls.Add(this.title);
-            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titleBar.Location = new System.Drawing.Point(200, 0);
-            this.titleBar.Name = "titleBar";
-            this.titleBar.Size = new System.Drawing.Size(713, 55);
-            this.titleBar.TabIndex = 1;
-            // 
-            // title
-            // 
-            this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(181)))));
-            this.title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.title.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.title.Location = new System.Drawing.Point(0, 0);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(713, 55);
-            this.title.TabIndex = 0;
-            this.title.Text = "Home";
-            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // workspace
-            // 
-            this.workspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
-            this.workspace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workspace.Location = new System.Drawing.Point(200, 55);
-            this.workspace.Name = "workspace";
-            this.workspace.Size = new System.Drawing.Size(713, 432);
-            this.workspace.TabIndex = 2;
-            // 
             // logo
             // 
             this.logo.BackColor = System.Drawing.Color.White;
@@ -210,16 +177,49 @@
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
+            // titleBar
+            // 
+            this.titleBar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.titleBar.Controls.Add(this.title);
+            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleBar.Location = new System.Drawing.Point(200, 0);
+            this.titleBar.Name = "titleBar";
+            this.titleBar.Size = new System.Drawing.Size(699, 55);
+            this.titleBar.TabIndex = 1;
+            // 
+            // title
+            // 
+            this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(181)))));
+            this.title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.title.Location = new System.Drawing.Point(0, 0);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(699, 55);
+            this.title.TabIndex = 0;
+            this.title.Text = "Home";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // workspace
+            // 
+            this.workspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.workspace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.workspace.Location = new System.Drawing.Point(200, 55);
+            this.workspace.Name = "workspace";
+            this.workspace.Size = new System.Drawing.Size(699, 398);
+            this.workspace.TabIndex = 2;
+            // 
             // dashboardBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 487);
+            this.ClientSize = new System.Drawing.Size(899, 453);
             this.Controls.Add(this.workspace);
             this.Controls.Add(this.titleBar);
             this.Controls.Add(this.sideNav);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1062, 620);
+            this.MaximumSize = new System.Drawing.Size(915, 492);
             this.MinimumSize = new System.Drawing.Size(915, 492);
             this.Name = "dashboardBar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -227,8 +227,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.dashboard_FormClosed);
             this.sideNav.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            this.titleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.titleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
