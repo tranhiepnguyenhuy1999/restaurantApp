@@ -53,5 +53,21 @@ namespace restaurant_management.DAO
         {
             return this.getListFood(name);
         }
+
+        public bool updateProps(int id, string food_name, float price, int id_kind)
+        {
+            int result = 0;
+            string proc = "call updateFood ( @id_in , @food_name_in , @price_in , @id_kind_in )";
+            result = DataProvider.Instance.ExecuteNonQuery(proc, new object[] { id, food_name, price, id_kind});
+            return result > 0 ? true : false;
+        }
+
+        public bool deleteFood(int id)
+        {
+            int res = 0;
+            string query = "call deleteFood ( @id_in )";
+            res = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+            return res > 0 ? true : false;
+        }
     }
 }
