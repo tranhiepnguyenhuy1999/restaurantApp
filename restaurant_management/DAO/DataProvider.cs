@@ -22,12 +22,13 @@ namespace restaurant_management.DAO
 
         private DataProvider() { }
 
-        private string SQL_conection_string = "server=localhost;uid=root;" + "pwd=119119311;database=restaurantManagement";
+        private string SQL_conection_string = "server=localhost;uid=root;" + "pwd=root;database=restaurantManagement";
 
         public DataTable ExecuteQuery(string query, object[] param = null)
         {
             DataTable data = new DataTable();
-
+            // can phai co call moi goi dc procedure
+            // query = "call " + query;
             try
             {
 

@@ -13,6 +13,8 @@ namespace restaurant_management
 {
     public partial class foodManagementF : Form
     {
+        DAO.kindDAO testkind = DAO.kindDAO.Instance;
+
         public foodManagementF()
         {
             InitializeComponent();
@@ -38,6 +40,12 @@ namespace restaurant_management
             idTextBox.Text = e.RowIndex.ToString();
             nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void cashOutBtn_Click(object sender, EventArgs e)
+        {
+            bool res = testkind.insertKind(1001, "my name", 1, 2, new DateTime());
+            bool b = res;
         }
     }
 }
