@@ -13,7 +13,10 @@ namespace restaurant_management
 {
     public partial class foodManagementF : Form
     {
+
+
         public int[] foodTypes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
         public foodManagementF()
         {
             InitializeComponent();
@@ -57,6 +60,11 @@ namespace restaurant_management
         private void updateBtn_Click(object sender, EventArgs e)
         {
             foodDAO.Instance.insertNewFood("a", 1.2f, 1);
+        }
+
+        private void cashOutBtn_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

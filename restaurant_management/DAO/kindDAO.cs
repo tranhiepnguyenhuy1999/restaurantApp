@@ -37,5 +37,22 @@ namespace restaurant_management.DAO
             }).ToList();
 
         }
+
+        public bool insertKind(int id, string kind_name, int from_age, int to_age, DateTime create_date)
+        {
+            int result = 0;
+            string proc = "call insertKindFood ( @id , @kind_name , @from_age , @to_age , @create_date )";
+           
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(proc, new object[] { id, kind_name, from_age, to_age, create_date.ToShortDateString()});
+            }
+            catch(MySql.Data.MySqlClient.MySqlException error)
+            {
+                return false;
+            }
+
+            return result > 0 ? true : false;
+        }
     }
 }
