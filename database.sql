@@ -169,3 +169,19 @@ END; $$
 DELIMITER ;
 
 
+DELIMITER // -- them ham cap nhap user tren id
+CREATE PROCEDURE updateUser(
+IN id INT,
+IN 	first_name NVARCHAR(100),
+IN 	last_name NVARCHAR(100),
+IN birthday DATE,
+IN  gender INT
+)
+BEGIN
+   update user
+   set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender
+   where id=id;
+	
+END //
+DELIMITER ;
+

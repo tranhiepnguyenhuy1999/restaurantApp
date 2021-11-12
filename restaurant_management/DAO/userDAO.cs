@@ -36,5 +36,14 @@ namespace restaurant_management.DAO
             return result;
                 
         }
+        public bool updateUser(int id,string first_name,string last_name ,DateTime birthday,int gender)
+        {
+            int result = 0;
+            string query = "call updateUser ( @id , @first_name , @last_name , @birthday , @gender )";
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, first_name, last_name, birthday, gender });
+            if (result == 0)
+                return true;
+            return false;
+        }
     }
 }
