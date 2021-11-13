@@ -13,10 +13,12 @@ namespace restaurant_management
 {
     public partial class foodAddingForm : Form
     {
-        public foodAddingForm(int[] foodTypes)
+        public List<int> _TypeIdList = new List<int>();
+        public foodAddingForm(List<int> TypeIdList, List<string> TypeNameList)
         {
             InitializeComponent();
-            typeComboBox.DataSource = foodTypes;
+            _TypeIdList = TypeIdList;
+            typeComboBox.DataSource = TypeNameList;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace restaurant_management
                 return;
             }
 
-            foodDAO.Instance.insertNewFood(nameTextBox.Text, float.Parse(priceTextBox.Text), int.Parse(typeComboBox.SelectedItem.ToString()));
+            foodDAO.Instance.insertNewFood(nameTextBox.Text, float.Parse(priceTextBox.Text), _TypeIdList[typeComboBox.SelectedIndex]);
             Close();
         }
 

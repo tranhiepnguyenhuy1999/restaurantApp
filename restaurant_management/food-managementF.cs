@@ -1,4 +1,5 @@
-﻿using restaurant_management.DAO;
+﻿using restaurant_management.Constants;
+using restaurant_management.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,9 @@ namespace restaurant_management
 {
     public partial class foodManagementF : Form
     {
-
-
-        public int[] foodTypes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        public List<DTO.Kind> TypeList = kindDAO.Instance.getListKind();
+        public List<int> TypeIdList = new List<int>();
+        public List<string> TypeNameList = new List<string>();
 
         public foodManagementF()
         {
@@ -25,29 +26,40 @@ namespace restaurant_management
         private void foodManagementF_Load(object sender, EventArgs e)
         {
             SetupData();
-            PopulateDataGridView();
+            SetupDataGridView();
         }
 
         private void SetupData()
         {
-            typeComboBox.DataSource = foodTypes;
+            foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
+
+            foreach (var type in TypeList)
+            {
+                TypeIdList.Add(type.ID);
+                TypeNameList.Add(type.Kind_name);
+            }
+            typeComboBox.DataSource = TypeNameList;
         }
 
-        private void PopulateDataGridView()
+        private void SetupDataGridView()
         {
-            foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
+            foodsDataGridView.Columns[0].HeaderText = FoodDataGridViewHeaders.iD;
+            foodsDataGridView.Columns[1].HeaderText = FoodDataGridViewHeaders.food_name;
+            foodsDataGridView.Columns[2].HeaderText = FoodDataGridViewHeaders.price;
+            foodsDataGridView.Columns[3].HeaderText = FoodDataGridViewHeaders.id_kind;
+            foodsDataGridView.Columns[4].HeaderText = FoodDataGridViewHeaders.create_date;
         }
 
         private void foodsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            typeComboBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            typeComboBox.SelectedIndex = int.Parse(foodsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString()) - 1;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            foodAddingForm form = new foodAddingForm(foodTypes);
+            foodAddingForm form = new foodAddingForm(TypeIdList, TypeNameList);
             form.FormClosed += new FormClosedEventHandler(addingForm_FormClosed);
             form.Show();
         }
@@ -59,12 +71,7 @@ namespace restaurant_management
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            foodDAO.Instance.insertNewFood("a", 1.2f, 1);
-        }
-
-        private void cashOutBtn_Click(object sender, EventArgs e)
-        {
-           
+            foodDAO.Instance.insertNewFood("a", 100000, 1);
         }
     }
 }

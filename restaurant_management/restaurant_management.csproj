@@ -114,6 +114,7 @@
     <Compile Include="cashOutF.Designer.cs">
       <DependentUpon>cashOutF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Constants\FoodDataGridViewHeaders.cs" />
     <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\kindDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
