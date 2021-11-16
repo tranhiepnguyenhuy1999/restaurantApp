@@ -1,4 +1,5 @@
 ﻿using restaurant_management.DAO;
+using restaurant_management.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,10 +29,11 @@ namespace restaurant_management
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(nameTextBox.Text) ||
-                String.IsNullOrEmpty(priceTextBox.Text) ||
-                String.IsNullOrEmpty(typeComboBox.SelectedItem.ToString()) ||
-                !IsFloatOrInt(priceTextBox.Text))
+            if (!FoodValidationHelper.isFoodValid(
+                nameTextBox.Text,
+                priceTextBox.Text,
+                typeComboBox.SelectedItem.ToString()
+            ))
             {
                 MessageBox.Show("Please fill all data.");
                 return;
@@ -39,13 +41,6 @@ namespace restaurant_management
 
             foodDAO.Instance.insertNewFood(nameTextBox.Text, float.Parse(priceTextBox.Text), _TypeIdList[typeComboBox.SelectedIndex]);
             Close();
-        }
-
-        public bool IsFloatOrInt(string value)
-        {
-            int intValue;
-            float floatValue;
-            return Int32.TryParse(value, out intValue) || float.TryParse(value, out floatValue);
         }
 
         private void foodAddingForm_FormClosed(object sender, FormClosedEventArgs e)

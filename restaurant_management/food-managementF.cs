@@ -1,5 +1,6 @@
 ﻿using restaurant_management.Constants;
 using restaurant_management.DAO;
+using restaurant_management.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace restaurant_management
         public List<DTO.Kind> TypeList = kindDAO.Instance.getListKind();
         public List<int> TypeIdList = new List<int>();
         public List<string> TypeNameList = new List<string>();
+        private int selectedRow = -1;
 
         public foodManagementF()
         {
@@ -52,6 +54,7 @@ namespace restaurant_management
 
         private void foodsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            selectedRow = e.RowIndex;
             nameTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             priceTextBox.Text = foodsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
             typeComboBox.SelectedIndex = int.Parse(foodsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString()) - 1;
@@ -71,7 +74,33 @@ namespace restaurant_management
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            foodDAO.Instance.insertNewFood("a", 100000, 1);
+            if (!FoodValidationHelper.isFoodValid(
+                nameTextBox.Text,
+                priceTextBox.Text,
+                typeComboBox.SelectedIndex.ToString()
+            ))
+            {
+                MessageBox.Show("Please fill all data.");
+                return;
+            }
+
+            foodDAO.Instance.updateProps(
+                int.Parse(foodsDataGridView.Rows[selectedRow].Cells[0].Value.ToString()),
+                nameTextBox.Text,
+                float.Parse(priceTextBox.Text),
+                TypeIdList[typeComboBox.SelectedIndex]
+            );
+
+            foodsDataGridView.Rows[selectedRow].Cells[1].Value = nameTextBox.Text;
+            foodsDataGridView.Rows[selectedRow].Cells[2].Value = float.Parse(priceTextBox.Text);
+            foodsDataGridView.Rows[selectedRow].Cells[3].Value = TypeIdList[typeComboBox.SelectedIndex];
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            foodDAO.Instance.deleteFood(int.Parse(foodsDataGridView.Rows[selectedRow].Cells[0].Value.ToString()));
+
+            foodsDataGridView.DataSource = foodDAO.Instance.getListFood();
         }
     }
 }

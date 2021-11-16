@@ -144,6 +144,7 @@
     <Compile Include="food-managementF.Designer.cs">
       <DependentUpon>food-managementF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FoodValidationHelper.cs" />
     <Compile Include="loginF.cs">
       <SubType>Form</SubType>
     </Compile>
