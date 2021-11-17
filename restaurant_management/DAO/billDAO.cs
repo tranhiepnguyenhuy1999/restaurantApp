@@ -62,6 +62,81 @@ namespace restaurant_management.DAO
             List<Bill> listbill = new List<Bill>();
             string month = month0.ToString();
             string query = "SELECT * FROM bill WHERE month(create_date)=" + month;
+<<<<<<< Updated upstream
+=======
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
+        public List<Bill> getListBillByBillMoney_ASC() //sap xep bill theo tong gia tien tang dan
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "select * from bill order by total_money ASC";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
+        public List<Bill> getListBillByBillMoney_DESC() //sap xep bill theo  tong gia tien giam dan
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "select * from bill order by total_money DESC";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
+        public List<Bill> getListBillByBillDate_Latest() //sap xep theo thoi gian som nhat ->muon nhat
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "select * from bill order by create_date DESC;";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
+        public List<Bill> getListBillByBillDate_Oldest() //sap xep theo thoi gian muon nhat ->som nhat
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "select * from bill order by create_date ASC;";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
+        public List<Bill> getListBillByBill_LowestAmount() //sap xep theo tong so luong mon an it nhat->nhieu nhat
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "select * from bill order by total_amount ASC;";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
+        }
+        public List<Bill> getListBillByBill_HighestAmount() //sap xep theo tong so luong mon an nhieu nhat->it nhat
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "select * from bill order by total_amount DESC;";
+>>>>>>> Stashed changes
             DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in datatb.Rows)
             {
