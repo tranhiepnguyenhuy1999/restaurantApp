@@ -127,7 +127,6 @@ namespace restaurant_management
             // 
             // deleteBtn
             // 
-
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.Location = new System.Drawing.Point(113, 239);
             this.deleteBtn.Name = "deleteBtn";
@@ -135,7 +134,7 @@ namespace restaurant_management
             this.deleteBtn.TabIndex = 8;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
-
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // foodInformationPanel
             // 
