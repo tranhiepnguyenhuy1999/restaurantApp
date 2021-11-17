@@ -46,6 +46,7 @@ namespace restaurant_management
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.foodDetailsPanel = new System.Windows.Forms.Panel();
             this.addBtn = new System.Windows.Forms.Button();
+            this.typePopupLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.foodsDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
             this.foodDetailsPanel.SuspendLayout();
@@ -138,6 +139,7 @@ namespace restaurant_management
             // 
             // foodInformationPanel
             // 
+            this.foodInformationPanel.Controls.Add(this.typePopupLabel);
             this.foodInformationPanel.Controls.Add(this.typeLabel);
             this.foodInformationPanel.Controls.Add(this.updateBtn);
             this.foodInformationPanel.Controls.Add(this.typeComboBox);
@@ -206,6 +208,18 @@ namespace restaurant_management
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
+            // typePopupLabel
+            // 
+            this.typePopupLabel.AutoSize = true;
+            this.typePopupLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.typePopupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typePopupLabel.Location = new System.Drawing.Point(65, 196);
+            this.typePopupLabel.Name = "typePopupLabel";
+            this.typePopupLabel.Size = new System.Drawing.Size(89, 13);
+            this.typePopupLabel.TabIndex = 13;
+            this.typePopupLabel.Text = "*Manage Type";
+            this.typePopupLabel.Click += new System.EventHandler(this.typePopupLabel_Click);
+            // 
             // foodManagementF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +253,6 @@ namespace restaurant_management
         private Label typeLabel;
         private Button updateBtn;
         private Button addBtn;
+        private Label typePopupLabel;
     }
 }

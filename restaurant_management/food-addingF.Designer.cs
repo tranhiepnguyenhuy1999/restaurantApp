@@ -143,6 +143,7 @@ namespace restaurant_management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(192, 291);
+            this.ControlBox = false;
             this.Controls.Add(this.foodInformationPanel);
             this.MaximumSize = new System.Drawing.Size(208, 330);
             this.MinimumSize = new System.Drawing.Size(208, 330);
