@@ -1,4 +1,5 @@
 ﻿using System;
+using restaurant_management.DTO;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -44,6 +45,15 @@ namespace restaurant_management.DAO
             if (result == 0)
                 return true;
             return false;
+        }
+        public User GetUserByID(int ID)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from user where id = " + ID);
+            foreach (DataRow item in data.Rows)
+            {
+                return new User(item);
+            }
+            return null;
         }
     }
 }
