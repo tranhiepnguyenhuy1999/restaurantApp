@@ -25,8 +25,14 @@ namespace restaurant_management
 
         private void update_btn_Click(object sender, EventArgs e)
         {
+            int num = dgv_user.CurrentCell.RowIndex;
             DateTime birthday = Convert.ToDateTime(birthday_txtbox.Text);
             userDAO.Instance.updateUser(int.Parse(id_txtbox.Text), firstname_txtbox.Text, lastname_txtbox.Text, birthday, int.Parse(gender_txtbox.Text));
+            dgv_user.Rows[num].Cells[0].Value = id_txtbox.Text;
+            dgv_user.Rows[num].Cells[1].Value = firstname_txtbox.Text;
+            dgv_user.Rows[num].Cells[2].Value = lastname_txtbox.Text;
+            dgv_user.Rows[num].Cells[3].Value = birthday_txtbox.Text;
+            dgv_user.Rows[num].Cells[4].Value = gender_txtbox.Text;
         }
 
         private void dgv_user_SelectionChanged(object sender, EventArgs e)
@@ -37,7 +43,7 @@ namespace restaurant_management
             lastname_txtbox.Text = dgv_user.Rows[num].Cells[2].Value.ToString();
             birthday_txtbox.Text = dgv_user.Rows[num].Cells[3].Value.ToString();
             gender_txtbox.Text = dgv_user.Rows[num].Cells[4].Value.ToString();
-            createday_txtbox.Text = dgv_user.Rows[num].Cells[5].Value.ToString()
+            createday_txtbox.Text = dgv_user.Rows[num].Cells[5].Value.ToString();
             
         }
     }
