@@ -43,7 +43,6 @@ namespace restaurant_management
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.Date_Find_Button = new System.Windows.Forms.Button();
             this.Day_Find = new System.Windows.Forms.TextBox();
@@ -188,15 +187,6 @@ namespace restaurant_management
             this.textBox4.Size = new System.Drawing.Size(137, 20);
             this.textBox4.TabIndex = 7;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(664, 250);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 48);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -265,7 +255,6 @@ namespace restaurant_management
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -306,7 +295,6 @@ namespace restaurant_management
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Date_Find_Button;
         private System.Windows.Forms.TextBox Day_Find;
