@@ -29,7 +29,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
             this.id_txtbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_user = new System.Windows.Forms.DataGridView();
@@ -41,19 +41,21 @@ namespace restaurant_management
             this.birthday_txtbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.createday_txtbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gender_txtbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // add_btn
             // 
-            this.button2.Location = new System.Drawing.Point(50, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 38);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.add_btn.Location = new System.Drawing.Point(50, 12);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(102, 38);
+            this.add_btn.TabIndex = 17;
+            this.add_btn.Text = "Add";
+            this.add_btn.UseVisualStyleBackColor = true;
             // 
             // id_txtbox
             // 
@@ -78,6 +80,7 @@ namespace restaurant_management
             this.dgv_user.Name = "dgv_user";
             this.dgv_user.Size = new System.Drawing.Size(542, 338);
             this.dgv_user.TabIndex = 8;
+            this.dgv_user.SelectionChanged += new System.EventHandler(this.dgv_user_SelectionChanged);
             // 
             // label2
             // 
@@ -114,7 +117,7 @@ namespace restaurant_management
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(617, 222);
+            this.label4.Location = new System.Drawing.Point(617, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 11;
@@ -122,7 +125,7 @@ namespace restaurant_management
             // 
             // birthday_txtbox
             // 
-            this.birthday_txtbox.Location = new System.Drawing.Point(676, 218);
+            this.birthday_txtbox.Location = new System.Drawing.Point(676, 224);
             this.birthday_txtbox.Name = "birthday_txtbox";
             this.birthday_txtbox.Size = new System.Drawing.Size(112, 20);
             this.birthday_txtbox.TabIndex = 12;
@@ -130,7 +133,7 @@ namespace restaurant_management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(617, 271);
+            this.label5.Location = new System.Drawing.Point(617, 327);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 11;
@@ -138,28 +141,44 @@ namespace restaurant_management
             // 
             // createday_txtbox
             // 
-            this.createday_txtbox.Location = new System.Drawing.Point(676, 267);
+            this.createday_txtbox.Location = new System.Drawing.Point(676, 323);
             this.createday_txtbox.Name = "createday_txtbox";
             this.createday_txtbox.Size = new System.Drawing.Size(112, 20);
             this.createday_txtbox.TabIndex = 12;
             // 
-            // button1
+            // delete_btn
             // 
-            this.button1.Location = new System.Drawing.Point(200, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 38);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.delete_btn.Location = new System.Drawing.Point(200, 12);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(102, 38);
+            this.delete_btn.TabIndex = 17;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = true;
             // 
             // update_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(676, 316);
+            this.update_btn.Location = new System.Drawing.Point(676, 377);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(102, 38);
             this.update_btn.TabIndex = 17;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(617, 276);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Gender";
+            // 
+            // gender_txtbox
+            // 
+            this.gender_txtbox.Location = new System.Drawing.Point(676, 272);
+            this.gender_txtbox.Name = "gender_txtbox";
+            this.gender_txtbox.Size = new System.Drawing.Size(112, 20);
+            this.gender_txtbox.TabIndex = 12;
             // 
             // user_managementF
             // 
@@ -167,12 +186,14 @@ namespace restaurant_management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.update_btn);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.delete_btn);
+            this.Controls.Add(this.add_btn);
+            this.Controls.Add(this.gender_txtbox);
             this.Controls.Add(this.createday_txtbox);
             this.Controls.Add(this.birthday_txtbox);
             this.Controls.Add(this.lastname_txtbox);
             this.Controls.Add(this.firstname_txtbox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.id_txtbox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -189,7 +210,7 @@ namespace restaurant_management
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.TextBox id_txtbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_user;
@@ -201,7 +222,9 @@ namespace restaurant_management
         private System.Windows.Forms.TextBox birthday_txtbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox createday_txtbox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox gender_txtbox;
     }
 }
