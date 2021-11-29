@@ -37,6 +37,7 @@ namespace restaurant_management.DAO
             return result;
                 
         }
+
         public bool updateUser(int id,string first_name,string last_name ,DateTime birthday,int gender)
         {
             int result = 0;
@@ -46,6 +47,7 @@ namespace restaurant_management.DAO
                 return true;
             return false;
         }
+
         public User GetUserByID(int ID)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("Select * from user where id = " + ID);

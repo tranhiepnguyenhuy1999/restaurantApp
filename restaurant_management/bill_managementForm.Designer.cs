@@ -37,7 +37,6 @@ namespace restaurant_management
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -56,7 +55,7 @@ namespace restaurant_management
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(85, 79);
+            this.dgv.Location = new System.Drawing.Point(12, 79);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 62;
             this.dgv.Size = new System.Drawing.Size(542, 338);
@@ -67,7 +66,7 @@ namespace restaurant_management
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 12);
+            this.label1.Location = new System.Drawing.Point(9, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 1;
@@ -76,7 +75,7 @@ namespace restaurant_management
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 56);
+            this.label2.Location = new System.Drawing.Point(9, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -85,7 +84,7 @@ namespace restaurant_management
             // 
             // ID_Find
             // 
-            this.ID_Find.Location = new System.Drawing.Point(122, 9);
+            this.ID_Find.Location = new System.Drawing.Point(49, 9);
             this.ID_Find.Name = "ID_Find";
             this.ID_Find.Size = new System.Drawing.Size(505, 20);
             this.ID_Find.TabIndex = 2;
@@ -97,7 +96,7 @@ namespace restaurant_management
             "All",
             "Import",
             "Export"});
-            this.listBox1.Location = new System.Drawing.Point(135, 56);
+            this.listBox1.Location = new System.Drawing.Point(62, 56);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(130, 17);
             this.listBox1.TabIndex = 3;
@@ -110,7 +109,7 @@ namespace restaurant_management
             "Oldest",
             "Highest Amount",
             "Lowest Amount"});
-            this.listBox2.Location = new System.Drawing.Point(497, 56);
+            this.listBox2.Location = new System.Drawing.Point(424, 56);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(130, 17);
             this.listBox2.TabIndex = 3;
@@ -118,7 +117,7 @@ namespace restaurant_management
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(444, 56);
+            this.label3.Location = new System.Drawing.Point(371, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
@@ -127,7 +126,7 @@ namespace restaurant_management
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(664, 9);
+            this.button1.Location = new System.Drawing.Point(562, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 20);
             this.button1.TabIndex = 4;
@@ -135,19 +134,9 @@ namespace restaurant_management
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(664, 79);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 48);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(664, 164);
+            this.button3.Location = new System.Drawing.Point(562, 79);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 48);
             this.button3.TabIndex = 4;
@@ -190,7 +179,7 @@ namespace restaurant_management
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(82, 36);
+            this.label6.Location = new System.Drawing.Point(9, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 1;
@@ -198,9 +187,9 @@ namespace restaurant_management
             // 
             // Date_Find_Button
             // 
-            this.Date_Find_Button.Location = new System.Drawing.Point(666, 32);
+            this.Date_Find_Button.Location = new System.Drawing.Point(562, 32);
             this.Date_Find_Button.Name = "Date_Find_Button";
-            this.Date_Find_Button.Size = new System.Drawing.Size(121, 20);
+            this.Date_Find_Button.Size = new System.Drawing.Size(124, 20);
             this.Date_Find_Button.TabIndex = 8;
             this.Date_Find_Button.Text = "Find by Date";
             this.Date_Find_Button.UseVisualStyleBackColor = true;
@@ -208,15 +197,15 @@ namespace restaurant_management
             // 
             // Day_Find
             // 
-            this.Day_Find.Location = new System.Drawing.Point(122, 33);
+            this.Day_Find.Location = new System.Drawing.Point(49, 33);
             this.Day_Find.Name = "Day_Find";
-            this.Day_Find.Size = new System.Drawing.Size(23, 20);
+            this.Day_Find.Size = new System.Drawing.Size(42, 20);
             this.Day_Find.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(202, 36);
+            this.label7.Location = new System.Drawing.Point(129, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 1;
@@ -224,15 +213,15 @@ namespace restaurant_management
             // 
             // Month_Find
             // 
-            this.Month_Find.Location = new System.Drawing.Point(242, 33);
+            this.Month_Find.Location = new System.Drawing.Point(169, 33);
             this.Month_Find.Name = "Month_Find";
-            this.Month_Find.Size = new System.Drawing.Size(23, 20);
+            this.Month_Find.Size = new System.Drawing.Size(53, 20);
             this.Month_Find.TabIndex = 2;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(317, 36);
+            this.label8.Location = new System.Drawing.Point(244, 36);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 1;
@@ -240,9 +229,9 @@ namespace restaurant_management
             // 
             // Year_Find
             // 
-            this.Year_Find.Location = new System.Drawing.Point(357, 33);
+            this.Year_Find.Location = new System.Drawing.Point(284, 33);
             this.Year_Find.Name = "Year_Find";
-            this.Year_Find.Size = new System.Drawing.Size(23, 20);
+            this.Year_Find.Size = new System.Drawing.Size(68, 20);
             this.Year_Find.TabIndex = 2;
             // 
             // bill_managementForm
@@ -256,7 +245,6 @@ namespace restaurant_management
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -289,7 +277,6 @@ namespace restaurant_management
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;

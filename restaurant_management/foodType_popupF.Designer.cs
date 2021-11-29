@@ -31,18 +31,18 @@ namespace restaurant_management
         {
             this.typesDataGridView = new System.Windows.Forms.DataGridView();
             this.foodInformationPanel = new System.Windows.Forms.Panel();
+            this.toAgeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.fromAgeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.toAgeLabel = new System.Windows.Forms.Label();
             this.addBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.nameLabel = new System.Windows.Forms.Label();
             this.fromAgeLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.fromAgeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.toAgeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.typesDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fromAgeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toAgeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fromAgeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // typesDataGridView
@@ -75,6 +75,20 @@ namespace restaurant_management
             this.foodInformationPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.foodInformationPanel.Size = new System.Drawing.Size(473, 182);
             this.foodInformationPanel.TabIndex = 4;
+            // 
+            // toAgeNumericUpDown
+            // 
+            this.toAgeNumericUpDown.Location = new System.Drawing.Point(153, 130);
+            this.toAgeNumericUpDown.Name = "toAgeNumericUpDown";
+            this.toAgeNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.toAgeNumericUpDown.TabIndex = 14;
+            // 
+            // fromAgeNumericUpDown
+            // 
+            this.fromAgeNumericUpDown.Location = new System.Drawing.Point(153, 78);
+            this.fromAgeNumericUpDown.Name = "fromAgeNumericUpDown";
+            this.fromAgeNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.fromAgeNumericUpDown.TabIndex = 13;
             // 
             // toAgeLabel
             // 
@@ -136,20 +150,6 @@ namespace restaurant_management
             this.nameTextBox.Size = new System.Drawing.Size(120, 20);
             this.nameTextBox.TabIndex = 5;
             // 
-            // fromAgeNumericUpDown
-            // 
-            this.fromAgeNumericUpDown.Location = new System.Drawing.Point(153, 78);
-            this.fromAgeNumericUpDown.Name = "fromAgeNumericUpDown";
-            this.fromAgeNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.fromAgeNumericUpDown.TabIndex = 13;
-            // 
-            // toAgeNumericUpDown
-            // 
-            this.toAgeNumericUpDown.Location = new System.Drawing.Point(153, 130);
-            this.toAgeNumericUpDown.Name = "toAgeNumericUpDown";
-            this.toAgeNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.toAgeNumericUpDown.TabIndex = 14;
-            // 
             // foodType_popupF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,8 +168,8 @@ namespace restaurant_management
             ((System.ComponentModel.ISupportInitialize)(this.typesDataGridView)).EndInit();
             this.foodInformationPanel.ResumeLayout(false);
             this.foodInformationPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fromAgeNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toAgeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fromAgeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }

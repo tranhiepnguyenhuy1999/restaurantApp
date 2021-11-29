@@ -46,5 +46,10 @@ namespace restaurant_management
             createday_txtbox.Text = dgv_user.Rows[num].Cells[5].Value.ToString();
             
         }
+
+        private void update_btn_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
