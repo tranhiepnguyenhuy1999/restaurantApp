@@ -62,8 +62,6 @@ namespace restaurant_management.DAO
             List<Bill> listbill = new List<Bill>();
             string month = month0.ToString();
             string query = "SELECT * FROM bill WHERE month(create_date)=" + month;
-<<<<<<< Updated upstream
-=======
             DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in datatb.Rows)
             {
@@ -136,7 +134,7 @@ namespace restaurant_management.DAO
         {
             List<Bill> listbill = new List<Bill>();
             string query = "select * from bill order by total_amount DESC;";
->>>>>>> Stashed changes
+
             DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in datatb.Rows)
             {

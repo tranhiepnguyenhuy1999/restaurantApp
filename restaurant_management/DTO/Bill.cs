@@ -17,7 +17,7 @@ namespace restaurant_management.DTO
             this.ID = (int)row["id"];
             this.total_money = (float)row["total_money"];
             this.total_amount = (int)row["total_amount"];
-            this.date = DateTime.Parse(row["date"].ToString());
+            this.date = DateTime.Parse(row["create_date"].ToString());
         }
         public int ID { get => iD; set => iD = value; }
         public float Total_money { get => total_money; set => total_money = value; }
