@@ -53,13 +53,14 @@ CREATE PROCEDURE insertUser(
 IN 	first_name NVARCHAR(100),
 IN 	last_name NVARCHAR(100),
 IN birthday DATE,
-IN create_date DATE
+IN create_date DATE,
+In gender int
 )
 BEGIN
    INSERT INTO 
-	user(first_name, last_name, birthday, create_date)
+	user(first_name, last_name, birthday, create_date,gender)
 	VALUES
-	(first_name, last_name, birthday, create_date);
+	(first_name, last_name, birthday, create_date,gender);
 END; $$
 DELIMITER $$
 DROP PROCEDURE IF EXISTS insertNewFood $$
@@ -134,6 +135,19 @@ BEGIN
    update user
    set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender
    where id=id;
+	
+END //
+DELIMITER ;
+CREATE PROCEDURE insertBill(
+in total_money FLOAT ,
+in total_amount int,
+in create_date DATE 
+)
+BEGIN
+   INSERT INTO 
+	bill(total_money, total_amount, create_date)
+	VALUES	
+	(total_money , total_amount, create_date )
 	
 END //
 DELIMITER ;

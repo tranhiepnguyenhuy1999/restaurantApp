@@ -142,5 +142,25 @@ namespace restaurant_management.DAO
             }
             return listbill;
         }
+        private int insertNewBill(int total_amount, float total_monney, DateTime create_day, string food_name, float price, int id_kind)
+        {
+            int result = 0, id = 0;
+            string query1 = "call  insertBill( @total_amount , @total_monney , @create_day)";
+            result = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { total_amount, price, id_kind, create_day });
+            string query2 = "SELECT  id FROM bill  order by id DESC  LIMIT 1";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query2);
+            foreach (DataRow item in datatb.Rows)
+            {
+                id = (int)item["id"];
+            }
+            return id; //0 chen bill khong thanh cong , khac 0 thanh cong tra lai id bill
+        }
+        private int insertDetailBillofBill(int amount,int id_food ,int id_bill) // chen detail bill dua vao id bill
+        {
+            int result = 0;
+            string query1 = "call insertBillDetail( @amount , @id_food , @id_bill)";
+            result = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { amount , id_food , id_bill });
+            return result; //chen vao bill dua vao id bill ,tra ve 0 thi chen k thanh cong khac 0 thi thanh cong
+        }
     }
 }
