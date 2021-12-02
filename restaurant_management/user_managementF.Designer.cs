@@ -56,6 +56,7 @@ namespace restaurant_management
             this.add_btn.TabIndex = 17;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // id_txtbox
             // 
@@ -133,7 +134,7 @@ namespace restaurant_management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(560, 323);
+            this.label5.Location = new System.Drawing.Point(560, 304);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 11;
@@ -141,8 +142,9 @@ namespace restaurant_management
             // 
             // createday_txtbox
             // 
-            this.createday_txtbox.Location = new System.Drawing.Point(619, 319);
+            this.createday_txtbox.Location = new System.Drawing.Point(619, 300);
             this.createday_txtbox.Name = "createday_txtbox";
+            this.createday_txtbox.ReadOnly = true;
             this.createday_txtbox.Size = new System.Drawing.Size(112, 20);
             this.createday_txtbox.TabIndex = 12;
             // 
@@ -157,7 +159,7 @@ namespace restaurant_management
             // 
             // update_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(619, 373);
+            this.update_btn.Location = new System.Drawing.Point(619, 343);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(102, 38);
             this.update_btn.TabIndex = 17;
@@ -168,7 +170,7 @@ namespace restaurant_management
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(560, 272);
+            this.label6.Location = new System.Drawing.Point(560, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 11;
@@ -176,7 +178,7 @@ namespace restaurant_management
             // 
             // gender_txtbox
             // 
-            this.gender_txtbox.Location = new System.Drawing.Point(619, 268);
+            this.gender_txtbox.Location = new System.Drawing.Point(619, 260);
             this.gender_txtbox.Name = "gender_txtbox";
             this.gender_txtbox.Size = new System.Drawing.Size(112, 20);
             this.gender_txtbox.TabIndex = 12;
@@ -189,13 +191,13 @@ namespace restaurant_management
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.gender_txtbox);
             this.Controls.Add(this.createday_txtbox);
+            this.Controls.Add(this.gender_txtbox);
             this.Controls.Add(this.birthday_txtbox);
             this.Controls.Add(this.lastname_txtbox);
             this.Controls.Add(this.firstname_txtbox);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.id_txtbox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

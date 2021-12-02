@@ -31,10 +31,7 @@ namespace restaurant_management
         {
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.ID_Find = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,16 +46,17 @@ namespace restaurant_management
             this.Month_Find = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Year_Find = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(12, 79);
+            this.dgv.Location = new System.Drawing.Point(49, 86);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 62;
-            this.dgv.Size = new System.Drawing.Size(542, 338);
+            this.dgv.Size = new System.Drawing.Size(578, 331);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
@@ -72,52 +70,17 @@ namespace restaurant_management
             this.label1.TabIndex = 1;
             this.label1.Text = "Bill ID";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bill Type";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // ID_Find
             // 
             this.ID_Find.Location = new System.Drawing.Point(49, 9);
             this.ID_Find.Name = "ID_Find";
-            this.ID_Find.Size = new System.Drawing.Size(505, 20);
+            this.ID_Find.Size = new System.Drawing.Size(578, 20);
             this.ID_Find.TabIndex = 2;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "All",
-            "Import",
-            "Export"});
-            this.listBox1.Location = new System.Drawing.Point(62, 56);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(130, 17);
-            this.listBox1.TabIndex = 3;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
-            "Latest",
-            "Oldest",
-            "Highest Amount",
-            "Lowest Amount"});
-            this.listBox2.Location = new System.Drawing.Point(424, 56);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(130, 17);
-            this.listBox2.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(371, 56);
+            this.label3.Location = new System.Drawing.Point(9, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
@@ -126,7 +89,7 @@ namespace restaurant_management
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(562, 9);
+            this.button1.Location = new System.Drawing.Point(661, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 20);
             this.button1.TabIndex = 4;
@@ -136,7 +99,7 @@ namespace restaurant_management
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(562, 79);
+            this.button3.Location = new System.Drawing.Point(661, 86);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 48);
             this.button3.TabIndex = 4;
@@ -187,7 +150,7 @@ namespace restaurant_management
             // 
             // Date_Find_Button
             // 
-            this.Date_Find_Button.Location = new System.Drawing.Point(562, 32);
+            this.Date_Find_Button.Location = new System.Drawing.Point(661, 39);
             this.Date_Find_Button.Name = "Date_Find_Button";
             this.Date_Find_Button.Size = new System.Drawing.Size(124, 20);
             this.Date_Find_Button.TabIndex = 8;
@@ -234,11 +197,20 @@ namespace restaurant_management
             this.Year_Find.Size = new System.Drawing.Size(68, 20);
             this.Year_Find.TabIndex = 2;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(49, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(114, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
             // bill_managementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Date_Find_Button);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -246,8 +218,6 @@ namespace restaurant_management
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Year_Find);
             this.Controls.Add(this.Month_Find);
             this.Controls.Add(this.Day_Find);
@@ -256,7 +226,6 @@ namespace restaurant_management
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
             this.Name = "bill_managementForm";
@@ -271,10 +240,7 @@ namespace restaurant_management
 
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ID_Find;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
@@ -289,5 +255,6 @@ namespace restaurant_management
         private System.Windows.Forms.TextBox Month_Find;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Year_Find;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace restaurant_management
 {
+
     public partial class bill_detailForm : Form
     {
-        public delegate void SendMessage(string message);
+        public delegate void SendMessage(string Message);
         public SendMessage Sender;
         public bill_detailForm()
         {
@@ -25,7 +26,7 @@ namespace restaurant_management
             int totalfood = 0;
             for (int i = 0; i<rc;i++)
             {
-                totalfood = int.Parse(dgvdetail.Rows[i].Cells["Amount"].Value.ToString());
+                totalfood += int.Parse(dgvdetail.Rows[i].Cells[2].Value.ToString());
             }
             totalBill_txtbox.Text = rc.ToString();
             totalFood_txtbox.Text = totalfood.ToString();

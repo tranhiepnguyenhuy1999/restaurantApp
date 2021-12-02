@@ -23,6 +23,11 @@ namespace restaurant_management
         {
             InitializeComponent();
             LoadListBill();
+            comboBox1.Items.Add("(None)");
+            comboBox1.Items.Add("Latest");
+            comboBox1.Items.Add("Oldest");
+            comboBox1.Items.Add("Highest Amount");
+            comboBox1.Items.Add("Lowest Amount");
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -76,7 +81,6 @@ namespace restaurant_management
             frm.Sender(ID_Find.Text);
             frm.ShowDialog();
         }
-
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
             int num = dgv.CurrentCell.RowIndex;
