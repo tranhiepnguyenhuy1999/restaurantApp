@@ -193,3 +193,16 @@ BEGIN
 	
 END //
 DELIMITER ;
+CREATE PROCEDURE insertBill(
+in total_money FLOAT ,
+in total_amount int,
+in create_date DATE 
+)
+BEGIN
+   INSERT INTO 
+	bill(total_money, total_amount, create_date)
+	VALUES	
+	(total_money , total_amount, create_date )
+	
+END //
+DELIMITER ;

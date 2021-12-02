@@ -28,11 +28,11 @@ namespace restaurant_management.DAO
             return data;
         }
 
-        public int insertNewUser(string firstName, string lastName, string birthDay, string createDate) {
+        public int insertNewUser(string firstName, string lastName, DateTime birthDay, DateTime createDate,int gender) {//1 nu 0 nam
             int result = 0;
-            string query = "insertUser ( @first_name , @last_name , @birthday , @create_date )";
+            string query = "insertUser ( @first_name , @last_name , @birthday , @create_date , @gender )";
 
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[]{ firstName, lastName, birthDay, createDate});
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[]{ firstName, lastName, birthDay, createDate, gender});
 
             return result;
                 

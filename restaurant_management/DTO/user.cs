@@ -14,15 +14,18 @@ namespace restaurant_management.DTO
         private string last_name;
         private DateTime birthday;
         private DateTime create_date;
+        private int gender;
         public User(DataRow row) {
             this.ID = (int)row["id"];
             this.First_name = row["first_name"].ToString();
             this.Last_name = row["last_name"].ToString();
             this.Birthday = DateTime.Parse(row["birthday"].ToString());
             this.Create_date = DateTime.Parse(row["create_date"].ToString());
+            this.Gender = (int)row["gender"];
         }
 
         public int ID { get => iD; set => iD = value; }
+        public int Gender { get => gender; set => gender = value; }
         public string First_name { get => first_name; set => first_name = value; }
         public string Last_name { get => last_name; set => last_name = value; }
         public DateTime Birthday { get => birthday; set => birthday = value; }
