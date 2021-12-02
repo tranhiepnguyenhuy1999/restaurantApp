@@ -151,11 +151,11 @@
       <DependentUpon>foodType_popupF.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FoodValidationHelper.cs" />
-    <Compile Include="loginF.cs">
+    <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginF.Designer.cs">
-      <DependentUpon>loginF.cs</DependentUpon>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Program.cs" />
@@ -186,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="foodType_popupF.resx">
       <DependentUpon>foodType_popupF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

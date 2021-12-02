@@ -19,7 +19,7 @@ namespace restaurant_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginF());
+            Application.Run(new login());
         }
     }
 }

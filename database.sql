@@ -46,7 +46,7 @@ CREATE TABLE user(
 	email VARCHAR(100),
 	birthday DATE,
     gender INT DEFAULT 0,
-	user_name VARCHAR(100) NOT NULL,
+	user_name VARCHAR(100) NOT NULL UNIQUE,
 	user_password  VARCHAR(100) NOT NULL,
 	create_date DATE NOT NULL,
     PRIMARY KEY(id)
@@ -65,7 +65,7 @@ BEGIN
    INSERT INTO 
 	user(first_name, last_name, phone, birthday, user_name, user_password, create_date)
 	VALUES
-	(first_name, last_name, phone, birthday, user_password, user_password, create_date);
+	(first_name, last_name, phone, birthday, user_name, user_password, create_date);
 END; $$
 
 DELIMITER $$

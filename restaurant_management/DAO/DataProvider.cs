@@ -22,7 +22,7 @@ namespace restaurant_management.DAO
 
         private DataProvider() { }
 
-        private string SQL_conection_string = "server=localhost;uid=root;" + "pwd=root;database=restaurantManagement;Convert Zero Datetime=True";
+        private string SQL_conection_string = "server=localhost;uid=root;" + "pwd=;database=restaurantManagement;Convert Zero Datetime=True";
 
         public DataTable ExecuteQuery(string query, object[] param = null)
         {
@@ -56,7 +56,7 @@ namespace restaurant_management.DAO
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                //System.Windows.Forms.MessageBox.Show(ex.Message);
             }
             return data;
         }
