@@ -142,6 +142,7 @@ namespace restaurant_management.DAO
             }
             return listbill;
         }
+
         private int insertNewBill(int total_amount, float total_monney, DateTime create_day, string food_name, float price, int id_kind)
         {
             int result = 0, id = 0;
@@ -161,6 +162,17 @@ namespace restaurant_management.DAO
             string query1 = "call insertBillDetail( @amount , @id_food , @id_bill)";
             result = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { amount , id_food , id_bill });
             return result; //chen vao bill dua vao id bill ,tra ve 0 thi chen k thanh cong khac 0 thi thanh cong
+        public List<Bill> getListBill()
+        {
+            List<Bill> listbill = new List<Bill>();
+            string query = "SELECT * FROM bill";
+            DataTable datatb = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in datatb.Rows)
+            {
+                Bill bill = new Bill(item);
+                listbill.Add(bill);
+            }
+            return listbill;
         }
     }
 }

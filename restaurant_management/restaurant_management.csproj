@@ -78,6 +78,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,66 +96,108 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_user.Designer.cs">
+      <DependentUpon>add_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bill_detailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bill_detailForm.Designer.cs">
+      <DependentUpon>bill_detailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="bill_managementForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="bill_managementForm.Designer.cs">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="cash-out.cs">
+    <Compile Include="cashOutF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cash-out.Designer.cs">
-      <DependentUpon>cash-out.cs</DependentUpon>
+    <Compile Include="cashOutF.Designer.cs">
+      <DependentUpon>cashOutF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Constants\FoodDataGridViewHeaders.cs" />
     <Compile Include="DAO\billDAO.cs" />
+    <Compile Include="DAO\kindDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\detailBillDAO.cs" />
     <Compile Include="DAO\foodDAO.cs" />
     <Compile Include="DAO\userDAO.cs" />
-    <Compile Include="dashboard.cs">
+    <Compile Include="dashboardBar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dashboard.Designer.cs">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <Compile Include="dashboardBar.Designer.cs">
+      <DependentUpon>dashboardBar.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\DetailBill.cs" />
+    <Compile Include="DTO\Kind.cs" />
+    <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\User.cs" />
-    <Compile Include="food-management.cs">
+    <Compile Include="food-addingF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="food-management.Designer.cs">
-      <DependentUpon>food-management.cs</DependentUpon>
+    <Compile Include="food-addingF.Designer.cs">
+      <DependentUpon>food-addingF.cs</DependentUpon>
     </Compile>
-    <Compile Include="loginForm.cs">
+    <Compile Include="food-managementF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginForm.Designer.cs">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <Compile Include="food-managementF.Designer.cs">
+      <DependentUpon>food-managementF.cs</DependentUpon>
     </Compile>
+    <Compile Include="foodType_popupF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="foodType_popupF.Designer.cs">
+      <DependentUpon>foodType_popupF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FoodValidationHelper.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user_managementForm.cs">
+    <Compile Include="user_managementF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_managementForm.Designer.cs">
-      <DependentUpon>user_managementForm.cs</DependentUpon>
+    <Compile Include="user_managementF.Designer.cs">
+      <DependentUpon>user_managementF.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="add_user.resx">
+      <DependentUpon>add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bill_detailForm.resx">
+      <DependentUpon>bill_detailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bill_managementForm.resx">
       <DependentUpon>bill_managementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cash-out.resx">
-      <DependentUpon>cash-out.cs</DependentUpon>
+    <EmbeddedResource Include="cashOutF.resx">
+      <DependentUpon>cashOutF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dashboard.resx">
-      <DependentUpon>dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="dashboardBar.resx">
+      <DependentUpon>dashboardBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="food-management.resx">
-      <DependentUpon>food-management.cs</DependentUpon>
+    <EmbeddedResource Include="food-addingF.resx">
+      <DependentUpon>food-addingF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="loginForm.resx">
-      <DependentUpon>loginForm.cs</DependentUpon>
+    <EmbeddedResource Include="food-managementF.resx">
+      <DependentUpon>food-managementF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="foodType_popupF.resx">
+      <DependentUpon>foodType_popupF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,9 +207,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="user_managementForm.resx">
-      <DependentUpon>user_managementForm.cs</DependentUpon>
+    <EmbeddedResource Include="user_managementF.resx">
+      <DependentUpon>user_managementF.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -181,6 +225,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo-uit-300x248.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
