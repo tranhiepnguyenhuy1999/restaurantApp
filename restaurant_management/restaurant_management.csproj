@@ -120,6 +120,7 @@
     <Compile Include="cashOutF.Designer.cs">
       <DependentUpon>cashOutF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Constants\BillDataGridViewHeaders.cs" />
     <Compile Include="Constants\FoodDataGridViewHeaders.cs" />
     <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\kindDAO.cs" />
@@ -163,7 +164,10 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BillDetailsModel.cs" />
+    <Compile Include="Models\BillModel.cs" />
     <Compile Include="Models\FoodModel.cs" />
+    <Compile Include="Models\TableModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="user_managementF.cs">
