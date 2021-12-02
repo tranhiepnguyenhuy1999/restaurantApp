@@ -56,7 +56,7 @@ namespace restaurant_management.DAO
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                //System.Windows.Forms.MessageBox.Show(ex.Message);
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
             return data;
         }
