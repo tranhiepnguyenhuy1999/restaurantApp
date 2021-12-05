@@ -1,4 +1,5 @@
-﻿using System;
+﻿using restaurant_management.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,16 @@ namespace restaurant_management
 {
     public partial class dashboardBar : Form
     {
+        public List<TableModel> Tables = new List<TableModel>();
         
         private Button currentNavButton;
         private Form currentChildForm;
         public dashboardBar()
         {
             InitializeComponent();
+
+            Tables.Add(new TableModel(1, "Table 1"));
+            Tables.Add(new TableModel(2, "Table 2"));
         }
 
         private void OpenChildForm(Form childForm)
@@ -73,7 +78,7 @@ namespace restaurant_management
         private void btnCashOut_Click(object sender, EventArgs e)
         {
             ActivateNavButton((Button)sender);
-            OpenChildForm(new cashOutF());
+            OpenChildForm(new cashOutF(Tables));
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)
