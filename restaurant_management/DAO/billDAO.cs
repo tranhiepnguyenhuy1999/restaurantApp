@@ -161,8 +161,8 @@ namespace restaurant_management.DAO
             int result = 0;
             string query1 = "call insertBillDetail( @amount , @id_food , @id_bill)";
             result = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { amount, id_food, id_bill });
-            return result;
-        }//chen vao bill dua vao id bill ,tra ve 0 thi chen k thanh cong khac 0 thi thanh cong
+            return result; //chen vao bill dua vao id bill ,tra ve 0 thi chen k thanh cong khac 0 thi thanh cong
+        }
         public List<Bill> getListBill()
         {
             List<Bill> listbill = new List<Bill>();

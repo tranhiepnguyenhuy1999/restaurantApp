@@ -60,6 +60,7 @@ namespace restaurant_management
             // 
             // id_txtbox
             // 
+            this.id_txtbox.Enabled = false;
             this.id_txtbox.Location = new System.Drawing.Point(619, 73);
             this.id_txtbox.Name = "id_txtbox";
             this.id_txtbox.Size = new System.Drawing.Size(112, 20);
@@ -142,6 +143,7 @@ namespace restaurant_management
             // 
             // createday_txtbox
             // 
+            this.createday_txtbox.Enabled = false;
             this.createday_txtbox.Location = new System.Drawing.Point(619, 300);
             this.createday_txtbox.Name = "createday_txtbox";
             this.createday_txtbox.ReadOnly = true;
@@ -150,7 +152,7 @@ namespace restaurant_management
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(162, 12);
+            this.delete_btn.Location = new System.Drawing.Point(120, 12);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(102, 38);
             this.delete_btn.TabIndex = 17;
