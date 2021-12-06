@@ -15,6 +15,9 @@ namespace restaurant_management.DTO
         private DateTime birthday;
         private DateTime create_date;
         private int gender;
+        private string user_name;
+        private string user_password;
+        private string phone;
         public User(DataRow row) {
             this.ID = (int)row["id"];
             this.First_name = row["first_name"].ToString();
@@ -22,6 +25,9 @@ namespace restaurant_management.DTO
             this.Birthday = DateTime.Parse(row["birthday"].ToString());
             this.Create_date = DateTime.Parse(row["create_date"].ToString());
             this.Gender = (int)row["gender"];
+            this.User_name= row["user_name"].ToString();
+            this.User_password = row["user_password"].ToString();
+            this.Phone = row["phone"].ToString();
         }
 
         public int ID { get => iD; set => iD = value; }
@@ -30,5 +36,8 @@ namespace restaurant_management.DTO
         public string Last_name { get => last_name; set => last_name = value; }
         public DateTime Birthday { get => birthday; set => birthday = value; }
         public DateTime Create_date { get => create_date; set => create_date = value; }
+        public string User_name { get => user_name; set => user_name = value; }
+        public string User_password { get => user_password; set => user_password = value; }
+        public string Phone { get => phone; set => phone = value; }
     }
 }

@@ -178,21 +178,24 @@ END; $$
 DELIMITER ;
 
 
-DELIMITER // -- them ham cap nhap user tren id
+DELIMITER $$
 CREATE PROCEDURE updateUser(
-IN id INT,
+IN id1 int,
 IN 	first_name NVARCHAR(100),
 IN 	last_name NVARCHAR(100),
+IN phone CHAR(10),
 IN birthday DATE,
-IN  gender INT
+IN user_name VARCHAR(100),
+IN user_password  VARCHAR(100),
+IN create_date DATE
 )
 BEGIN
-   update user
-   set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender
-   where id=id;
-	
-END //
-DELIMITER ;
+  update user
+   set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender,create_date=create_date,
+   user_name=user_name,user_password=user_password
+   where id=id1;
+END; $$
+
 CREATE PROCEDURE insertBill(
 in total_money FLOAT ,
 in total_amount int,
