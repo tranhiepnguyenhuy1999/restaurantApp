@@ -21,6 +21,7 @@ namespace restaurant_management
         {
             InitializeComponent();
             LoadListUser();
+
         }
 
         private void update_btn_Click(object sender, EventArgs e)
