@@ -28,24 +28,24 @@ namespace restaurant_management.DAO
             return data;
         }
 
-        public int insertNewUser(string firstName, string lastName, DateTime birthDay, DateTime createDate,int gender) {//1 nu 0 nam
+        public int insertNewUser(string firstName, string lastName,string phone, DateTime birthDay, string user_name, string user_password, DateTime create_date) {
             int result = 0;
-            string query = "insertUser ( @first_name , @last_name , @birthday , @create_date , @gender )";
+            string query = "insertUser ( @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @create_date   )";
 
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[]{ firstName, lastName, birthDay, createDate, gender});
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[]{ firstName, lastName, phone ,birthDay, user_name, user_password,create_date });
 
             return result;
                 
         }
 
-        public bool updateUser(int id,string first_name,string last_name ,DateTime birthday,int gender)
+        public bool updateUser(int id,string first_name,string last_name ,string phone,DateTime birthday, string user_name, string user_password,DateTime create_date)
         {
             int result = 0;
-            string query = "call updateUser ( @id , @first_name , @last_name , @birthday , @gender )";
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, first_name, last_name, birthday, gender });
+            string query = "call updateUser ( @id , @first_name , @last_name ,@phone , @birthday ,@user_name, @user_password , @create_date  )";
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, first_name, last_name ,phone, birthday,user_name, user_password ,create_date });
             if (result == 0)
-                return true;
-            return false;
+                return false;
+            return true;
         }
 
         public User GetUserByID(int ID)
