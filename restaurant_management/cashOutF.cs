@@ -38,10 +38,10 @@ namespace restaurant_management
 
         private void LoadData()
         {
-            button1.Text = Tables[0].Name;
-            button1.Tag = 0;
-            button2.Text = Tables[1].Name;
-            button2.Tag = 1;
+            button1.Text = Tables[1].Name;
+            button1.Tag = 1;
+            button2.Text = Tables[2].Name;
+            button2.Tag = 2;
 
             Foods = foodDAO.Instance.getListFood();
             foreach (var food in Foods)
@@ -56,9 +56,9 @@ namespace restaurant_management
         {
             nameValueLabel.Text = button1.Text;
             nameValueLabel.Tag = button1.Tag;
-            totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
-            billDetailsDataGridView.DataSource = Tables[0].Bill.GetBillDetailsList();
-            totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
+            totalPriceValueLabel.Text = Tables[1].TotalPrice.ToString();
+            billDetailsDataGridView.DataSource = Tables[1].Bill.GetBillDetailsList();
+            totalPriceValueLabel.Text = Tables[1].TotalPrice.ToString();
             SetupDataGridView();
         }
 
@@ -66,9 +66,9 @@ namespace restaurant_management
         {
             nameValueLabel.Text = button2.Text;
             nameValueLabel.Tag = button2.Tag;
-            totalPriceValueLabel.Text = Tables[1].TotalPrice.ToString();
-            billDetailsDataGridView.DataSource = Tables[1].Bill.GetBillDetailsList();
-            totalPriceValueLabel.Text = Tables[1].TotalPrice.ToString();
+            totalPriceValueLabel.Text = Tables[2].TotalPrice.ToString();
+            billDetailsDataGridView.DataSource = Tables[2].Bill.GetBillDetailsList();
+            totalPriceValueLabel.Text = Tables[2].TotalPrice.ToString();
             SetupDataGridView();
         }
 
@@ -105,6 +105,30 @@ namespace restaurant_management
 
             billDetailsDataGridView.DataSource = Tables[tableIndex].Bill.GetBillDetailsList();
             totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
+        }
+
+        private void typeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (typeComboBox.SelectedIndex == 0)
+            {
+                tablesFlowLayoutPanel.Enabled = true;
+                billDetailsDataGridView.Enabled = false;
+                foodsComboBox.Enabled = false;
+                quantityNumericUpDown.Enabled = false;
+                addBtn.Enabled = false;
+                deleteBillBtn.Enabled = false;
+                printBillBtn.Enabled = false;
+            } 
+            else
+            {
+                tablesFlowLayoutPanel.Enabled = false;
+                nameValueLabel.Text = Tables[0].Name;
+                nameValueLabel.Tag = 0;
+                totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
+                billDetailsDataGridView.DataSource = Tables[0].Bill.GetBillDetailsList();
+                totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
+                SetupDataGridView();
+            }
         }
     }
 }

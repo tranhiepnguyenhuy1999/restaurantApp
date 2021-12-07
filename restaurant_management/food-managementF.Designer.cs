@@ -46,7 +46,8 @@ namespace restaurant_management
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.foodDetailsPanel = new System.Windows.Forms.Panel();
             this.addBtn = new System.Windows.Forms.Button();
-            this.typePopupLabel = new System.Windows.Forms.Label();
+            this.foodDetailsLabel = new System.Windows.Forms.Label();
+            this.manageTypeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.foodsDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
             this.foodDetailsPanel.SuspendLayout();
@@ -58,7 +59,7 @@ namespace restaurant_management
             this.foodsDataGridView.AllowUserToDeleteRows = false;
             this.foodsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.foodsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.foodsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.foodsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.foodsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
@@ -86,7 +87,7 @@ namespace restaurant_management
             this.foodsDataGridView.RowHeadersVisible = false;
             this.foodsDataGridView.RowHeadersWidth = 62;
             this.foodsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.foodsDataGridView.Size = new System.Drawing.Size(489, 393);
+            this.foodsDataGridView.Size = new System.Drawing.Size(484, 393);
             this.foodsDataGridView.TabIndex = 0;
             this.foodsDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.foodsDataGridView_RowEnter);
             // 
@@ -94,7 +95,7 @@ namespace restaurant_management
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(3, 71);
+            this.nameLabel.Location = new System.Drawing.Point(11, 14);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(49, 16);
             this.nameLabel.TabIndex = 2;
@@ -104,7 +105,7 @@ namespace restaurant_management
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(3, 121);
+            this.priceLabel.Location = new System.Drawing.Point(11, 64);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(44, 16);
             this.priceLabel.TabIndex = 3;
@@ -113,7 +114,7 @@ namespace restaurant_management
             // nameTextBox
             // 
             this.nameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nameTextBox.Location = new System.Drawing.Point(68, 70);
+            this.nameTextBox.Location = new System.Drawing.Point(76, 13);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(120, 20);
             this.nameTextBox.TabIndex = 5;
@@ -121,7 +122,7 @@ namespace restaurant_management
             // priceTextBox
             // 
             this.priceTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.priceTextBox.Location = new System.Drawing.Point(68, 120);
+            this.priceTextBox.Location = new System.Drawing.Point(76, 63);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(120, 20);
             this.priceTextBox.TabIndex = 6;
@@ -129,9 +130,10 @@ namespace restaurant_management
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(113, 239);
+            this.deleteBtn.ForeColor = System.Drawing.Color.Black;
+            this.deleteBtn.Location = new System.Drawing.Point(121, 142);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 21);
+            this.deleteBtn.Size = new System.Drawing.Size(75, 42);
             this.deleteBtn.TabIndex = 8;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -139,7 +141,9 @@ namespace restaurant_management
             // 
             // foodInformationPanel
             // 
-            this.foodInformationPanel.Controls.Add(this.typePopupLabel);
+            this.foodInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.foodInformationPanel.Controls.Add(this.manageTypeBtn);
+            this.foodInformationPanel.Controls.Add(this.addBtn);
             this.foodInformationPanel.Controls.Add(this.typeLabel);
             this.foodInformationPanel.Controls.Add(this.updateBtn);
             this.foodInformationPanel.Controls.Add(this.typeComboBox);
@@ -149,17 +153,18 @@ namespace restaurant_management
             this.foodInformationPanel.Controls.Add(this.priceTextBox);
             this.foodInformationPanel.Controls.Add(this.nameTextBox);
             this.foodInformationPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.foodInformationPanel.ForeColor = System.Drawing.Color.White;
             this.foodInformationPanel.Location = new System.Drawing.Point(0, 63);
             this.foodInformationPanel.Name = "foodInformationPanel";
             this.foodInformationPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.foodInformationPanel.Size = new System.Drawing.Size(208, 330);
+            this.foodInformationPanel.Size = new System.Drawing.Size(213, 330);
             this.foodInformationPanel.TabIndex = 2;
             // 
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
             this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typeLabel.Location = new System.Drawing.Point(3, 173);
+            this.typeLabel.Location = new System.Drawing.Point(11, 116);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(44, 16);
             this.typeLabel.TabIndex = 12;
@@ -168,9 +173,10 @@ namespace restaurant_management
             // updateBtn
             // 
             this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.Location = new System.Drawing.Point(6, 239);
+            this.updateBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateBtn.Location = new System.Drawing.Point(14, 142);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(75, 21);
+            this.updateBtn.Size = new System.Drawing.Size(75, 42);
             this.updateBtn.TabIndex = 11;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
@@ -182,49 +188,67 @@ namespace restaurant_management
             this.typeComboBox.Items.AddRange(new object[] {
             "Table 1",
             "Table 2"});
-            this.typeComboBox.Location = new System.Drawing.Point(68, 172);
+            this.typeComboBox.Location = new System.Drawing.Point(76, 115);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(120, 21);
             this.typeComboBox.TabIndex = 10;
             // 
             // foodDetailsPanel
             // 
-            this.foodDetailsPanel.Controls.Add(this.addBtn);
+            this.foodDetailsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.foodDetailsPanel.Controls.Add(this.foodInformationPanel);
-            this.foodDetailsPanel.Location = new System.Drawing.Point(489, 0);
+            this.foodDetailsPanel.Controls.Add(this.foodDetailsLabel);
+            this.foodDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.foodDetailsPanel.Location = new System.Drawing.Point(484, 0);
             this.foodDetailsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.foodDetailsPanel.Name = "foodDetailsPanel";
-            this.foodDetailsPanel.Size = new System.Drawing.Size(208, 393);
+            this.foodDetailsPanel.Size = new System.Drawing.Size(213, 393);
             this.foodDetailsPanel.TabIndex = 3;
             // 
             // addBtn
             // 
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(0, 0);
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.Color.Black;
+            this.addBtn.Location = new System.Drawing.Point(14, 232);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(208, 63);
+            this.addBtn.Size = new System.Drawing.Size(182, 40);
             this.addBtn.TabIndex = 3;
-            this.addBtn.Text = "+ Add";
+            this.addBtn.Text = "Add Food";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // typePopupLabel
+            // foodDetailsLabel
             // 
-            this.typePopupLabel.AutoSize = true;
-            this.typePopupLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.typePopupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typePopupLabel.Location = new System.Drawing.Point(65, 196);
-            this.typePopupLabel.Name = "typePopupLabel";
-            this.typePopupLabel.Size = new System.Drawing.Size(89, 13);
-            this.typePopupLabel.TabIndex = 13;
-            this.typePopupLabel.Text = "*Manage Type";
-            this.typePopupLabel.Click += new System.EventHandler(this.typePopupLabel_Click);
+            this.foodDetailsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.foodDetailsLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.foodDetailsLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.foodDetailsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foodDetailsLabel.ForeColor = System.Drawing.Color.White;
+            this.foodDetailsLabel.Location = new System.Drawing.Point(0, 0);
+            this.foodDetailsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.foodDetailsLabel.Name = "foodDetailsLabel";
+            this.foodDetailsLabel.Size = new System.Drawing.Size(213, 63);
+            this.foodDetailsLabel.TabIndex = 3;
+            this.foodDetailsLabel.Text = "Food Details";
+            this.foodDetailsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // manageTypeBtn
+            // 
+            this.manageTypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageTypeBtn.ForeColor = System.Drawing.Color.Black;
+            this.manageTypeBtn.Location = new System.Drawing.Point(14, 278);
+            this.manageTypeBtn.Name = "manageTypeBtn";
+            this.manageTypeBtn.Size = new System.Drawing.Size(182, 40);
+            this.manageTypeBtn.TabIndex = 14;
+            this.manageTypeBtn.Text = "Manage Type";
+            this.manageTypeBtn.UseVisualStyleBackColor = true;
+            this.manageTypeBtn.Click += new System.EventHandler(this.manageTypeBtn_Click);
             // 
             // foodManagementF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(162)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(697, 393);
             this.Controls.Add(this.foodDetailsPanel);
             this.Controls.Add(this.foodsDataGridView);
@@ -253,6 +277,7 @@ namespace restaurant_management
         private Label typeLabel;
         private Button updateBtn;
         private Button addBtn;
-        private Label typePopupLabel;
+        private Button manageTypeBtn;
+        private Label foodDetailsLabel;
     }
 }

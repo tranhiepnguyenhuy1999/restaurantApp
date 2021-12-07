@@ -37,6 +37,9 @@ namespace restaurant_management
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableBillDetailsPanel = new System.Windows.Forms.Panel();
+            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.foodsComboBox = new System.Windows.Forms.ComboBox();
             this.totalPriceValueLabel = new System.Windows.Forms.Label();
             this.deleteBillBtn = new System.Windows.Forms.Button();
             this.printBillBtn = new System.Windows.Forms.Button();
@@ -47,23 +50,23 @@ namespace restaurant_management
             this.nameLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.tableBillLabel = new System.Windows.Forms.Label();
-            this.foodsComboBox = new System.Windows.Forms.ComboBox();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.typeLabel = new System.Windows.Forms.Label();
             this.tablesFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableBillDetailsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billDetailsDataGridView)).BeginInit();
             this.titlePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // tablesFlowLayoutPanel
             // 
-            this.tablesFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.tablesFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.tablesFlowLayoutPanel.Controls.Add(this.button1);
             this.tablesFlowLayoutPanel.Controls.Add(this.button2);
             this.tablesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tablesFlowLayoutPanel.Enabled = false;
             this.tablesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tablesFlowLayoutPanel.Name = "tablesFlowLayoutPanel";
             this.tablesFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
@@ -104,6 +107,9 @@ namespace restaurant_management
             // 
             // tableBillDetailsPanel
             // 
+            this.tableBillDetailsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.tableBillDetailsPanel.Controls.Add(this.typeLabel);
+            this.tableBillDetailsPanel.Controls.Add(this.typeComboBox);
             this.tableBillDetailsPanel.Controls.Add(this.quantityNumericUpDown);
             this.tableBillDetailsPanel.Controls.Add(this.addBtn);
             this.tableBillDetailsPanel.Controls.Add(this.foodsComboBox);
@@ -120,6 +126,46 @@ namespace restaurant_management
             this.tableBillDetailsPanel.Name = "tableBillDetailsPanel";
             this.tableBillDetailsPanel.Size = new System.Drawing.Size(348, 357);
             this.tableBillDetailsPanel.TabIndex = 1;
+            // 
+            // quantityNumericUpDown
+            // 
+            this.quantityNumericUpDown.Enabled = false;
+            this.quantityNumericUpDown.Location = new System.Drawing.Point(216, 246);
+            this.quantityNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
+            this.quantityNumericUpDown.Size = new System.Drawing.Size(39, 20);
+            this.quantityNumericUpDown.TabIndex = 11;
+            this.quantityNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // addBtn
+            // 
+            this.addBtn.Enabled = false;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(260, 239);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(76, 32);
+            this.addBtn.TabIndex = 9;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // foodsComboBox
+            // 
+            this.foodsComboBox.Enabled = false;
+            this.foodsComboBox.FormattingEnabled = true;
+            this.foodsComboBox.Location = new System.Drawing.Point(25, 245);
+            this.foodsComboBox.Name = "foodsComboBox";
+            this.foodsComboBox.Size = new System.Drawing.Size(185, 21);
+            this.foodsComboBox.TabIndex = 8;
             // 
             // totalPriceValueLabel
             // 
@@ -162,7 +208,7 @@ namespace restaurant_management
             this.nameValueLabel.AutoSize = true;
             this.nameValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameValueLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nameValueLabel.Location = new System.Drawing.Point(22, 21);
+            this.nameValueLabel.Location = new System.Drawing.Point(22, 25);
             this.nameValueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameValueLabel.Name = "nameValueLabel";
             this.nameValueLabel.Size = new System.Drawing.Size(67, 16);
@@ -234,9 +280,11 @@ namespace restaurant_management
             // 
             // tableBillLabel
             // 
+            this.tableBillLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.tableBillLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tableBillLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableBillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableBillLabel.ForeColor = System.Drawing.Color.White;
             this.tableBillLabel.Location = new System.Drawing.Point(0, 0);
             this.tableBillLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tableBillLabel.Name = "tableBillLabel";
@@ -245,51 +293,34 @@ namespace restaurant_management
             this.tableBillLabel.Text = "Table Bill";
             this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // foodsComboBox
+            // typeComboBox
             // 
-            this.foodsComboBox.Enabled = false;
-            this.foodsComboBox.FormattingEnabled = true;
-            this.foodsComboBox.Location = new System.Drawing.Point(25, 245);
-            this.foodsComboBox.Name = "foodsComboBox";
-            this.foodsComboBox.Size = new System.Drawing.Size(185, 21);
-            this.foodsComboBox.TabIndex = 8;
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Items.AddRange(new object[] {
+            "Tại bàn",
+            "Mang về"});
+            this.typeComboBox.Location = new System.Drawing.Point(235, 24);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(76, 21);
+            this.typeComboBox.TabIndex = 12;
+            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
             // 
-            // addBtn
+            // typeLabel
             // 
-            this.addBtn.Enabled = false;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(260, 239);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(76, 32);
-            this.addBtn.TabIndex = 9;
-            this.addBtn.Text = "Add";
-            this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
-            // 
-            // quantityNumericUpDown
-            // 
-            this.quantityNumericUpDown.Enabled = false;
-            this.quantityNumericUpDown.Location = new System.Drawing.Point(216, 246);
-            this.quantityNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
-            this.quantityNumericUpDown.Size = new System.Drawing.Size(39, 20);
-            this.quantityNumericUpDown.TabIndex = 11;
-            this.quantityNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.typeLabel.Location = new System.Drawing.Point(220, 8);
+            this.typeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(31, 13);
+            this.typeLabel.TabIndex = 13;
+            this.typeLabel.Text = "Type";
             // 
             // cashOutF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(697, 393);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tablesFlowLayoutPanel);
@@ -301,9 +332,9 @@ namespace restaurant_management
             this.panel1.ResumeLayout(false);
             this.tableBillDetailsPanel.ResumeLayout(false);
             this.tableBillDetailsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billDetailsDataGridView)).EndInit();
             this.titlePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +359,7 @@ namespace restaurant_management
         private NumericUpDown quantityNumericUpDown;
         private Button addBtn;
         private ComboBox foodsComboBox;
+        private Label typeLabel;
+        private ComboBox typeComboBox;
     }
 }
