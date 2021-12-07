@@ -18,6 +18,7 @@ namespace restaurant_management
         void LoadListBill()
         {
             dgv.DataSource = billDAO.Instance.getListBill();
+            dateTimePicker1.Value = DateTime.Today;
         }
         public bill_managementForm()
         {
@@ -52,27 +53,8 @@ namespace restaurant_management
 
         private void Date_Find_Button_Click(object sender, EventArgs e)
         {
-            if ((Day_Find.Text != "") && (Month_Find.Text != "") && (Year_Find.Text != ""))
-            {
-                int day, month, year = new int();
-                day = int.Parse(Day_Find.Text);
-                month = int.Parse(Month_Find.Text);
-                year = int.Parse(Year_Find.Text);
-                dgv.DataSource = billDAO.Instance.getListBillByDate(day,month,year);
-            }
-            else if ((Day_Find.Text != "") && (Month_Find.Text == "") && (Year_Find.Text == ""))
-            {
-                
-                int day = new int();
-                day = int.Parse(Day_Find.Text);
-                dgv.DataSource = billDAO.Instance.getListBillByDay(day);
-            }
-            else if ((Day_Find.Text == "") && (Month_Find.Text != "") && (Year_Find.Text == ""))
-            {
-                int month = new int();
-                month = int.Parse(Month_Find.Text);
-                dgv.DataSource = billDAO.Instance.getListBillByMonth(month);
-            }
+            DateTime date = dateTimePicker1.Value;
+            dgv.DataSource = billDAO.Instance.getListBillByDate(date.Day, date.Month, date.Year);
         }
 
         private void button3_Click(object sender, EventArgs e)
