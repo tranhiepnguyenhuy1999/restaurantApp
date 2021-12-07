@@ -58,7 +58,8 @@ namespace restaurant_management
                 day = int.Parse(Day_Find.Text);
                 month = int.Parse(Month_Find.Text);
                 year = int.Parse(Year_Find.Text);
-                dgv.DataSource = billDAO.Instance.getListBillByDate(day,month,year);
+                DateTime dt = new DateTime(year, month, day);
+                dgv.DataSource = billDAO.Instance.getListBillByDate(dt);
             }
             else if ((Day_Find.Text != "") && (Month_Find.Text == "") && (Year_Find.Text == ""))
             {
