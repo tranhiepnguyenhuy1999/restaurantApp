@@ -38,11 +38,11 @@ namespace restaurant_management.DAO
                 
         }
 
-        public bool updateUser(int id,string first_name,string last_name ,string phone,DateTime birthday, string user_name, string user_password,DateTime create_date)
+        public bool updateUser(int id,string first_name,string last_name ,string phone,DateTime birthday, string user_name, string user_password)
         {
             int result = 0;
-            string query = "call updateUser ( @id , @first_name , @last_name ,@phone , @birthday ,@user_name, @user_password , @create_date  )";
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, first_name, last_name ,phone, birthday,user_name, user_password ,create_date });
+            string query = "call updateUser ( @id , @first_name , @last_name ,@phone , @birthday ,@user_name, @user_password";
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, first_name, last_name ,phone, birthday,user_name, user_password });
             if (result == 0)
                 return false;
             return true;
