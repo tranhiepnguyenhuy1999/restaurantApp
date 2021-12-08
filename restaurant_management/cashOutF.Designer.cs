@@ -45,9 +45,9 @@ namespace restaurant_management
             this.printBillBtn = new System.Windows.Forms.Button();
             this.nameValueLabel = new System.Windows.Forms.Label();
             this.billDetailsDataGridView = new System.Windows.Forms.DataGridView();
-            this.food_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.food_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.detailsLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -247,21 +247,21 @@ namespace restaurant_management
             // 
             // food_name
             // 
-            this.food_name.HeaderText = "Food name";
-            this.food_name.MinimumWidth = 8;
-            this.food_name.Name = "food_name";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 8;
-            this.Amount.Name = "Amount";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 8;
-            this.Price.Name = "Price";
+            //this.food_name.HeaderText = "Food name";
+            //this.food_name.MinimumWidth = 8;
+            //this.food_name.Name = "food_name";
+            //// 
+            //// Amount
+            //// 
+            //this.Amount.HeaderText = "Amount";
+            //this.Amount.MinimumWidth = 8;
+            //this.Amount.Name = "Amount";
+            //// 
+            //// Price
+            //// 
+            //this.Price.HeaderText = "Price";
+            //this.Price.MinimumWidth = 8;
+            //this.Price.Name = "Price";
             // 
             // totalPriceLabel
             // 
