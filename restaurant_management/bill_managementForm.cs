@@ -53,33 +53,34 @@ namespace restaurant_management
 
         private void Date_Find_Button_Click(object sender, EventArgs e)
         {
-            if ((Day_Find.Text != "") && (Month_Find.Text != "") && (Year_Find.Text != ""))
-            {
-                int day, month, year = new int();
-                day = int.Parse(Day_Find.Text);
-                month = int.Parse(Month_Find.Text);
-                year = int.Parse(Year_Find.Text);
-                DateTime dt = new DateTime(year, month, day);
-                dgv.DataSource = billDAO.Instance.getListBillByDate(dt);
-            }
-            else if ((Day_Find.Text != "") && (Month_Find.Text == "") && (Year_Find.Text == ""))
-            {
+            //if ((Day_Find.Text != "") && (Month_Find.Text != "") && (Year_Find.Text != ""))
+            //{
+            //    int day, month, year = new int();
+            //    day = int.Parse(Day_Find.Text);
+            //    month = int.Parse(Month_Find.Text);
+            //    year = int.Parse(Year_Find.Text);
+            //    DateTime dt = new DateTime(year, month, day);
+            //    dgv.DataSource = billDAO.Instance.getListBillByDate(dt);
+            //}
+            //else if ((Day_Find.Text != "") && (Month_Find.Text == "") && (Year_Find.Text == ""))
+            //{
                 
-                int day = new int();
-                day = int.Parse(Day_Find.Text);
-                dgv.DataSource = billDAO.Instance.getListBillByDay(day);
-            }
-            else if ((Day_Find.Text == "") && (Month_Find.Text != "") && (Year_Find.Text == ""))
-            {
-                int month = new int();
-                month = int.Parse(Month_Find.Text);
-                dgv.DataSource = billDAO.Instance.getListBillByMonth(month);
-            }
+            //    int day = new int();
+            //    day = int.Parse(Day_Find.Text);
+            //    dgv.DataSource = billDAO.Instance.getListBillByDay(day);
+            //}
+            //else if ((Day_Find.Text == "") && (Month_Find.Text != "") && (Year_Find.Text == ""))
+            //{
+            //    int month = new int();
+            //    month = int.Parse(Month_Find.Text);
+            //    dgv.DataSource = billDAO.Instance.getListBillByMonth(month);
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             bill_detailForm frm = new bill_detailForm();
+            if (ID_Find.Text == "")
             frm.Sender(ID_Find.Text);
             frm.ShowDialog();
         }

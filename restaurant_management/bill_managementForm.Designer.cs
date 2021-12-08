@@ -52,7 +52,7 @@ namespace restaurant_management
             this.dgv.Location = new System.Drawing.Point(49, 86);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 62;
-            this.dgv.Size = new System.Drawing.Size(578, 331);
+            this.dgv.Size = new System.Drawing.Size(578, 245);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
@@ -95,7 +95,7 @@ namespace restaurant_management
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(661, 369);
+            this.button3.Location = new System.Drawing.Point(503, 9);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 48);
             this.button3.TabIndex = 4;
@@ -106,7 +106,7 @@ namespace restaurant_management
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 428);
+            this.label4.Location = new System.Drawing.Point(82, 347);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 5;
@@ -114,7 +114,7 @@ namespace restaurant_management
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(169, 425);
+            this.textBox3.Location = new System.Drawing.Point(169, 344);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(53, 20);
             this.textBox3.TabIndex = 7;
@@ -122,7 +122,7 @@ namespace restaurant_management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(428, 428);
+            this.label5.Location = new System.Drawing.Point(428, 347);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace restaurant_management
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(490, 423);
+            this.textBox4.Location = new System.Drawing.Point(490, 342);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(137, 20);
             this.textBox4.TabIndex = 7;
@@ -173,7 +173,8 @@ namespace restaurant_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 450);
+            this.BackColor = System.Drawing.Color.SlateGray;
+            this.ClientSize = new System.Drawing.Size(697, 393);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Date_Find_Button);
