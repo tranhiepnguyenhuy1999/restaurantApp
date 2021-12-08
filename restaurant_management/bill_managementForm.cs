@@ -24,9 +24,7 @@ namespace restaurant_management
         {
             InitializeComponent();
             LoadListBill();
-            comboBox1.Items.Add("(None)");
             comboBox1.Items.Add("Latest");
-            comboBox1.Items.Add("Oldest");
             comboBox1.Items.Add("Highest Amount");
             comboBox1.Items.Add("Lowest Amount");
         }
@@ -88,6 +86,11 @@ namespace restaurant_management
         {
             int num = dgv.CurrentCell.RowIndex;
             ID_Find.Text = dgv.Rows[num].Cells[0].Value.ToString();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) 
         }
     }
 }
