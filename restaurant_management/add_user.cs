@@ -1,4 +1,5 @@
 ﻿using System;
+using restaurant_management.DAO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,45 @@ namespace restaurant_management
         public add_user()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
+        }
+        public bool isValid(string s)
+        {
+            if (s[0] == '0' && s.Length == 10 && IsDigit(s))
+                return true;
+            return false;
+        }
+        public bool IsDigit(string s)
+        {
+            foreach (char c in s)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+            return true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (pass_txtbox.Text != repass_txtbox.Text || isValid(phone_txtbox.Text.ToString())==false)
+            {
+                MessageBox.Show("Invalid");
+            }
+            else
+            {
+                DateTime date = dateTimePicker1.Value.Date;
+                userDAO.Instance.insertNewUser(firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, date, user_txtbox.Text, pass_txtbox.Text, DateTime.Today);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            user_txtbox.Text = "";
+            pass_txtbox.Text = "";
+            repass_txtbox.Text = "";
+            firstname_txtbox.Text = "";
+            lastname_txtbox.Text = "";
+            dateTimePicker1.Value = DateTime.Today;
+            comboBox1.SelectedIndex = 0;
         }
     }
 }
