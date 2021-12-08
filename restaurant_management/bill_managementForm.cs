@@ -90,7 +90,7 @@ namespace restaurant_management
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0) 
+            if (comboBox1.SelectedIndex == 0) return;
         }
     }
 }
