@@ -47,7 +47,7 @@ namespace restaurant_management
 
         private void update_btn_Click_1(object sender, EventArgs e)
         {
-            int num = dgv_user.CurrentCell.RowIndex;
+            /*int num = dgv_user.CurrentCell.RowIndex;
             DateTime birthday = Convert.ToDateTime(birthday_txtbox.Text);
             userDAO.Instance.updateUser(int.Parse(id_txtbox.Text), firstname_txtbox.Text, lastname_txtbox.Text,phone_txtbox.Text, birthday, user_txtbox.Text,pass_txtbox.Text);
             dgv_user.Rows[num].Cells[0].Value = id_txtbox.Text;
