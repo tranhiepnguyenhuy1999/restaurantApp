@@ -21,8 +21,9 @@ namespace restaurant_management
         {
             InitializeComponent();
 
-            Tables.Add(new TableModel(1, "Table 1"));
-            Tables.Add(new TableModel(2, "Table 2"));
+            Tables.Add(new TableModel(0, "Mang về"));
+            Tables.Add(new TableModel(1, "Bàn 1"));
+            Tables.Add(new TableModel(2, "Bàn 2"));
         }
 
         private void OpenChildForm(Form childForm)
@@ -47,10 +48,10 @@ namespace restaurant_management
         {
             if (currentNavButton != null)
             {
-                currentNavButton.BackColor = Color.FromArgb(0, 114, 181);
+            currentNavButton.BackColor = Color.FromArgb(51, 51, 51);
             }
             currentNavButton = button;
-            currentNavButton.BackColor = Color.FromArgb(0, 162, 255);
+            currentNavButton.BackColor = Color.FromArgb(153, 153, 153);
         }
 
         private void dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -88,6 +89,11 @@ namespace restaurant_management
         }
 
         private void logo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void workspace_Paint(object sender, PaintEventArgs e)
         {
 
         }

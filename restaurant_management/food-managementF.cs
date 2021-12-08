@@ -111,16 +111,16 @@ namespace restaurant_management
             LoadData();
         }
 
-        private void typePopupLabel_Click(object sender, EventArgs e)
+        void foodType_popupF_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadData();
+        }
+
+        private void manageTypeBtn_Click(object sender, EventArgs e)
         {
             foodType_popupF form = new foodType_popupF(TypeList);
             form.FormClosed += new FormClosedEventHandler(foodType_popupF_FormClosed);
             form.Show();
-        }
-
-        void foodType_popupF_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            LoadData();
         }
     }
 }
