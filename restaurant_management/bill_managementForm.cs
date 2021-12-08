@@ -20,13 +20,27 @@ namespace restaurant_management
             dgv.DataSource = billDAO.Instance.getListBill();
             dateTimePicker1.Value = DateTime.Today;
         }
+        void findtotal()
+        {
+            int count = dgv.Rows.Count-1;
+            long sum = 0;
+            bill_count_txtbox.Text = count.ToString();
+            for (int i =0;i<count;i++)
+            {
+                sum += int.Parse(dgv.Rows[i].Cells[1].Value.ToString());
+            }
+            sum_txtbox.Text = sum.ToString();
+        }
         public bill_managementForm()
         {
             InitializeComponent();
             LoadListBill();
+            findtotal();
             comboBox1.Items.Add("Latest");
             comboBox1.Items.Add("Highest Amount");
             comboBox1.Items.Add("Lowest Amount");
+            comboBox2.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,60 +51,93 @@ namespace restaurant_management
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int id = new int();
-            id = int.Parse(ID_Find.Text);
-            dgv.DataSource = billDAO.Instance.getListBillById(id);
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Date_Find_Button_Click(object sender, EventArgs e)
         {
-            //if ((Day_Find.Text != "") && (Month_Find.Text != "") && (Year_Find.Text != ""))
-            //{
-            //    int day, month, year = new int();
-            //    day = int.Parse(Day_Find.Text);
-            //    month = int.Parse(Month_Find.Text);
-            //    year = int.Parse(Year_Find.Text);
-            //    DateTime dt = new DateTime(year, month, day);
-            //    dgv.DataSource = billDAO.Instance.getListBillByDate(dt);
-            //}
-            //else if ((Day_Find.Text != "") && (Month_Find.Text == "") && (Year_Find.Text == ""))
-            //{
-                
-            //    int day = new int();
-            //    day = int.Parse(Day_Find.Text);
-            //    dgv.DataSource = billDAO.Instance.getListBillByDay(day);
-            //}
-            //else if ((Day_Find.Text == "") && (Month_Find.Text != "") && (Year_Find.Text == ""))
-            //{
-            //    int month = new int();
-            //    month = int.Parse(Month_Find.Text);
-            //    dgv.DataSource = billDAO.Instance.getListBillByMonth(month);
-            //}
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    dgv.DataSource = billDAO.Instance.getListBillByDate(dateTimePicker1.Value);
+                    break;
+                case 1:
+                    int year = dateTimePicker1.Value.Year;
+                    dgv.DataSource = billDAO.Instance.getListBillByYear(year, 0);
+                    break;
+                case 2:
+                    int month = dateTimePicker1.Value.Month;
+                    dgv.DataSource = billDAO.Instance.getListBillByMonth(month, 0);
+                    break;
+                case 3:
+                    int day = dateTimePicker1.Value.Day;
+                    dgv.DataSource = billDAO.Instance.getListBillByDay(day, 0);
+                    break;
+            }
+            findtotal();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             bill_detailForm frm = new bill_detailForm();
-            if (ID_Find.Text == "")
-            frm.Sender(ID_Find.Text);
-            frm.ShowDialog();
+            if (selected_id_txtbox.Text == "")
+            {
+                MessageBox.Show("Please select a bill");
+            }
+            else
+            {
+                frm.Sender(selected_id_txtbox.Text);
+                frm.ShowDialog();
+            }
         }
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
             int num = dgv.CurrentCell.RowIndex;
-            ID_Find.Text = dgv.Rows[num].Cells[0].Value.ToString();
+            selected_id_txtbox.Text = dgv.Rows[num].Cells[0].Value.ToString();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0) 
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0: 
+                    Date_Find_Button.Text = "Find by Date";
+                    break;
+                case 1:
+                    Date_Find_Button.Text = "Find by Year";
+                    break;
+                case 2:
+                    Date_Find_Button.Text = "Find by Month";
+                    break;
+                case 3:
+                    Date_Find_Button.Text = "Find by Day";
+                    break;
+            }
+            findtotal();
+        }
+
+        private void ID_Find_TextChanged(object sender, EventArgs e)
+        {
+            if (IsDigit(ID_Find.Text))
+            {
+                int num = int.Parse(ID_Find.Text.ToString());
+                dgv.DataSource = billDAO.Instance.getListBillById(num);
+                findtotal();
+            }
+            else MessageBox.Show("Please enter number only");
+        }
+        public bool IsDigit(string s)
+        {
+            foreach (char c in s)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+            return true;
         }
     }
 }
