@@ -180,7 +180,7 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE PROCEDURE updateUser(
-IN id1 int,
+IN id int,
 IN 	first_name NVARCHAR(100),
 IN 	last_name NVARCHAR(100),
 IN phone CHAR(10),
@@ -193,19 +193,85 @@ BEGIN
   update user
    set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender,create_date=create_date,
    user_name=user_name,user_password=user_password
-   where id=id1;
+   where id=id;
 END; $$
 
+DELIMITER $$
+CREATE PROCEDURE findDateBill(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date=create_date;
+END; $$
+
+DELIMITER $$
+
+DELIMITER $$
+CREATE PROCEDURE findDateBill3(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date=create_date order by total_money ASC;
+END; $$
+
+DELIMITER $$
+
+DELIMITER $$
+CREATE PROCEDURE findDateBill4(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date=create_date order by total_money DESC;
+END; $$
+
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill1(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date=create_date order by total_amount ASC;
+END; $$
+
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill2(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date=create_date order by total_amount DESC;
+END; $$
+
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill5(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date=create_date order by create_date DESC;
+END; $$
+
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill6(
+IN create_date DATE
+)
+BEGIN
+  select * from bill where create_date= create_date order by create_date ASC;
+END; $$
+
+DELIMITER $$
+
+DELIMITER $$
 CREATE PROCEDURE insertBill(
-in total_money FLOAT ,
-in total_amount int,
-in create_date DATE 
+    total_amount int ,
+    total_money FLOAT ,
+    create_date DATE 
 )
 BEGIN
    INSERT INTO 
-	bill(total_money, total_amount, create_date)
+	bill( total_amount,total_money, create_date)
 	VALUES	
-	(total_money , total_amount, create_date )
-	
-END //
+	(total_amount,total_money, create_date);
+END; $$
 DELIMITER ;

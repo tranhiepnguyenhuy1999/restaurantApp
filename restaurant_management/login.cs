@@ -20,7 +20,12 @@ namespace restaurant_management
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Chắc chắn thoát", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+           
         }
 
         private void btn_login_Click(object sender, EventArgs e)
