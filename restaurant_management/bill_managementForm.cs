@@ -18,6 +18,7 @@ namespace restaurant_management
         void LoadListBill()
         {
             dgv.DataSource = billDAO.Instance.getListBill();
+            dateTimePicker1.Value = DateTime.Today;
         }
         public bill_managementForm()
         {

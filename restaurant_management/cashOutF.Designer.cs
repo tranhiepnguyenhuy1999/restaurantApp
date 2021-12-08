@@ -50,11 +50,15 @@ namespace restaurant_management
             this.nameLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.tableBillLabel = new System.Windows.Forms.Label();
+            this.foodsComboBox = new System.Windows.Forms.ComboBox();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.tablesFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableBillDetailsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billDetailsDataGridView)).BeginInit();
             this.titlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // tablesFlowLayoutPanel
@@ -105,6 +109,9 @@ namespace restaurant_management
             // 
             // tableBillDetailsPanel
             // 
+            this.tableBillDetailsPanel.Controls.Add(this.quantityNumericUpDown);
+            this.tableBillDetailsPanel.Controls.Add(this.addBtn);
+            this.tableBillDetailsPanel.Controls.Add(this.foodsComboBox);
             this.tableBillDetailsPanel.Controls.Add(this.totalPriceValueLabel);
             this.tableBillDetailsPanel.Controls.Add(this.deleteBillBtn);
             this.tableBillDetailsPanel.Controls.Add(this.printBillBtn);
@@ -133,10 +140,12 @@ namespace restaurant_management
             // 
             // deleteBillBtn
             // 
+            this.deleteBillBtn.Enabled = false;
             this.deleteBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBillBtn.Location = new System.Drawing.Point(298, 483);
+            this.deleteBillBtn.Location = new System.Drawing.Point(189, 314);
+            this.deleteBillBtn.Margin = new System.Windows.Forms.Padding(2);
             this.deleteBillBtn.Name = "deleteBillBtn";
-            this.deleteBillBtn.Size = new System.Drawing.Size(116, 49);
+            this.deleteBillBtn.Size = new System.Drawing.Size(147, 32);
             this.deleteBillBtn.TabIndex = 6;
             this.deleteBillBtn.Text = "Delete";
             this.deleteBillBtn.UseVisualStyleBackColor = true;
@@ -144,10 +153,12 @@ namespace restaurant_management
             // 
             // printBillBtn
             // 
+            this.printBillBtn.Enabled = false;
             this.printBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printBillBtn.Location = new System.Drawing.Point(116, 483);
+            this.printBillBtn.Location = new System.Drawing.Point(25, 314);
+            this.printBillBtn.Margin = new System.Windows.Forms.Padding(2);
             this.printBillBtn.Name = "printBillBtn";
-            this.printBillBtn.Size = new System.Drawing.Size(116, 49);
+            this.printBillBtn.Size = new System.Drawing.Size(147, 32);
             this.printBillBtn.TabIndex = 5;
             this.printBillBtn.Text = "Print";
             this.printBillBtn.UseVisualStyleBackColor = true;
@@ -163,6 +174,7 @@ namespace restaurant_management
             this.nameValueLabel.Size = new System.Drawing.Size(98, 25);
             this.nameValueLabel.TabIndex = 4;
             this.nameValueLabel.Text = "unknown";
+            this.nameValueLabel.TextChanged += new System.EventHandler(this.nameValueLabel_TextChanged);
             // 
             // billDetailsDataGridView
             // 
@@ -172,10 +184,8 @@ namespace restaurant_management
             this.billDetailsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.billDetailsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.billDetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.billDetailsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.food_name,
-            this.Amount,
-            this.Price});
+            this.billDetailsDataGridView.Enabled = false;
+
             this.billDetailsDataGridView.GridColor = System.Drawing.Color.Black;
             this.billDetailsDataGridView.Location = new System.Drawing.Point(38, 103);
             this.billDetailsDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -184,7 +194,8 @@ namespace restaurant_management
             this.billDetailsDataGridView.RowHeadersVisible = false;
             this.billDetailsDataGridView.RowHeadersWidth = 62;
             this.billDetailsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.billDetailsDataGridView.Size = new System.Drawing.Size(466, 312);
+
+            this.billDetailsDataGridView.Size = new System.Drawing.Size(311, 167);
             this.billDetailsDataGridView.TabIndex = 3;
             // 
             // food_name
@@ -256,6 +267,46 @@ namespace restaurant_management
             this.tableBillLabel.Text = "Table Bill";
             this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // foodsComboBox
+            // 
+            this.foodsComboBox.Enabled = false;
+            this.foodsComboBox.FormattingEnabled = true;
+            this.foodsComboBox.Location = new System.Drawing.Point(25, 245);
+            this.foodsComboBox.Name = "foodsComboBox";
+            this.foodsComboBox.Size = new System.Drawing.Size(185, 21);
+            this.foodsComboBox.TabIndex = 8;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Enabled = false;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(260, 239);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(76, 32);
+            this.addBtn.TabIndex = 9;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // quantityNumericUpDown
+            // 
+            this.quantityNumericUpDown.Enabled = false;
+            this.quantityNumericUpDown.Location = new System.Drawing.Point(216, 246);
+            this.quantityNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
+            this.quantityNumericUpDown.Size = new System.Drawing.Size(39, 20);
+            this.quantityNumericUpDown.TabIndex = 11;
+            this.quantityNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // cashOutF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -275,6 +326,7 @@ namespace restaurant_management
             this.tableBillDetailsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billDetailsDataGridView)).EndInit();
             this.titlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,8 +348,8 @@ namespace restaurant_management
         private System.Windows.Forms.Button deleteBillBtn;
         private System.Windows.Forms.Button printBillBtn;
         private System.Windows.Forms.Label totalPriceValueLabel;
-        private DataGridViewTextBoxColumn food_name;
-        private DataGridViewTextBoxColumn Amount;
-        private DataGridViewTextBoxColumn Price;
+        private NumericUpDown quantityNumericUpDown;
+        private Button addBtn;
+        private ComboBox foodsComboBox;
     }
 }
