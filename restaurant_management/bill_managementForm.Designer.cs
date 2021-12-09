@@ -234,7 +234,7 @@ namespace restaurant_management
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(185, 134);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Bill Management";
+            this.label8.Text = "Bill Infomation";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bill_managementForm
