@@ -44,22 +44,22 @@ CREATE TABLE user(
 	last_name VARCHAR(100) NOT NULL,
     phone CHAR(10) NOT NULL,
 	email VARCHAR(100),
-	birthday DATE,
+	birthday DATETIME,
     gender INT DEFAULT 0,
 	user_name VARCHAR(100) NOT NULL UNIQUE,
 	user_password  VARCHAR(100) NOT NULL,
-	create_date DATE NOT NULL,
+	create_date DATETIME NOT NULL,
     PRIMARY KEY(id)
 );
 DELIMITER $$
 CREATE PROCEDURE insertUser(
-IN 	first_name NVARCHAR(100),
-IN 	last_name NVARCHAR(100),
+IN first_name NVARCHAR(100),
+IN last_name NVARCHAR(100),
 IN phone CHAR(10),
-IN birthday DATE,
+IN birthday DATETIME,
 IN user_name VARCHAR(100),
 IN user_password  VARCHAR(100),
-IN create_date DATE
+IN create_date DATETIME
 )
 BEGIN
    INSERT INTO 
@@ -156,7 +156,6 @@ CREATE PROCEDURE deleteFood(
 IN 	id_in int(6)
 )
 BEGIN
-   delete from bill_detail where id_food=id_in;
    delete from food where id=id_in;
 END; $$
 DELIMITER $$
@@ -180,20 +179,19 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE PROCEDURE updateUser(
-IN id int,
-IN 	first_name NVARCHAR(100),
-IN 	last_name NVARCHAR(100),
-IN phone CHAR(10),
-IN birthday DATE,
-IN user_name VARCHAR(100),
-IN user_password  VARCHAR(100),
-IN create_date DATE
+IN inId int,
+IN inFirstName NVARCHAR(100),
+IN inLastName NVARCHAR(100),
+IN inPhone CHAR(10),
+IN inBirthday DATE,
+IN inUserName VARCHAR(100),
+IN inUserPassword  VARCHAR(100)
 )
 BEGIN
   update user
-   set first_name=first_name,last_name=last_name,birthday=birthday,gender=gender,create_date=create_date,
-   user_name=user_name,user_password=user_password
-   where id=id;
+   set first_name=inFirstName,last_name=inLastName,phone=inPhone,birthday=inBirthday,
+   user_name=inUserName,user_password=inUserPassword
+   where id=inId;
 END; $$
 
 DELIMITER $$

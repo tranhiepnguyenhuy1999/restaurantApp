@@ -119,6 +119,7 @@ namespace restaurant_management
             this.delete_btn.TabIndex = 17;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // update_btn
             // 
@@ -285,6 +286,7 @@ namespace restaurant_management
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "user_managementF";
             this.Text = "user_managementForm";
+            this.Load += new System.EventHandler(this.user_managementF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

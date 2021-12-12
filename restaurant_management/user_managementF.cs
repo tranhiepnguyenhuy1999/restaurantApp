@@ -76,5 +76,15 @@ namespace restaurant_management
             }
             return true;
         }
+
+        private void user_managementF_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

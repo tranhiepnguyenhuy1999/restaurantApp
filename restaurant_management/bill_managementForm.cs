@@ -122,6 +122,10 @@ namespace restaurant_management
 
         private void ID_Find_TextChanged(object sender, EventArgs e)
         {
+            if (ID_Find.Text == "")
+            {
+                return;
+            }
             if (IsDigit(ID_Find.Text))
             {
                 int num = int.Parse(ID_Find.Text.ToString());
