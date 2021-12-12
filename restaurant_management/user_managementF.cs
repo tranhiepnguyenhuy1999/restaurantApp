@@ -42,8 +42,16 @@ namespace restaurant_management
             int num = dgv_user.CurrentCell.RowIndex;
             if (isValid(phone_txtbox.Text))
             {
+                string gender = cbo_gender.SelectedItem.ToString();
+                int g;
+                if (gender == "Nữ")
+                    g = 1;
+                else
+                    g = 0;
                 DateTime birthday = Convert.ToDateTime(dateTimePicker1.Value);
-                userDAO.Instance.updateUser(int.Parse(dgv_user.Rows[num].Cells[0].Value.ToString()), firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday, user_txtbox.Text, pass_txtbox.Text);
+                int id = userDAO.Instance.getidbyname(user_txtbox.Text);
+                bool s=userDAO.Instance.updateUser(id, firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday, user_txtbox.Text, pass_txtbox.Text, g);
+                //userDAO.Instance.updateUser(int.Parse(dgv_user.Rows[num].Cells[0].Value.ToString()), firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday, user_txtbox.Text, pass_txtbox.Text,g);
                 dgv_user.Rows[num].Cells[1].Value = firstname_txtbox.Text;
                 dgv_user.Rows[num].Cells[2].Value = lastname_txtbox.Text;
                 dgv_user.Rows[num].Cells[3].Value = phone_txtbox.Text;
@@ -51,6 +59,7 @@ namespace restaurant_management
                 dgv_user.Rows[num].Cells[7].Value = user_txtbox.Text;
                 dgv_user.Rows[num].Cells[8].Value = pass_txtbox.Text;
                 LoadListUser();
+                MessageBox.Show("Cập nhập thành công !");
             }
             else MessageBox.Show("Invalid");
         }
@@ -84,7 +93,9 @@ namespace restaurant_management
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-
+            string name = user_txtbox.Text;
+            userDAO.Instance.deleteUser(name);
+            MessageBox.Show("Xoá user thành công !");
         }
     }
 }

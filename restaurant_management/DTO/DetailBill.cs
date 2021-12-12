@@ -17,11 +17,9 @@ namespace restaurant_management.DTO
             this.ID = (int)row["id"];
             this.Amount = (int)row["amount"];
             this.ID_bill = (int)row["id_bill"];
-            this.ID_food = (int)row["id_food"];
         }
         public int ID { get => iD; set => iD = value; }
         public int Amount { get => amount; set => amount = value; }
-        public int ID_food { get => iD_food; set => iD_food = value; }
         public int ID_bill { get => iD_bill; set => iD_bill = value; }
 
 
