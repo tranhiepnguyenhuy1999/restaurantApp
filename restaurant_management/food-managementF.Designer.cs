@@ -41,13 +41,13 @@ namespace restaurant_management
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.foodInformationPanel = new System.Windows.Forms.Panel();
+            this.manageTypeBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.typeLabel = new System.Windows.Forms.Label();
             this.updateBtn = new System.Windows.Forms.Button();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.foodDetailsPanel = new System.Windows.Forms.Panel();
-            this.addBtn = new System.Windows.Forms.Button();
             this.foodDetailsLabel = new System.Windows.Forms.Label();
-            this.manageTypeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.foodsDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
             this.foodDetailsPanel.SuspendLayout();
@@ -160,6 +160,30 @@ namespace restaurant_management
             this.foodInformationPanel.Size = new System.Drawing.Size(213, 330);
             this.foodInformationPanel.TabIndex = 2;
             // 
+            // manageTypeBtn
+            // 
+            this.manageTypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageTypeBtn.ForeColor = System.Drawing.Color.Black;
+            this.manageTypeBtn.Location = new System.Drawing.Point(14, 278);
+            this.manageTypeBtn.Name = "manageTypeBtn";
+            this.manageTypeBtn.Size = new System.Drawing.Size(182, 40);
+            this.manageTypeBtn.TabIndex = 14;
+            this.manageTypeBtn.Text = "Manage Type";
+            this.manageTypeBtn.UseVisualStyleBackColor = true;
+            this.manageTypeBtn.Click += new System.EventHandler(this.manageTypeBtn_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.Color.Black;
+            this.addBtn.Location = new System.Drawing.Point(14, 232);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(182, 40);
+            this.addBtn.TabIndex = 3;
+            this.addBtn.Text = "Add Food";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
@@ -205,18 +229,6 @@ namespace restaurant_management
             this.foodDetailsPanel.Size = new System.Drawing.Size(213, 393);
             this.foodDetailsPanel.TabIndex = 3;
             // 
-            // addBtn
-            // 
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(14, 232);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(182, 40);
-            this.addBtn.TabIndex = 3;
-            this.addBtn.Text = "Add Food";
-            this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
-            // 
             // foodDetailsLabel
             // 
             this.foodDetailsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
@@ -231,18 +243,6 @@ namespace restaurant_management
             this.foodDetailsLabel.TabIndex = 3;
             this.foodDetailsLabel.Text = "Food Details";
             this.foodDetailsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // manageTypeBtn
-            // 
-            this.manageTypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageTypeBtn.ForeColor = System.Drawing.Color.Black;
-            this.manageTypeBtn.Location = new System.Drawing.Point(14, 278);
-            this.manageTypeBtn.Name = "manageTypeBtn";
-            this.manageTypeBtn.Size = new System.Drawing.Size(182, 40);
-            this.manageTypeBtn.TabIndex = 14;
-            this.manageTypeBtn.Text = "Manage Type";
-            this.manageTypeBtn.UseVisualStyleBackColor = true;
-            this.manageTypeBtn.Click += new System.EventHandler(this.manageTypeBtn_Click);
             // 
             // foodManagementF
             // 

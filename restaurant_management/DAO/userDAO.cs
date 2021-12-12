@@ -30,7 +30,7 @@ namespace restaurant_management.DAO
 
         public int insertNewUser(string firstName, string lastName,string phone, DateTime birthDay, string user_name, string user_password, DateTime create_date) {
             int result = 0;
-            string query = "insertUser ( @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @create_date   )";
+            string query = "insertUser ( @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @create_date )";
 
             result = DataProvider.Instance.ExecuteNonQuery(query, new object[]{ firstName, lastName, phone ,birthDay, user_name, user_password,create_date });
 
@@ -41,7 +41,7 @@ namespace restaurant_management.DAO
         public bool updateUser(int id,string first_name,string last_name ,string phone,DateTime birthday, string user_name, string user_password)
         {
             int result = 0;
-            string query = "call updateUser ( @id , @first_name , @last_name ,@phone , @birthday ,@user_name, @user_password";
+            string query = "call updateUser ( @inId , @inFirstName , @inLastName , @inPhone , @inBirthday , @inUserName , @inUserPassword )";
             result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, first_name, last_name ,phone, birthday,user_name, user_password });
             if (result == 0)
                 return false;
