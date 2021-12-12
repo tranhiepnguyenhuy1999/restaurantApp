@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using restaurant_management.DTO;
 using System.Data;
+using restaurant_management.Models;
+
 namespace restaurant_management.DAO
 {
     public class billDAO
@@ -359,7 +361,11 @@ namespace restaurant_management.DAO
             result = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { id_bill,amount, food_name, price });
             return result;
         }//chen vao bill dua vao id bill ,tra ve 0 thi chen k thanh cong khac 0 thi thanh cong
-
+        public int insertNewBillWithBillDetails(List<BillDetailsModel> bill_details, int total_amount, float total_money)
+        {
+            int id = 0;
+            return id;
+        }
         public List<Bill> getListBill()
         {
             List<Bill> listbill = new List<Bill>();

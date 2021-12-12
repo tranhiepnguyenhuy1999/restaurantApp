@@ -48,7 +48,7 @@ namespace restaurant_management
             // typesDataGridView
             // 
             this.typesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.typesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.typesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.typesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.typesDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.typesDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -61,6 +61,7 @@ namespace restaurant_management
             // 
             // foodInformationPanel
             // 
+            this.foodInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.foodInformationPanel.Controls.Add(this.toAgeNumericUpDown);
             this.foodInformationPanel.Controls.Add(this.fromAgeNumericUpDown);
             this.foodInformationPanel.Controls.Add(this.toAgeLabel);
@@ -94,6 +95,7 @@ namespace restaurant_management
             // 
             this.toAgeLabel.AutoSize = true;
             this.toAgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toAgeLabel.ForeColor = System.Drawing.Color.White;
             this.toAgeLabel.Location = new System.Drawing.Point(48, 130);
             this.toAgeLabel.Name = "toAgeLabel";
             this.toAgeLabel.Size = new System.Drawing.Size(59, 16);
@@ -126,6 +128,7 @@ namespace restaurant_management
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
             this.nameLabel.Location = new System.Drawing.Point(48, 28);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(49, 16);
@@ -136,6 +139,7 @@ namespace restaurant_management
             // 
             this.fromAgeLabel.AutoSize = true;
             this.fromAgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromAgeLabel.ForeColor = System.Drawing.Color.White;
             this.fromAgeLabel.Location = new System.Drawing.Point(48, 78);
             this.fromAgeLabel.Name = "fromAgeLabel";
             this.fromAgeLabel.Size = new System.Drawing.Size(75, 16);
