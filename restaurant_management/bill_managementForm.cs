@@ -122,17 +122,7 @@ namespace restaurant_management
 
         private void ID_Find_TextChanged(object sender, EventArgs e)
         {
-            if (ID_Find.Text == "")
-            {
-                return;
-            }
-            if (IsDigit(ID_Find.Text))
-            {
-                int num = int.Parse(ID_Find.Text.ToString());
-                dgv.DataSource = billDAO.Instance.getListBillById(num);
-                findtotal();
-            }
-            else MessageBox.Show("Please enter number only");
+            
         }
         public bool IsDigit(string s)
         {
@@ -142,6 +132,21 @@ namespace restaurant_management
                     return false;
             }
             return true;
+        }
+
+        private void ID_Find_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (ID_Find.Text == "")
+            {
+                dgv.DataSource = billDAO.Instance.getListBill();
+            }
+            if (IsDigit(ID_Find.Text))
+            {
+                int num = int.Parse(ID_Find.Text.ToString());
+                dgv.DataSource = billDAO.Instance.getListBillById(num);
+                findtotal();
+            }
+            else MessageBox.Show("Please enter number only");
         }
     }
 }

@@ -273,3 +273,45 @@ BEGIN
 	(total_amount,total_money, create_date);
 END; $$
 DELIMITER ;
+
+#
+DELIMITER $$
+CREATE PROCEDURE insertUser0(
+IN first_name NVARCHAR(100),
+IN last_name NVARCHAR(100),
+IN phone CHAR(10),
+IN birthday DATETIME,
+IN user_name VARCHAR(100),
+IN user_password  VARCHAR(100),
+IN create_date DATETIME,
+in gender  int
+)
+BEGIN
+   INSERT INTO 
+	user(first_name, last_name, phone, birthday, user_name, user_password, create_date,gender)
+	VALUES
+	(first_name, last_name, phone, birthday, user_name, user_password, create_date,gender);
+END; $$
+
+DELIMITER $$
+
+DELIMITER $$
+CREATE PROCEDURE updateUser0(
+IN id0 int,
+IN first_name NVARCHAR(100),
+IN last_name NVARCHAR(100),
+IN phone CHAR(10),
+IN birthday DATE,
+IN user_name VARCHAR(100),
+IN user_password  VARCHAR(100),
+in gender int
+)
+BEGIN
+  update user
+   set first_name=first_name,last_name=last_name,phone=phone,birthday=birthday,
+   user_name=user_name,user_password=user_password,gender=gender
+   where id=id0;
+END; $$
+
+DELIMITER $$
+#
