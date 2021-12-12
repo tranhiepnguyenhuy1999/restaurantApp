@@ -37,6 +37,8 @@ namespace restaurant_management
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableBillDetailsPanel = new System.Windows.Forms.Panel();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.addBtn = new System.Windows.Forms.Button();
             this.foodsComboBox = new System.Windows.Forms.ComboBox();
@@ -50,8 +52,6 @@ namespace restaurant_management
             this.nameLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.tableBillLabel = new System.Windows.Forms.Label();
-            this.typeComboBox = new System.Windows.Forms.ComboBox();
-            this.typeLabel = new System.Windows.Forms.Label();
             this.tablesFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableBillDetailsPanel.SuspendLayout();
@@ -127,6 +127,29 @@ namespace restaurant_management
             this.tableBillDetailsPanel.Size = new System.Drawing.Size(348, 357);
             this.tableBillDetailsPanel.TabIndex = 1;
             // 
+            // typeLabel
+            // 
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.typeLabel.Location = new System.Drawing.Point(220, 8);
+            this.typeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(31, 13);
+            this.typeLabel.TabIndex = 13;
+            this.typeLabel.Text = "Type";
+            // 
+            // typeComboBox
+            // 
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Items.AddRange(new object[] {
+            "Tại bàn",
+            "Mang về"});
+            this.typeComboBox.Location = new System.Drawing.Point(235, 24);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(76, 21);
+            this.typeComboBox.TabIndex = 12;
+            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
+            // 
             // quantityNumericUpDown
             // 
             this.quantityNumericUpDown.Enabled = false;
@@ -190,6 +213,7 @@ namespace restaurant_management
             this.deleteBillBtn.TabIndex = 6;
             this.deleteBillBtn.Text = "Delete";
             this.deleteBillBtn.UseVisualStyleBackColor = true;
+            this.deleteBillBtn.Click += new System.EventHandler(this.deleteBillBtn_Click);
             // 
             // printBillBtn
             // 
@@ -202,6 +226,7 @@ namespace restaurant_management
             this.printBillBtn.TabIndex = 5;
             this.printBillBtn.Text = "Print";
             this.printBillBtn.UseVisualStyleBackColor = true;
+            this.printBillBtn.Click += new System.EventHandler(this.printBillBtn_Click);
             // 
             // nameValueLabel
             // 
@@ -292,29 +317,6 @@ namespace restaurant_management
             this.tableBillLabel.TabIndex = 0;
             this.tableBillLabel.Text = "Table Bill";
             this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // typeComboBox
-            // 
-            this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Items.AddRange(new object[] {
-            "Tại bàn",
-            "Mang về"});
-            this.typeComboBox.Location = new System.Drawing.Point(235, 24);
-            this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(76, 21);
-            this.typeComboBox.TabIndex = 12;
-            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
-            // 
-            // typeLabel
-            // 
-            this.typeLabel.AutoSize = true;
-            this.typeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.typeLabel.Location = new System.Drawing.Point(220, 8);
-            this.typeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(31, 13);
-            this.typeLabel.TabIndex = 13;
-            this.typeLabel.Text = "Type";
             // 
             // cashOutF
             // 

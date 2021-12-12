@@ -38,5 +38,11 @@ namespace restaurant_management.Models
 
             return list;
         }
+        public int GetTotalAmount()
+        {
+            var result = 0;
+            AmountList.ForEach(amount => result += amount);
+            return result;
+        }
     }
 }
