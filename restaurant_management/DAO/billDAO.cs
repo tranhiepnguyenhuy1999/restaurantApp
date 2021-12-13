@@ -38,13 +38,13 @@ namespace restaurant_management.DAO
         //flag =4 sap xep theo so tien thanh toan cua bill giam dan
         //flag =5 sap xep theo thoi gian som nhat ->muon nhat
         //flag =6 sap xep theo thoi gian muon nhat ->som nhat
-        public List<Bill> getListBillByDate(DateTime create_day,int flag=0)//tim kiem theo ngay thang nam/thang nam + sort
+        public List<Bill> getListBillByDate(DateTime create_day0,int flag=0)//tim kiem theo ngay thang nam/thang nam + sort
         {
             List<Bill> listbill = new List<Bill>();
             if(flag==0)
             {
-                string query = "call findDateBill( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -53,8 +53,8 @@ namespace restaurant_management.DAO
             }
             else if(flag==1)
             {
-                string query = "call findDateBill1( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill1( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -63,8 +63,8 @@ namespace restaurant_management.DAO
             }
             else if (flag == 2)
             {
-                string query = "call findDateBill2( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill2( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -73,8 +73,8 @@ namespace restaurant_management.DAO
             }
             else if (flag == 3)
             {
-                string query = "call findDateBill3( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill3( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -83,8 +83,8 @@ namespace restaurant_management.DAO
             }
             else if (flag == 4)
             {
-                string query = "call findDateBill4( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill4( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -93,8 +93,8 @@ namespace restaurant_management.DAO
             }
             else if (flag == 5)
             {
-                string query = "call findDateBill5( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill5( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -103,8 +103,8 @@ namespace restaurant_management.DAO
             }
             else if (flag == 6)
             {
-                string query = "call findDateBill6( @create_day )";
-                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day });
+                string query = "call findDateBill6( @create_day0 )";
+                DataTable datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                 foreach (DataRow item in datatb.Rows)
                 {
                     Bill bill = new Bill(item);
@@ -265,7 +265,7 @@ namespace restaurant_management.DAO
             }
             return listbill;
         }
-        public List<Bill> getListBillByYear(int year0,int flag) //tim kiem theo nam
+        public List<Bill> getListBillByYear(int year0,int flag=0) //tim kiem theo nam
         {
             List<Bill> listbill = new List<Bill>();
             string year = year0.ToString();

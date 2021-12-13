@@ -58,7 +58,7 @@ namespace restaurant_management
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
-                    dgv.DataSource = billDAO.Instance.getListBillByDate(dateTimePicker1.Value);
+                    dgv.DataSource = billDAO.Instance.getListBillByDate(dateTimePicker1.Value,0);
                     break;
                 case 1:
                     int year = dateTimePicker1.Value.Year;
