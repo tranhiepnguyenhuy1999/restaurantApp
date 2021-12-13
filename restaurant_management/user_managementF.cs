@@ -97,5 +97,13 @@ namespace restaurant_management
             userDAO.Instance.deleteUser(name);
             MessageBox.Show("Xoá user thành công !");
         }
+
+        private void dgv_user_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 8 && e.Value != null )
+            {
+                e.Value = new string ('*',e.Value.ToString().Length);
+            }
+        }
     }
 }

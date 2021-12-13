@@ -107,7 +107,7 @@ namespace restaurant_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
-            this.ClientSize = new System.Drawing.Size(933, 450);
+            this.ClientSize = new System.Drawing.Size(740, 450);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.totalFood_txtbox);
