@@ -18,6 +18,7 @@ namespace restaurant_management.DTO
         private string user_name;
         private string user_password;
         private string phone;
+        private string userRole;
         public User(DataRow row) {
             this.ID = (int)row["id"];
             this.First_name = row["first_name"].ToString();
@@ -28,6 +29,7 @@ namespace restaurant_management.DTO
             this.User_name= row["user_name"].ToString();
             this.User_password = row["user_password"].ToString();
             this.Phone = row["phone"].ToString();
+            this.UserRole = row["userRole"].ToString();
         }
 
         public int ID { get => iD; set => iD = value; }
@@ -39,5 +41,6 @@ namespace restaurant_management.DTO
         public string User_name { get => user_name; set => user_name = value; }
         public string User_password { get => user_password; set => user_password = value; }
         public string Phone { get => phone; set => phone = value; }
+        public string UserRole { get => userRole; set => userRole = value; }
     }
 }

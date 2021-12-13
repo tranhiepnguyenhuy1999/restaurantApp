@@ -49,6 +49,7 @@ CREATE TABLE user(
 	user_name VARCHAR(100) NOT NULL UNIQUE,
 	user_password  VARCHAR(100) NOT NULL,
 	create_date DATETIME NOT NULL,
+	userRole VARCHAR(100) DEFAULT "employee",
     PRIMARY KEY(id)
 );
 DELIMITER $$
@@ -314,4 +315,3 @@ BEGIN
 END; $$
 
 DELIMITER $$
-#
