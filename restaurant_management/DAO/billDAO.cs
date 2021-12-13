@@ -265,7 +265,7 @@ namespace restaurant_management.DAO
             }
             return listbill;
         }
-        public List<Bill> getListBillByYear(int year0,int flag) //tim kiem theo nam
+        public List<Bill> getListBillByYear(int year0,int flag=0) //tim kiem theo nam
         {
             List<Bill> listbill = new List<Bill>();
             string year = year0.ToString();

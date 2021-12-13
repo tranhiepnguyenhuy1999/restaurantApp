@@ -240,9 +240,11 @@ namespace restaurant_management
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_user.Location = new System.Drawing.Point(1, 1);
             this.dgv_user.Name = "dgv_user";
+            this.dgv_user.RowHeadersVisible = false;
             this.dgv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_user.Size = new System.Drawing.Size(440, 399);
             this.dgv_user.TabIndex = 8;
+            this.dgv_user.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_user_CellFormatting);
             this.dgv_user.SelectionChanged += new System.EventHandler(this.dgv_user_SelectionChanged);
             // 
             // label1
