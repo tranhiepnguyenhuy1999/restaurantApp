@@ -140,7 +140,7 @@ namespace restaurant_management
                 {
                     y = Int32.Parse(billDetailsDataGridView.Rows[i].Cells[1].Value.ToString());
                     so_luong += Int32.Parse(billDetailsDataGridView.Rows[i].Cells[1].Value.ToString());
-                    tong_tien += y * float.Parse(billDetailsDataGridView.Rows[i].Cells[2].Value.ToString());
+                    tong_tien += float.Parse(billDetailsDataGridView.Rows[i].Cells[2].Value.ToString());
                 }
                 DateTime createday = DateTime.Now;
                 int id = billDAO.Instance.insertNewBill(so_luong, tong_tien, createday);
