@@ -119,6 +119,7 @@ namespace restaurant_management
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "bill_detailForm";
             this.Text = "bill_detailForm";
+            this.Load += new System.EventHandler(this.bill_detailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
