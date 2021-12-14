@@ -123,5 +123,9 @@ namespace restaurant_management
             }
             else pass_txtbox.Enabled = false;
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
