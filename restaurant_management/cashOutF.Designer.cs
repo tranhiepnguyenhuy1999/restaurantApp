@@ -52,9 +52,6 @@ namespace restaurant_management
             this.nameLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.tableBillLabel = new System.Windows.Forms.Label();
-            this.food_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablesFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableBillDetailsPanel.SuspendLayout();
@@ -250,10 +247,6 @@ namespace restaurant_management
             this.billDetailsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.billDetailsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.billDetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.billDetailsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.food_name,
-            this.Amount,
-            this.price});
             this.billDetailsDataGridView.Enabled = false;
             this.billDetailsDataGridView.GridColor = System.Drawing.Color.Black;
             this.billDetailsDataGridView.Location = new System.Drawing.Point(38, 103);
@@ -319,24 +312,6 @@ namespace restaurant_management
             this.tableBillLabel.Text = "Table Bill";
             this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // food_name
-            // 
-            this.food_name.HeaderText = "Tên món";
-            this.food_name.MinimumWidth = 8;
-            this.food_name.Name = "food_name";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Số lượng";
-            this.Amount.MinimumWidth = 8;
-            this.Amount.Name = "Amount";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Giá";
-            this.price.MinimumWidth = 8;
-            this.price.Name = "price";
-            // 
             // cashOutF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -383,8 +358,5 @@ namespace restaurant_management
         private ComboBox foodsComboBox;
         private Label typeLabel;
         private ComboBox typeComboBox;
-        private DataGridViewTextBoxColumn food_name;
-        private DataGridViewTextBoxColumn Amount;
-        private DataGridViewTextBoxColumn price;
     }
 }
