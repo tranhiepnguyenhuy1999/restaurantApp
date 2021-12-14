@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Constants\BillDataGridViewHeaders.cs" />
     <Compile Include="Constants\FoodDataGridViewHeaders.cs" />
+    <Compile Include="Constants\UserRoles.cs" />
     <Compile Include="DAO\billDAO.cs" />
     <Compile Include="DAO\kindDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />

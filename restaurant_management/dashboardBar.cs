@@ -1,4 +1,5 @@
-﻿using restaurant_management.Models;
+﻿using restaurant_management.Constants;
+using restaurant_management.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +15,41 @@ namespace restaurant_management
     public partial class dashboardBar : Form
     {
         public List<TableModel> Tables = new List<TableModel>();
-        
+        private string role = UserInfo.Instance.Role;
         private Button currentNavButton;
         private Form currentChildForm;
         public dashboardBar()
         {
             InitializeComponent();
+            EnableFeaturesByRole();
 
             Tables.Add(new TableModel(0, "Mang về"));
             Tables.Add(new TableModel(1, "Bàn 1"));
             Tables.Add(new TableModel(2, "Bàn 2"));
+        }
+
+        private void EnableFeaturesByRole()
+        {
+            switch (role)
+            {
+                case UserRoles.Admin:
+                case UserRoles.Manager:
+                    btnFood.Enabled = true;
+                    btnFood.Cursor = Cursors.Hand;
+                    btnCashOut.Enabled = true;
+                    btnCashOut.Cursor = Cursors.Hand;
+                    btnBill.Enabled = true;
+                    btnBill.Cursor = Cursors.Hand;
+                    btnEmployees.Enabled = true;
+                    btnEmployees.Cursor = Cursors.Hand;
+                    break;
+                case UserRoles.Employee:
+                    btnCashOut.Enabled = true;
+                    btnCashOut.Cursor = Cursors.Hand;
+                    btnBill.Enabled = true;
+                    btnBill.Cursor = Cursors.Hand;
+                    break;
+            }
         }
 
         private void OpenChildForm(Form childForm)
