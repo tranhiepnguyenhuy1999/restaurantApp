@@ -28,14 +28,10 @@ namespace restaurant_management
             ID.Text = temp;
             int id_check = int.Parse(temp);
             dgvdetail.DataSource = detailBillDAO.Instance.getListBillById(id_check);
+            dgvdetail.Columns[0].Visible = false;
+            dgvdetail.Columns[2].Visible = false;
             int rc = dgvdetail.Rows.Count;
-            int totalfood = 0;
-            for (int i = 0; i < rc - 1; i++)
-            {
-                totalfood += int.Parse(dgvdetail.Rows[i].Cells[2].Value.ToString());
-            }
             totalBill_txtbox.Text = rc.ToString();
-            totalFood_txtbox.Text = totalfood.ToString();
         }
         /*private void GetMessage(string message)
 {

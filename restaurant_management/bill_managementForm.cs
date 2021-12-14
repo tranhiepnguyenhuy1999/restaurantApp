@@ -16,18 +16,20 @@ namespace restaurant_management
     public partial class bill_managementForm : Form
     {
         int check;
-        bool check_date = false;
+        bool check_date = true;
+        bool check_year = false;
         int month = DateTime.Today.Month;
+        int year = DateTime.Today.Year;
         void LoadListBill()
         {
-            dgv.DataSource = billDAO.Instance.getListBillByMonth(month, 0);
+            dgv.DataSource = billDAO.Instance.getListBillByDate(DateTime.Today,0);
         }
         void findtotal()
         {
             int count = dgv.Rows.Count;
             long sum = 0;
             bill_count_txtbox.Text = count.ToString();
-            for (int i =0;i<count-1;i++)
+            for (int i =0;i<count;i++)
             {
                 sum += int.Parse(dgv.Rows[i].Cells[1].Value.ToString());
             }
@@ -39,8 +41,23 @@ namespace restaurant_management
             {
                 comboBox3.Visible = false;
                 label9.Visible = false;
+                comboBox4.Visible = false;
+                label10.Visible = false;
+                comboBox5.Visible = false;
+                label11.Visible = false;
                 dateTimePicker1.Visible = true;
                 label6.Visible = true;
+            }
+            else if (check_year)
+            {
+                comboBox3.Visible = false;
+                label9.Visible = false;
+                dateTimePicker1.Visible = false;
+                label6.Visible = false;
+                comboBox4.Visible = false;
+                label10.Visible = false;
+                label11.Visible = true;
+                comboBox5.Visible = true;
             }
             else
             {
@@ -48,6 +65,10 @@ namespace restaurant_management
                 label9.Visible = true;
                 dateTimePicker1.Visible = false;
                 label6.Visible = false;
+                comboBox4.Visible = true;
+                label10.Visible = true;
+                label11.Visible = false;
+                comboBox5.Visible = false;
             }
         }
         public bill_managementForm()
@@ -60,9 +81,16 @@ namespace restaurant_management
             comboBox1.Items.Add("Latest");
             comboBox1.Items.Add("Highest Amount");
             comboBox1.Items.Add("Lowest Amount");
-            comboBox2.SelectedIndex = 2;
+            for (int i = DateTime.Today.Year-10; i<= DateTime.Today.Year;i++)
+            {
+                comboBox4.Items.Add(i.ToString());
+                comboBox5.Items.Add(i.ToString());
+            }
+            comboBox2.SelectedIndex = 0;
             comboBox1.SelectedIndex = 0;
             comboBox3.SelectedIndex = comboBox3.FindString(month.ToString());
+            comboBox4.SelectedIndex = comboBox4.FindString(year.ToString());
+            comboBox5.SelectedIndex = comboBox5.FindString(year.ToString());
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -137,14 +165,17 @@ namespace restaurant_management
                 case 0: 
                     Date_Find_Button.Text = "Find by Date";
                     check_date = true;
+                    check_year = false;
                     break;
                 case 1:
                     Date_Find_Button.Text = "Find by Year";
-                    check_date = true;
+                    check_date = false;
+                    check_year = true;
                     break;
                 case 2:
                     Date_Find_Button.Text = "Find by Month";
                     check_date = false;
+                    check_year = false;
                     break;
             }
             date_check();
@@ -179,6 +210,17 @@ namespace restaurant_management
                 findtotal();
             }
             else MessageBox.Show("Please enter number only");
+        }
+
+        private void bill_managementForm_Load(object sender, EventArgs e)
+        {
+            if (UserInfo.Instance.Role == "employee")
+            {
+                dateTimePicker1.Enabled = false;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                Date_Find_Button.Enabled = false;
+            }
         }
     }
 }
