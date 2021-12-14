@@ -36,12 +36,29 @@ namespace restaurant_management
             billDetailsDataGridView.Columns[2].HeaderText = BillDataGridViewHeaders.price;
         }
 
+        private List<Button> PrepareTables()
+        {
+            List<Button> tableButtons = new List<Button>();
+            foreach(var table in Tables)
+            {
+                if (Tables.IndexOf(table) == 0) continue;
+
+                Button button = new Button();
+                button.Size = new Size(100, 100);
+                button.BackColor = SystemColors.Control;
+                button.Text = table.Name;
+                button.Tag = Tables.IndexOf(table);
+                button.Click += button_Click;
+
+                tableButtons.Add(button);
+            }
+
+            return tableButtons;
+        }
+
         private void LoadData()
         {
-            button1.Text = Tables[1].Name;
-            button1.Tag = 1;
-            button2.Text = Tables[2].Name;
-            button2.Tag = 2;
+            tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
 
             Foods = foodDAO.Instance.getListFood();
             foreach (var food in Foods)
@@ -52,23 +69,14 @@ namespace restaurant_management
             foodsComboBox.DataSource = FoodNameList;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-            nameValueLabel.Text = button1.Text;
-            nameValueLabel.Tag = button1.Tag;
-            totalPriceValueLabel.Text = Tables[1].TotalPrice.ToString();
-            billDetailsDataGridView.DataSource = Tables[1].Bill.GetBillDetailsList();
-            totalPriceValueLabel.Text = Tables[1].TotalPrice.ToString();
-            SetupDataGridView();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            nameValueLabel.Text = button2.Text;
-            nameValueLabel.Tag = button2.Tag;
-            totalPriceValueLabel.Text = Tables[2].TotalPrice.ToString();
-            billDetailsDataGridView.DataSource = Tables[2].Bill.GetBillDetailsList();
-            totalPriceValueLabel.Text = Tables[2].TotalPrice.ToString();
+            var tableIndex = int.Parse((sender as Button).Tag.ToString());
+            nameValueLabel.Text = (sender as Button).Text;
+            nameValueLabel.Tag = (sender as Button).Tag;
+            totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
+            billDetailsDataGridView.DataSource = Tables[tableIndex].Bill.GetBillDetailsList();
+            totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
             SetupDataGridView();
         }
 

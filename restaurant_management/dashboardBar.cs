@@ -24,8 +24,10 @@ namespace restaurant_management
             EnableFeaturesByRole();
 
             Tables.Add(new TableModel(0, "Mang về"));
-            Tables.Add(new TableModel(1, "Bàn 1"));
-            Tables.Add(new TableModel(2, "Bàn 2"));
+            for (int i = 1; i < 10; i++)
+            {
+                Tables.Add(new TableModel(i, "Bàn " + i));
+            }
         }
 
         private void EnableFeaturesByRole()
