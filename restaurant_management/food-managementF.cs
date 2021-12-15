@@ -20,6 +20,7 @@ namespace restaurant_management
         public List<int> TypeIdList = new List<int>();
         public List<string> TypeNameList = new List<string>();
         private int selectedRow = -1;
+        private string searchName = "";
 
         public foodManagementF()
         {
@@ -32,9 +33,9 @@ namespace restaurant_management
             SetupDataGridView();
         }
 
-        private void LoadData()
+        private void LoadData(string name = "")
         {
-            Foods = foodDAO.Instance.getListFood();
+            Foods = foodDAO.Instance.getListFood(name);
             TypeList = kindDAO.Instance.getListKind();
             foreach (var type in TypeList)
             {
@@ -121,6 +122,16 @@ namespace restaurant_management
             foodType_popupF form = new foodType_popupF(TypeList);
             form.FormClosed += new FormClosedEventHandler(foodType_popupF_FormClosed);
             form.Show();
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            searchName = searchTextBox.Text.ToLower().Trim();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            LoadData(searchName);
         }
     }
 }

@@ -83,6 +83,7 @@
             // 
             this.btnEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmployees.Enabled = false;
             this.btnEmployees.FlatAppearance.BorderSize = 0;
             this.btnEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btnEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,6 +103,7 @@
             // 
             this.btnBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBill.Enabled = false;
             this.btnBill.FlatAppearance.BorderSize = 0;
             this.btnBill.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -121,6 +123,7 @@
             // 
             this.btnCashOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCashOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCashOut.Enabled = false;
             this.btnCashOut.FlatAppearance.BorderSize = 0;
             this.btnCashOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btnCashOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -140,6 +143,7 @@
             // 
             this.btnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnFood.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFood.Enabled = false;
             this.btnFood.FlatAppearance.BorderSize = 0;
             this.btnFood.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
