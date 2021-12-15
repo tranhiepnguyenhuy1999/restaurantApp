@@ -195,72 +195,6 @@ BEGIN
 END; $$
 
 DELIMITER $$
-CREATE PROCEDURE findDateBill(
-IN create_date DATE
-)
-BEGIN
-  select * from bill where create_date=create_date;
-END; $$
-
-DELIMITER $$
-
-DELIMITER $$
-CREATE PROCEDURE findDateBill3(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_money ASC;
-END; $$
-
-DELIMITER $$
-
-DELIMITER $$
-CREATE PROCEDURE findDateBill4(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_money DESC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill1(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_amount ASC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill2(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_amount DESC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill5(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by create_date DESC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill6(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date= create_date0 order by create_date ASC;
-END; $$
-
-DELIMITER $$
-
-DELIMITER $$
 CREATE PROCEDURE insertBill(
     total_amount int ,
     total_money FLOAT ,
@@ -313,5 +247,70 @@ BEGIN
    where id=id0;
 END; $$
 
+DELIMITER $$
+#
+DELIMITER $$
+CREATE PROCEDURE findDateBill01(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_amount asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill02(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_amount desc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill03(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_money asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill04(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_money desc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill11(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC,total_amount asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill12(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC,total_amount desc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill13(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC, total_money asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill14(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC, total_money desc;
+END; $$
 DELIMITER $$
 #

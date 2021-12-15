@@ -17,12 +17,12 @@ namespace restaurant_management
     {
         void LoadListBill()
         {
-            dgv.DataSource = billDAO.Instance.getListBill();
+            dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value,0,0,0);
             dateTimePicker1.Value = DateTime.Today;
         }
         void findtotal()
         {
-            int count = dgv.Rows.Count-1;
+            int count = dgv.Rows.Count;
             long sum = 0;
             bill_count_txtbox.Text = count.ToString();
             for (int i =0;i<count;i++)
@@ -36,11 +36,9 @@ namespace restaurant_management
             InitializeComponent();
             LoadListBill();
             findtotal();
-            comboBox1.Items.Add("Latest");
-            comboBox1.Items.Add("Highest Amount");
-            comboBox1.Items.Add("Lowest Amount");
-            comboBox2.SelectedIndex = 0;
-            comboBox1.SelectedIndex = 0;
+            typecb.SelectedIndex = 0;
+            sortcb.SelectedIndex = 0;
+            timecb.SelectedIndex = 0;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -55,25 +53,7 @@ namespace restaurant_management
 
         private void Date_Find_Button_Click(object sender, EventArgs e)
         {
-            switch (comboBox2.SelectedIndex)
-            {
-                case 0:
-                    dgv.DataSource = billDAO.Instance.getListBillByDate(dateTimePicker1.Value,0);
-                    break;
-                case 1:
-                    int year = dateTimePicker1.Value.Year;
-                    dgv.DataSource = billDAO.Instance.getListBillByYear(year, 0);
-                    break;
-                case 2:
-                    int month = dateTimePicker1.Value.Month;
-                    dgv.DataSource = billDAO.Instance.getListBillByMonth(month, 0);
-                    break;
-                case 3:
-                    int day = dateTimePicker1.Value.Day;
-                    dgv.DataSource = billDAO.Instance.getListBillByDay(day, 0);
-                    break;
-            }
-            findtotal();
+     
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -102,22 +82,25 @@ namespace restaurant_management
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox2.SelectedIndex)
+            /*switch (typecb.SelectedIndex)
             {
                 case 0: 
-                    Date_Find_Button.Text = "Find by Date";
+                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 0, 0, 0);
                     break;
                 case 1:
-                    Date_Find_Button.Text = "Find by Year";
+                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 1, 1, 0);
                     break;
                 case 2:
-                    Date_Find_Button.Text = "Find by Month";
+                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 2, 1, 0);
                     break;
                 case 3:
-                    Date_Find_Button.Text = "Find by Day";
+                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 3, 1, 0);
+                    break;
+                case 4:
+                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 4, 0, 2);
                     break;
             }
-            findtotal();
+            findtotal();*/
         }
 
         private void ID_Find_TextChanged(object sender, EventArgs e)
@@ -140,13 +123,19 @@ namespace restaurant_management
             {
                 dgv.DataSource = billDAO.Instance.getListBill();
             }
-            if (IsDigit(ID_Find.Text))
+            else if (IsDigit(ID_Find.Text))
             {
                 int num = int.Parse(ID_Find.Text.ToString());
                 dgv.DataSource = billDAO.Instance.getListBillById(num);
                 findtotal();
             }
             else MessageBox.Show("Please enter number only");
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+            findtotal();
         }
     }
 }
