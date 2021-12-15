@@ -15,10 +15,17 @@ namespace restaurant_management
 {
     public partial class bill_managementForm : Form
     {
+        int check;
+        bool check_date = true;
+        bool check_year = false;
+        int month = DateTime.Today.Month;
+        int year = DateTime.Today.Year;
         void LoadListBill()
         {
+
             dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value,0,0,0);
             dateTimePicker1.Value = DateTime.Today;
+
         }
         void findtotal()
         {
@@ -31,9 +38,46 @@ namespace restaurant_management
             }
             sum_txtbox.Text = sum.ToString();
         }
+        void date_check()
+        {
+            if (check_date)
+            {
+                comboBox3.Visible = false;
+                label9.Visible = false;
+                comboBox4.Visible = false;
+                label10.Visible = false;
+                comboBox5.Visible = false;
+                label11.Visible = false;
+                dateTimePicker1.Visible = true;
+                label6.Visible = true;
+            }
+            else if (check_year)
+            {
+                comboBox3.Visible = false;
+                label9.Visible = false;
+                dateTimePicker1.Visible = false;
+                label6.Visible = false;
+                comboBox4.Visible = false;
+                label10.Visible = false;
+                label11.Visible = true;
+                comboBox5.Visible = true;
+            }
+            else
+            {
+                comboBox3.Visible = true;
+                label9.Visible = true;
+                dateTimePicker1.Visible = false;
+                label6.Visible = false;
+                comboBox4.Visible = true;
+                label10.Visible = true;
+                label11.Visible = false;
+                comboBox5.Visible = false;
+            }
+        }
         public bill_managementForm()
         {
             InitializeComponent();
+            date_check();
             LoadListBill();
             findtotal();
             typecb.SelectedIndex = 0;
@@ -53,19 +97,19 @@ namespace restaurant_management
 
         private void Date_Find_Button_Click(object sender, EventArgs e)
         {
-     
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bill_detailForm frm = new bill_detailForm();
-            if (selected_id_txtbox.Text == "")
+            if (String.IsNullOrEmpty(selected_id_txtbox.Text))
             {
                 MessageBox.Show("Please select a bill");
             }
             else
             {
-                frm.Sender(selected_id_txtbox.Text);
+                bill_detailForm frm = new bill_detailForm();
+                frm.temp = selected_id_txtbox.Text;
                 frm.ShowDialog();
             }
         }
@@ -119,9 +163,10 @@ namespace restaurant_management
 
         private void ID_Find_KeyUp(object sender, KeyEventArgs e)
         {
-            if (ID_Find.Text == "")
+            if (String.IsNullOrEmpty(ID_Find.Text))
             {
                 dgv.DataSource = billDAO.Instance.getListBill();
+                findtotal();
             }
             else if (IsDigit(ID_Find.Text))
             {
@@ -131,7 +176,6 @@ namespace restaurant_management
             }
             else MessageBox.Show("Please enter number only");
         }
-
         private void label10_Click(object sender, EventArgs e)
         {
             dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);

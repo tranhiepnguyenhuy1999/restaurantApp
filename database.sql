@@ -49,6 +49,7 @@ CREATE TABLE user(
 	user_name VARCHAR(100) NOT NULL UNIQUE,
 	user_password  VARCHAR(100) NOT NULL,
 	create_date DATETIME NOT NULL,
+	userRole VARCHAR(100) DEFAULT "employee",
     PRIMARY KEY(id)
 );
 DELIMITER $$
@@ -313,4 +314,3 @@ BEGIN
   select * from bill where create_date= create_date0 order by create_date ASC, total_money desc;
 END; $$
 DELIMITER $$
-#

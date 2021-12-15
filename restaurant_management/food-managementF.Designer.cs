@@ -32,8 +32,8 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foodsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
@@ -48,9 +48,16 @@ namespace restaurant_management
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.foodDetailsPanel = new System.Windows.Forms.Panel();
             this.foodDetailsLabel = new System.Windows.Forms.Label();
+            this.dataPanel = new System.Windows.Forms.Panel();
+            this.searchBarPanel = new System.Windows.Forms.Panel();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.foodsDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
             this.foodDetailsPanel.SuspendLayout();
+            this.dataPanel.SuspendLayout();
+            this.searchBarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // foodsDataGridView
@@ -61,33 +68,33 @@ namespace restaurant_management
             this.foodsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.foodsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.foodsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.foodsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.foodsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.foodsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.foodsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.foodsDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.foodsDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
+            this.foodsDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.foodsDataGridView.GridColor = System.Drawing.Color.Black;
-            this.foodsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.foodsDataGridView.Location = new System.Drawing.Point(0, 33);
             this.foodsDataGridView.MultiSelect = false;
             this.foodsDataGridView.Name = "foodsDataGridView";
             this.foodsDataGridView.ReadOnly = true;
             this.foodsDataGridView.RowHeadersVisible = false;
             this.foodsDataGridView.RowHeadersWidth = 62;
             this.foodsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.foodsDataGridView.Size = new System.Drawing.Size(484, 393);
+            this.foodsDataGridView.Size = new System.Drawing.Size(479, 360);
             this.foodsDataGridView.TabIndex = 0;
             this.foodsDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.foodsDataGridView_RowEnter);
             // 
@@ -222,7 +229,7 @@ namespace restaurant_management
             this.foodDetailsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.foodDetailsPanel.Controls.Add(this.foodInformationPanel);
             this.foodDetailsPanel.Controls.Add(this.foodDetailsLabel);
-            this.foodDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.foodDetailsPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.foodDetailsPanel.Location = new System.Drawing.Point(484, 0);
             this.foodDetailsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.foodDetailsPanel.Name = "foodDetailsPanel";
@@ -244,14 +251,66 @@ namespace restaurant_management
             this.foodDetailsLabel.Text = "Food Details";
             this.foodDetailsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dataPanel
+            // 
+            this.dataPanel.Controls.Add(this.searchBarPanel);
+            this.dataPanel.Controls.Add(this.foodsDataGridView);
+            this.dataPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataPanel.Location = new System.Drawing.Point(0, 0);
+            this.dataPanel.Name = "dataPanel";
+            this.dataPanel.Size = new System.Drawing.Size(479, 393);
+            this.dataPanel.TabIndex = 4;
+            // 
+            // searchBarPanel
+            // 
+            this.searchBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.searchBarPanel.Controls.Add(this.label1);
+            this.searchBarPanel.Controls.Add(this.searchBtn);
+            this.searchBarPanel.Controls.Add(this.searchTextBox);
+            this.searchBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchBarPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchBarPanel.Name = "searchBarPanel";
+            this.searchBarPanel.Size = new System.Drawing.Size(479, 35);
+            this.searchBarPanel.TabIndex = 1;
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(3, 7);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(243, 20);
+            this.searchTextBox.TabIndex = 0;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(252, 5);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 1;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(333, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "*Type food name to search";
+            // 
             // foodManagementF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(697, 393);
+            this.Controls.Add(this.dataPanel);
             this.Controls.Add(this.foodDetailsPanel);
-            this.Controls.Add(this.foodsDataGridView);
             this.Name = "foodManagementF";
             this.Text = "Food Management";
             this.Load += new System.EventHandler(this.foodManagementF_Load);
@@ -259,6 +318,9 @@ namespace restaurant_management
             this.foodInformationPanel.ResumeLayout(false);
             this.foodInformationPanel.PerformLayout();
             this.foodDetailsPanel.ResumeLayout(false);
+            this.dataPanel.ResumeLayout(false);
+            this.searchBarPanel.ResumeLayout(false);
+            this.searchBarPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +341,10 @@ namespace restaurant_management
         private Button addBtn;
         private Button manageTypeBtn;
         private Label foodDetailsLabel;
+        private Panel dataPanel;
+        private Panel searchBarPanel;
+        private Button searchBtn;
+        private TextBox searchTextBox;
+        private Label label1;
     }
 }

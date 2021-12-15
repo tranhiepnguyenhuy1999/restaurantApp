@@ -166,6 +166,7 @@ namespace restaurant_management
             this.MaximumSize = new System.Drawing.Size(489, 393);
             this.MinimumSize = new System.Drawing.Size(489, 393);
             this.Name = "foodType_popupF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Food Type";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.foodType_popupF_FormClosed);
             this.Load += new System.EventHandler(this.foodType_popupF_Load);

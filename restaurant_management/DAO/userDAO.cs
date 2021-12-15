@@ -63,17 +63,17 @@ namespace restaurant_management.DAO
             return null;
         }
 
-        public int GetIdByUsernamePwd(String username, String password)
+        public User GetIdByUsernamePwd(String username, String password)
         {
             int id = -1;
-            string query = "SELECT id FROM user WHERE user_name = '" + username + "' AND user_password = '" + password + "'";
+            string query = "SELECT * FROM user WHERE user_name = '" + username + "' AND user_password = '" + password + "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            if (data.Rows.Count > 0)
+
+            foreach (DataRow item in data.Rows)
             {
-                DataRow row = data.Rows[0];
-                id = int.Parse(row["id"].ToString());
+                return new User(item);
             }
-            return id;
+            return null;
         }
         public void deleteUser(string userName)
         {

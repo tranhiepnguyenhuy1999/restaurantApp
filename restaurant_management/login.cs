@@ -30,21 +30,23 @@ namespace restaurant_management
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            int id = userDAO.Instance.GetIdByUsernamePwd(txt_UserName.Text, txt_pwd.Text);
+            DTO.User user = userDAO.Instance.GetIdByUsernamePwd(txt_UserName.Text, txt_pwd.Text);
             try
             {
-                if (id > -1)
+                if (user != null)
                 {
                     this.Hide();
+                    UserInfo.Instance.IsLogin = true;
+                    UserInfo.Instance.Role = user.UserRole;
+
                     dashboardBar dash = new dashboardBar();
                     dash.ShowDialog();
                     this.Close();
 
-
                 }
                 else
                 {
-                    MessageBox.Show("incorrect UserName or Password");
+                    MessageBox.Show("Incorrect Username or Password");
                 }
             }
             catch

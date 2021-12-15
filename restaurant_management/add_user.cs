@@ -35,9 +35,13 @@ namespace restaurant_management
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (pass_txtbox.Text != repass_txtbox.Text || isValid(phone_txtbox.Text.ToString())==false)
+            if (pass_txtbox.Text != repass_txtbox.Text)
             {
-               MessageBox.Show("Invalid");
+               MessageBox.Show("Re-pass phải trùng với pass");
+            }
+            else if (isValid(phone_txtbox.Text.ToString()) == false)
+            {
+                MessageBox.Show("SĐT không hợp lệ");
             }
             else
             {
