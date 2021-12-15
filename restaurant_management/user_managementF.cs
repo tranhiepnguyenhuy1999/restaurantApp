@@ -21,6 +21,14 @@ namespace restaurant_management
         {
             InitializeComponent();
             LoadListUser();
+            dgv_user.Columns[0].Visible = false;
+            dgv_user.Columns[4].Visible = false;
+            dgv_user.Columns[5].Visible = false;
+            dgv_user.Columns[6].Visible = false;
+            dgv_user.Columns[7].Visible = false;
+            dgv_user.Columns[8].Visible = false;
+            dgv_user.Columns[9].Visible = false;
+            dateTimePicker1.Value = DateTime.Today;
         }
 
         private void dgv_user_SelectionChanged(object sender, EventArgs e)
@@ -55,13 +63,13 @@ namespace restaurant_management
                 dgv_user.Rows[num].Cells[1].Value = firstname_txtbox.Text;
                 dgv_user.Rows[num].Cells[2].Value = lastname_txtbox.Text;
                 dgv_user.Rows[num].Cells[3].Value = phone_txtbox.Text;
-                dgv_user.Rows[num].Cells[5].Value = birthday.Date.ToString();
+                dgv_user.Rows[num].Cells[5].Value = birthday.Date.ToString("dd/MM/yyyy");
                 dgv_user.Rows[num].Cells[7].Value = user_txtbox.Text;
                 dgv_user.Rows[num].Cells[8].Value = pass_txtbox.Text;
                 LoadListUser();
                 MessageBox.Show("Cập nhập thành công !");
             }
-            else MessageBox.Show("Invalid");
+            else MessageBox.Show("SĐT không hợp lệ");
         }
 
         private void add_btn_Click(object sender, EventArgs e)
@@ -96,6 +104,7 @@ namespace restaurant_management
             string name = user_txtbox.Text;
             userDAO.Instance.deleteUser(name);
             MessageBox.Show("Xoá user thành công !");
+            LoadListUser();
         }
 
         private void dgv_user_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -104,6 +113,19 @@ namespace restaurant_management
             {
                 e.Value = new string ('*',e.Value.ToString().Length);
             }
+        }
+
+        private void pass_change_btn_Click(object sender, EventArgs e)
+        {
+            if (pass_txtbox.Enabled == false)
+            {
+                pass_txtbox.Enabled = true;
+            }
+            else pass_txtbox.Enabled = false;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }
