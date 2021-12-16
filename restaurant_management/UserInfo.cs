@@ -11,7 +11,7 @@ namespace restaurant_management
         bool isLogin;
         String role;
         String username;
-        String iD;
+        int iD;
 
 
 
@@ -25,7 +25,7 @@ namespace restaurant_management
         public bool IsLogin { get => isLogin; set => isLogin = value; }
         public string Role { get => role; set => role = value; }
         public string Username { get => username; set => username = value; }
-        public string ID { get => iD; set => iD = value; }
+        public int ID { get => iD; set => iD = value; }
 
         private UserInfo() { }
     }
