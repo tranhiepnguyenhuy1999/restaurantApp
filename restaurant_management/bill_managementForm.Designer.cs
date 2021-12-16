@@ -29,7 +29,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.ID_Find = new System.Windows.Forms.TextBox();
@@ -47,7 +47,6 @@ namespace restaurant_management
             this.selected_id_txtbox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-
             this.timecb = new System.Windows.Forms.ComboBox();
             this.sortcb = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,14 +60,14 @@ namespace restaurant_management
             this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.Location = new System.Drawing.Point(2, 0);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
@@ -114,7 +113,7 @@ namespace restaurant_management
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(522, 261);
+            this.button3.Location = new System.Drawing.Point(522, 276);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(171, 25);
             this.button3.TabIndex = 4;
@@ -127,8 +126,7 @@ namespace restaurant_management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-
-            this.label4.Location = new System.Drawing.Point(779, 451);
+            this.label4.Location = new System.Drawing.Point(522, 208);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
@@ -137,8 +135,7 @@ namespace restaurant_management
             // 
             // bill_count_txtbox
             // 
-
-            this.bill_count_txtbox.Location = new System.Drawing.Point(924, 446);
+            this.bill_count_txtbox.Location = new System.Drawing.Point(579, 205);
             this.bill_count_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bill_count_txtbox.Name = "bill_count_txtbox";
             this.bill_count_txtbox.Size = new System.Drawing.Size(114, 20);
@@ -149,8 +146,7 @@ namespace restaurant_management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-
-            this.label5.Location = new System.Drawing.Point(785, 490);
+            this.label5.Location = new System.Drawing.Point(523, 238);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
@@ -159,9 +155,8 @@ namespace restaurant_management
             // 
             // sum_txtbox
             // 
-            this.sum_txtbox.Location = new System.Drawing.Point(870, 482);
+            this.sum_txtbox.Location = new System.Drawing.Point(579, 235);
             this.sum_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-
             this.sum_txtbox.Name = "sum_txtbox";
             this.sum_txtbox.Size = new System.Drawing.Size(114, 20);
             this.sum_txtbox.TabIndex = 7;
@@ -171,7 +166,7 @@ namespace restaurant_management
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(522, 82);
+            this.label6.Location = new System.Drawing.Point(523, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 1;
@@ -179,6 +174,8 @@ namespace restaurant_management
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(579, 82);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(114, 20);
@@ -190,16 +187,15 @@ namespace restaurant_management
             this.typecb.Items.AddRange(new object[] {
             "All",
             "Year",
-
             "Month",
             "Day",
             "Date"});
-            this.typecb.Location = new System.Drawing.Point(863, 292);
+            this.typecb.Location = new System.Drawing.Point(579, 108);
             this.typecb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.typecb.Name = "typecb";
-            this.typecb.Size = new System.Drawing.Size(170, 28);
+            this.typecb.Size = new System.Drawing.Size(114, 21);
             this.typecb.TabIndex = 11;
-            this.typecb.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.typecb.SelectedIndexChanged += new System.EventHandler(this.typecb_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -208,8 +204,7 @@ namespace restaurant_management
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(522, 111);
             this.label2.Name = "label2";
-
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Type:";
             // 
@@ -218,7 +213,7 @@ namespace restaurant_management
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(522, 245);
+            this.label7.Location = new System.Drawing.Point(522, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 13);
             this.label7.TabIndex = 5;
@@ -226,7 +221,7 @@ namespace restaurant_management
             // 
             // selected_id_txtbox
             // 
-            this.selected_id_txtbox.Location = new System.Drawing.Point(619, 242);
+            this.selected_id_txtbox.Location = new System.Drawing.Point(619, 257);
             this.selected_id_txtbox.Name = "selected_id_txtbox";
             this.selected_id_txtbox.Size = new System.Drawing.Size(74, 20);
             this.selected_id_txtbox.TabIndex = 7;
@@ -248,11 +243,10 @@ namespace restaurant_management
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-
-            this.label9.Location = new System.Drawing.Point(783, 333);
+            this.label9.Location = new System.Drawing.Point(523, 164);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 13;
             this.label9.Text = "Time:";
             // 
@@ -262,10 +256,10 @@ namespace restaurant_management
             this.timecb.Items.AddRange(new object[] {
             "Lastest",
             "Oldest"});
-            this.timecb.Location = new System.Drawing.Point(863, 330);
+            this.timecb.Location = new System.Drawing.Point(579, 161);
             this.timecb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.timecb.Name = "timecb";
-            this.timecb.Size = new System.Drawing.Size(170, 28);
+            this.timecb.Size = new System.Drawing.Size(114, 21);
             this.timecb.TabIndex = 14;
             // 
             // sortcb
@@ -276,10 +270,10 @@ namespace restaurant_management
             "Highest Amount Of Day",
             "Lowsest Money  Of Day",
             "Highest Money Of Day"});
-            this.sortcb.Location = new System.Drawing.Point(863, 368);
+            this.sortcb.Location = new System.Drawing.Point(579, 135);
             this.sortcb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sortcb.Name = "sortcb";
-            this.sortcb.Size = new System.Drawing.Size(170, 28);
+            this.sortcb.Size = new System.Drawing.Size(114, 21);
             this.sortcb.TabIndex = 15;
             // 
             // label10
@@ -288,10 +282,10 @@ namespace restaurant_management
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Navy;
-            this.label10.Location = new System.Drawing.Point(806, 414);
+            this.label10.Location = new System.Drawing.Point(657, 187);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 20);
+            this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 16;
             this.label10.Text = "FIND";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -301,12 +295,9 @@ namespace restaurant_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
-
-            this.ClientSize = new System.Drawing.Size(1046, 605);
-            this.Controls.Add(this.label10);
+            this.ClientSize = new System.Drawing.Size(697, 393);
             this.Controls.Add(this.sortcb);
             this.Controls.Add(this.timecb);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.typecb);
             this.Controls.Add(this.dateTimePicker1);
@@ -321,14 +312,13 @@ namespace restaurant_management
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
-            //this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
             this.Name = "bill_managementForm";
             this.Text = "bill_managementForm";
-            //this.Load += new System.EventHandler(this.bill_managementForm_Load);
+            this.Load += new System.EventHandler(this.bill_managementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
