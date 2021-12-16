@@ -45,13 +45,14 @@ namespace restaurant_management
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.role_txtbox = new System.Windows.Forms.TextBox();
+            this.update_btn = new System.Windows.Forms.Button();
+            this.pass_change_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // birthday
             // 
             this.birthday.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthday.CustomFormat = "dd/MM/yyyy";
-            this.birthday.Enabled = false;
             this.birthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.birthday.Location = new System.Drawing.Point(94, 187);
             this.birthday.Name = "birthday";
@@ -120,7 +121,7 @@ namespace restaurant_management
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(16, 225);
+            this.label6.Location = new System.Drawing.Point(17, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 16);
             this.label6.TabIndex = 20;
@@ -131,7 +132,7 @@ namespace restaurant_management
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(16, 159);
+            this.label8.Location = new System.Drawing.Point(16, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 21;
@@ -142,7 +143,7 @@ namespace restaurant_management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(16, 193);
+            this.label4.Location = new System.Drawing.Point(16, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 22;
@@ -164,7 +165,7 @@ namespace restaurant_management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(16, 128);
+            this.label3.Location = new System.Drawing.Point(17, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 24;
@@ -197,7 +198,7 @@ namespace restaurant_management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(16, 264);
+            this.label1.Location = new System.Drawing.Point(16, 261);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 21;
@@ -205,18 +206,43 @@ namespace restaurant_management
             // 
             // role_txtbox
             // 
+            this.role_txtbox.Enabled = false;
             this.role_txtbox.Location = new System.Drawing.Point(94, 260);
             this.role_txtbox.Name = "role_txtbox";
             this.role_txtbox.ReadOnly = true;
             this.role_txtbox.Size = new System.Drawing.Size(164, 20);
             this.role_txtbox.TabIndex = 27;
             // 
+            // update_btn
+            // 
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.Location = new System.Drawing.Point(139, 291);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(119, 38);
+            this.update_btn.TabIndex = 34;
+            this.update_btn.Text = "Update";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            // 
+            // pass_change_btn
+            // 
+            this.pass_change_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass_change_btn.Location = new System.Drawing.Point(264, 53);
+            this.pass_change_btn.Name = "pass_change_btn";
+            this.pass_change_btn.Size = new System.Drawing.Size(74, 22);
+            this.pass_change_btn.TabIndex = 35;
+            this.pass_change_btn.Text = "Change";
+            this.pass_change_btn.UseVisualStyleBackColor = true;
+            this.pass_change_btn.Click += new System.EventHandler(this.pass_change_btn_Click);
+            // 
             // Personal_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
-            this.ClientSize = new System.Drawing.Size(312, 316);
+            this.ClientSize = new System.Drawing.Size(350, 341);
+            this.Controls.Add(this.pass_change_btn);
+            this.Controls.Add(this.update_btn);
             this.Controls.Add(this.birthday);
             this.Controls.Add(this.cbo_gender);
             this.Controls.Add(this.role_txtbox);
@@ -235,6 +261,7 @@ namespace restaurant_management
             this.Controls.Add(this.label2);
             this.Name = "Personal_Info";
             this.Text = "Personal Info";
+            this.Load += new System.EventHandler(this.Personal_Info_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +285,7 @@ namespace restaurant_management
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox role_txtbox;
+        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button pass_change_btn;
     }
 }
