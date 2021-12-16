@@ -16,16 +16,15 @@ namespace restaurant_management
     public partial class bill_managementForm : Form
     {
         int check;
-        bool check_date = true;
+        /*bool check_date = true;
         bool check_year = false;
         int month = DateTime.Today.Month;
-        int year = DateTime.Today.Year;
+        int year = DateTime.Today.Year;*/
         void LoadListBill()
         {
 
             dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value,0,0,0);
             dateTimePicker1.Value = DateTime.Today;
-
         }
         void findtotal()
         {
@@ -38,7 +37,7 @@ namespace restaurant_management
             }
             sum_txtbox.Text = sum.ToString();
         }
-        void date_check()
+        /*void date_check()
         {
             if (check_date)
             {
@@ -73,11 +72,11 @@ namespace restaurant_management
                 //label11.Visible = false;
                 //comboBox5.Visible = false;
             }
-        }
+        }*/
         public bill_managementForm()
         {
             InitializeComponent();
-            date_check();
+            //date_check();
             LoadListBill();
             findtotal();
             typecb.SelectedIndex = 0;
