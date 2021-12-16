@@ -16,10 +16,6 @@ namespace restaurant_management
     public partial class bill_managementForm : Form
     {
         int check;
-        /*bool check_date = true;
-        bool check_year = false;
-        int month = DateTime.Today.Month;
-        int year = DateTime.Today.Year;*/
         void LoadListBill()
         {
 
@@ -37,46 +33,9 @@ namespace restaurant_management
             }
             sum_txtbox.Text = sum.ToString();
         }
-        /*void date_check()
-        {
-            if (check_date)
-            {
-                //comboBox3.Visible = false;
-                label9.Visible = false;
-                //comboBox4.Visible = false;
-                label10.Visible = false;
-                //comboBox5.Visible = false;
-                //label11.Visible = false;
-                dateTimePicker1.Visible = true;
-                label6.Visible = true;
-            }
-            else if (check_year)
-            {
-                //comboBox3.Visible = false;
-                label9.Visible = false;
-                dateTimePicker1.Visible = false;
-                label6.Visible = false;
-                //comboBox4.Visible = false;
-                label10.Visible = false;
-                //label11.Visible = true;
-                //comboBox5.Visible = true;
-            }
-            else
-            {
-                //comboBox3.Visible = true;
-                label9.Visible = true;
-                dateTimePicker1.Visible = false;
-                label6.Visible = false;
-                //comboBox4.Visible = true;
-                label10.Visible = true;
-                //label11.Visible = false;
-                //comboBox5.Visible = false;
-            }
-        }*/
         public bill_managementForm()
         {
             InitializeComponent();
-            //date_check();
             LoadListBill();
             findtotal();
             typecb.SelectedIndex = 0;
@@ -94,10 +53,6 @@ namespace restaurant_management
 
 
 
-        private void Date_Find_Button_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -116,34 +71,6 @@ namespace restaurant_management
         {
             int num = dgv.CurrentCell.RowIndex;
             selected_id_txtbox.Text = dgv.Rows[num].Cells[0].Value.ToString();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*switch (typecb.SelectedIndex)
-            {
-                case 0: 
-                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 0, 0, 0);
-                    break;
-                case 1:
-                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 1, 1, 0);
-                    break;
-                case 2:
-                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 2, 1, 0);
-                    break;
-                case 3:
-                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 3, 1, 0);
-                    break;
-                case 4:
-                    dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, 4, 0, 2);
-                    break;
-            }
-            findtotal();*/
         }
 
         private void ID_Find_TextChanged(object sender, EventArgs e)
@@ -179,6 +106,30 @@ namespace restaurant_management
         {
             dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
             findtotal();
+        }
+
+        private void typecb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            check = int.Parse(typecb.SelectedIndex.ToString());
+            if (check == 1 )
+            {
+                label6.Text = "Year";
+                dateTimePicker1.CustomFormat = "yyyy";
+            }
+            else if (check == 2 )
+            {
+                label6.Text = "Month";
+                dateTimePicker1.CustomFormat = "MM/yyyy";
+            }
+            else
+            {
+                label6.Text = "Date";
+                dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            }
+        }
+
+        private void bill_managementForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }
