@@ -18,7 +18,7 @@ namespace restaurant_management
         private string role = UserInfo.Instance.Role;
         private Button currentNavButton;
         private Form currentChildForm;
-        public dashboardBar()
+        public dashboardBar(string username)
         {
             InitializeComponent();
             EnableFeaturesByRole();
@@ -28,6 +28,8 @@ namespace restaurant_management
             {
                 Tables.Add(new TableModel(i, "Bàn " + i));
             }
+
+            usernameLabel.Text = username;
         }
 
         private void EnableFeaturesByRole()
@@ -114,11 +116,6 @@ namespace restaurant_management
         {
             ActivateNavButton((Button)sender);
             OpenChildForm(new user_managementF());
-        }
-
-        private void logo_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void workspace_Paint(object sender, PaintEventArgs e)

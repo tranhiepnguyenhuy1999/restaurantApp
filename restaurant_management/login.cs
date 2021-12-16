@@ -39,7 +39,7 @@ namespace restaurant_management
                     UserInfo.Instance.IsLogin = true;
                     UserInfo.Instance.Role = user.UserRole;
 
-                    dashboardBar dash = new dashboardBar();
+                    dashboardBar dash = new dashboardBar(txt_UserName.Text);
                     dash.ShowDialog();
                     this.Close();
 
