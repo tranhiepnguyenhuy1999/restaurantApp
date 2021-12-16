@@ -42,36 +42,36 @@ namespace restaurant_management
         {
             if (check_date)
             {
-                comboBox3.Visible = false;
+                //comboBox3.Visible = false;
                 label9.Visible = false;
-                comboBox4.Visible = false;
+                //comboBox4.Visible = false;
                 label10.Visible = false;
-                comboBox5.Visible = false;
-                label11.Visible = false;
+                //comboBox5.Visible = false;
+                //label11.Visible = false;
                 dateTimePicker1.Visible = true;
                 label6.Visible = true;
             }
             else if (check_year)
             {
-                comboBox3.Visible = false;
+                //comboBox3.Visible = false;
                 label9.Visible = false;
                 dateTimePicker1.Visible = false;
                 label6.Visible = false;
-                comboBox4.Visible = false;
+                //comboBox4.Visible = false;
                 label10.Visible = false;
-                label11.Visible = true;
-                comboBox5.Visible = true;
+                //label11.Visible = true;
+                //comboBox5.Visible = true;
             }
             else
             {
-                comboBox3.Visible = true;
+                //comboBox3.Visible = true;
                 label9.Visible = true;
                 dateTimePicker1.Visible = false;
                 label6.Visible = false;
-                comboBox4.Visible = true;
+                //comboBox4.Visible = true;
                 label10.Visible = true;
-                label11.Visible = false;
-                comboBox5.Visible = false;
+                //label11.Visible = false;
+                //comboBox5.Visible = false;
             }
         }
         public bill_managementForm()

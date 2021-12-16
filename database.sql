@@ -60,13 +60,21 @@ IN phone CHAR(10),
 IN birthday DATETIME,
 IN user_name VARCHAR(100),
 IN user_password  VARCHAR(100),
-IN create_date DATETIME
+IN create_date DATETIME,
+IN userRole NVARCHAR(100)
 )
 BEGIN
    INSERT INTO 
-	user(first_name, last_name, phone, birthday, user_name, user_password, create_date)
+	user(first_name, last_name, phone, birthday, user_name, user_password, userRole, create_date)
 	VALUES
-	(first_name, last_name, phone, birthday, user_name, user_password, create_date);
+	(first_name,
+    last_name,
+    phone, 
+    birthday, 
+    user_name, 
+    user_password, 
+    userRole, 
+    create_date);
 END; $$
 
 DELIMITER $$
@@ -119,8 +127,8 @@ CALL insertNewFood('Rau câu', 12000, 2, '2021-10-21');
 CALL insertNewFood('Bánh mì Bò Kho', 45000, 1, '2021-10-21');
 CALL insertNewFood('Hủ tiếu mực', 60000, 1, '2021-10-21');
 -- user
-CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "123456",'2019-11-20');
-CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "123456",'2019-12-31'); 
+CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "123456",'2019-11-20','admin');
+CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "123456",'2019-12-31','employee'); 
 -- bill
 INSERT INTO 
 	bill(total_money, total_amount, create_date)

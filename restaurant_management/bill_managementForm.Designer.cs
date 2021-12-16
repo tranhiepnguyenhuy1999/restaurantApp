@@ -321,14 +321,14 @@ namespace restaurant_management
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label11);
+            //this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
             this.Name = "bill_managementForm";
             this.Text = "bill_managementForm";
-            this.Load += new System.EventHandler(this.bill_managementForm_Load);
+            //this.Load += new System.EventHandler(this.bill_managementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
