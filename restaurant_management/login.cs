@@ -38,6 +38,9 @@ namespace restaurant_management
                     this.Hide();
                     UserInfo.Instance.IsLogin = true;
                     UserInfo.Instance.Role = user.UserRole;
+                    UserInfo.Instance.ID = user.ID;
+                    UserInfo.Instance.Username = user.User_name;
+
 
                     dashboardBar dash = new dashboardBar();
                     dash.ShowDialog();
@@ -53,6 +56,11 @@ namespace restaurant_management
             {
                 MessageBox.Show("Có vấn đề với cơ sở dữ liệu");
             }
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
