@@ -4,7 +4,7 @@ USE restaurantManagement;
 
 CREATE TABLE kind(
 	id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-	kind_name VARCHAR(100) NOT NULL,
+	kind_name NVARCHAR(100) NOT NULL,
 	from_age INT,
     to_age INT,
     create_date DATE
@@ -12,7 +12,7 @@ CREATE TABLE kind(
 
 CREATE TABLE food(
 	id INT(6) AUTO_INCREMENT , 
-	food_name VARCHAR(100) NOT NULL,
+	food_name NVARCHAR(100) NOT NULL,
 	price FLOAT DEFAULT 0,
     id_kind INT(6),
 	FOREIGN KEY (id_kind) REFERENCES kind(id),
@@ -322,3 +322,5 @@ BEGIN
   select * from bill where create_date= create_date0 order by create_date ASC, total_money desc;
 END; $$
 DELIMITER $$
+
+select * from food where food_name like "%com%"
