@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace restaurant_management
 { 
     public partial class user_managementF : Form
@@ -130,12 +130,74 @@ namespace restaurant_management
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            dgv_user.DataSource = userDAO.Instance.getUserListByUserName(searchBtn.Text);
+            if(searchTextBox.Text == null) dgv_user.DataSource = userDAO.Instance.getUserList();
+            else dgv_user.DataSource = userDAO.Instance.getUserList(searchTextBox.Text);
         }
 
         private void printTable_btn_Click(object sender, EventArgs e)
         {
+            DataTable data = (DataTable)(dgv_user.DataSource);
 
+            try
+            {
+                if (data == null || data.Columns.Count == 0)
+                    throw new Exception("ExportToExcel: Null or empty input table!\n");
+
+                // load excel, and create a new workbook
+                var excelApp = new Excel.Application();
+                excelApp.Workbooks.Add();
+
+                // single worksheet
+                Excel._Worksheet workSheet = excelApp.ActiveSheet;
+
+                // column headings
+                for (var i = 0; i < data.Columns.Count; i++)
+                {
+                    workSheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                }
+
+                // rows
+                for (var i = 0; i < data.Rows.Count; i++)
+                {
+                    // to do: format datetime values before printing
+                    for (var j = 0; j < data.Columns.Count; j++)
+                    {
+                        if ((data.Rows[i][j] is DateTime?))
+                        {
+
+                            workSheet.Cells[i + 2, j + 1] = (data.Rows[i][j]).ToString();
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, j + 1] = data.Rows[i][j];
+                        }
+                    }
+                }
+
+                // check file path
+                if (!string.IsNullOrEmpty(""))
+                {
+                    try
+                    {
+                        workSheet.SaveAs("excelFilePath");
+                        excelApp.Quit();
+                        MessageBox.Show("Excel file saved!");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExportToExcel: Excel file could not be saved! Check filepath.\n"
+                                            + ex.Message);
+                    }
+                }
+                else
+                { // no file path is given
+                    excelApp.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExportToExcel: \n" + ex.Message);
+            }
         }
     }
 }

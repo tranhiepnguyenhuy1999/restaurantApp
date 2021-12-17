@@ -20,21 +20,21 @@ namespace restaurant_management.DAO
 
         private userDAO() { }
 
-        public DataTable getUserList ()
+        public DataTable getUserList (string name = "")
         {
             DataTable data;
-            string query = "select * from user";
+            string query;
+            if (!name.Equals(""))
+            {
+                query = "SELECT * FROM user WHERE LOWER(first_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%') OR  LOWER(last_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%')";
+            }
+            else
+            {
+                query = "select * from user";
+            }
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
-        public DataTable getUserListByUserName(string username)
-        {
-            DataTable data;
-            string query = "select * from user where user_name = "+username;
-            data = DataProvider.Instance.ExecuteQuery(query);
-            return data;
-        }
-
         public int insertNewUser(string firstName, string lastName,string phone, DateTime birthDay, string user_name, string user_password, DateTime create_date,int gender) {
             int result = 0;
             string query = "call insertUser0 ( @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @create_date , @gender )";

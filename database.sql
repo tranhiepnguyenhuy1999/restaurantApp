@@ -322,5 +322,3 @@ BEGIN
   select * from bill where create_date= create_date0 order by create_date ASC, total_money desc;
 END; $$
 DELIMITER $$
-
-select * from food where food_name like "%com%"
