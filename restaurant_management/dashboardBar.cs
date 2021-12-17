@@ -122,5 +122,11 @@ namespace restaurant_management
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Personal_Info info = new Personal_Info();
+            info.ShowDialog();
+        }
     }
 }

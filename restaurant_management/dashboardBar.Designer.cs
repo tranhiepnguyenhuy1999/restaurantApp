@@ -38,6 +38,7 @@
             this.titleBar = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
             this.workspace = new System.Windows.Forms.Panel();
+
             this.userIcon = new System.Windows.Forms.PictureBox();
             this.logo = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.userPanel.SuspendLayout();
+          
             this.SuspendLayout();
             // 
             // sideNav
@@ -167,7 +169,9 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+
             this.panelLogo.Controls.Add(this.userPanel);
+
             this.panelLogo.Controls.Add(this.logo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -209,6 +213,7 @@
             this.workspace.TabIndex = 2;
             this.workspace.Paint += new System.Windows.Forms.PaintEventHandler(this.workspace_Paint);
             // 
+
             // userIcon
             // 
             this.userIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -254,6 +259,7 @@
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(200, 24);
             this.userPanel.TabIndex = 3;
+
             // 
             // dashboardBar
             // 
@@ -273,10 +279,12 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.dashboard_FormClosed);
             this.sideNav.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+
             this.titleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.userPanel.ResumeLayout(false);
+
             this.ResumeLayout(false);
 
         }
@@ -294,8 +302,10 @@
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Panel workspace;
+
         private System.Windows.Forms.PictureBox userIcon;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Panel userPanel;
+
     }
 }

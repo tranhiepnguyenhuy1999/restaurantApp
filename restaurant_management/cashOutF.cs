@@ -95,6 +95,7 @@ namespace restaurant_management
         private void addBtn_Click(object sender, EventArgs e)
         {
             var tableIndex = int.Parse(nameValueLabel.Tag.ToString());
+
             var index = Tables[tableIndex].Bill.FoodList
                 .FindIndex(food => food.ID == FoodIdList[foodsComboBox.SelectedIndex]);
 

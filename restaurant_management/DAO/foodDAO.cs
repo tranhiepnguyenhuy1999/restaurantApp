@@ -36,7 +36,7 @@ namespace restaurant_management.DAO
             string query;
             if(!name.Equals(""))
             {
-                query = "select * from food where food_name=" + '"' + name + '"';
+                query = "SELECT * FROM food WHERE LOWER(food_name) LIKE CONCAT('%', CONVERT('"+name+"', BINARY), '%') ";
             }
             else query = "select * from food";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
@@ -84,7 +84,15 @@ namespace restaurant_management.DAO
                     // to do: format datetime values before printing
                     for (var j = 0; j < data.Columns.Count; j++)
                     {
-                        workSheet.Cells[i + 2, j + 1] = data.Rows[i][j];
+                        if ((data.Rows[i][j] is DateTime?))
+                        {
+
+                            workSheet.Cells[i + 2, j + 1] = (data.Rows[i][j]).ToString();
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, j + 1] = data.Rows[i][j];
+                        }
                     }
                 }
 

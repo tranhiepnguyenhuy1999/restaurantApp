@@ -10,6 +10,10 @@ namespace restaurant_management
     {
         bool isLogin;
         String role;
+        String username;
+        int iD;
+
+
 
         private static UserInfo instance;
         public static UserInfo Instance
@@ -20,6 +24,8 @@ namespace restaurant_management
 
         public bool IsLogin { get => isLogin; set => isLogin = value; }
         public string Role { get => role; set => role = value; }
+        public string Username { get => username; set => username = value; }
+        public int ID { get => iD; set => iD = value; }
 
         private UserInfo() { }
     }

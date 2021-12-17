@@ -29,6 +29,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.add_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.firstname_txtbox = new System.Windows.Forms.TextBox();
@@ -49,6 +50,10 @@ namespace restaurant_management
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dgv_user = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.printTable_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,6 +188,7 @@ namespace restaurant_management
             this.pass_change_btn.TabIndex = 17;
             this.pass_change_btn.Text = "Change";
             this.pass_change_btn.UseVisualStyleBackColor = true;
+            this.pass_change_btn.Click += new System.EventHandler(this.pass_change_btn_Click);
             // 
             // label8
             // 
@@ -226,23 +232,37 @@ namespace restaurant_management
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(525, 245);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dgv_user
             // 
+            this.dgv_user.AllowUserToAddRows = false;
+            this.dgv_user.AllowUserToDeleteRows = false;
             this.dgv_user.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_user.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgv_user.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.dgv_user.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_user.Location = new System.Drawing.Point(1, 1);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_user.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_user.Location = new System.Drawing.Point(1, 29);
             this.dgv_user.Name = "dgv_user";
+            this.dgv_user.ReadOnly = true;
             this.dgv_user.RowHeadersVisible = false;
             this.dgv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_user.Size = new System.Drawing.Size(440, 399);
+            this.dgv_user.Size = new System.Drawing.Size(440, 316);
             this.dgv_user.TabIndex = 8;
             this.dgv_user.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_user_CellFormatting);
             this.dgv_user.SelectionChanged += new System.EventHandler(this.dgv_user_SelectionChanged);
@@ -259,15 +279,59 @@ namespace restaurant_management
             this.label1.Text = "User Management";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(289, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(131, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "*Type username to search";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(207, 1);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(76, 23);
+            this.searchBtn.TabIndex = 22;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(1, 3);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(200, 20);
+            this.searchTextBox.TabIndex = 21;
+            // 
+            // printTable_btn
+            // 
+            this.printTable_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printTable_btn.Location = new System.Drawing.Point(322, 351);
+            this.printTable_btn.Name = "printTable_btn";
+            this.printTable_btn.Size = new System.Drawing.Size(119, 38);
+            this.printTable_btn.TabIndex = 17;
+            this.printTable_btn.Text = "Convert to Excel";
+            this.printTable_btn.UseVisualStyleBackColor = true;
+            this.printTable_btn.Click += new System.EventHandler(this.printTable_btn_Click);
+            // 
             // user_managementF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(697, 393);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cbo_gender);
+            this.Controls.Add(this.printTable_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.pass_change_btn);
             this.Controls.Add(this.delete_btn);
@@ -287,7 +351,7 @@ namespace restaurant_management
             this.Controls.Add(this.dgv_user);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "user_managementF";
-            this.Text = "user_managementForm";
+            this.Text = "User Management";
             this.Load += new System.EventHandler(this.user_managementF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).EndInit();
             this.ResumeLayout(false);
@@ -316,5 +380,9 @@ namespace restaurant_management
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dgv_user;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button printTable_btn;
     }
 }

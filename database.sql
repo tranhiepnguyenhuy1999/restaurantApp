@@ -4,7 +4,7 @@ USE restaurantManagement;
 
 CREATE TABLE kind(
 	id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-	kind_name VARCHAR(100) NOT NULL,
+	kind_name NVARCHAR(100) NOT NULL,
 	from_age INT,
     to_age INT,
     create_date DATE
@@ -12,7 +12,7 @@ CREATE TABLE kind(
 
 CREATE TABLE food(
 	id INT(6) AUTO_INCREMENT , 
-	food_name VARCHAR(100) NOT NULL,
+	food_name NVARCHAR(100) NOT NULL,
 	price FLOAT DEFAULT 0,
     id_kind INT(6),
 	FOREIGN KEY (id_kind) REFERENCES kind(id),
@@ -60,13 +60,21 @@ IN phone CHAR(10),
 IN birthday DATETIME,
 IN user_name VARCHAR(100),
 IN user_password  VARCHAR(100),
-IN create_date DATETIME
+IN create_date DATETIME,
+IN userRole NVARCHAR(100)
 )
 BEGIN
    INSERT INTO 
-	user(first_name, last_name, phone, birthday, user_name, user_password, create_date)
+	user(first_name, last_name, phone, birthday, user_name, user_password, userRole, create_date)
 	VALUES
-	(first_name, last_name, phone, birthday, user_name, user_password, create_date);
+	(first_name,
+    last_name,
+    phone, 
+    birthday, 
+    user_name, 
+    user_password, 
+    userRole, 
+    create_date);
 END; $$
 
 DELIMITER $$
@@ -119,8 +127,8 @@ CALL insertNewFood('Rau câu', 12000, 2, '2021-10-21');
 CALL insertNewFood('Bánh mì Bò Kho', 45000, 1, '2021-10-21');
 CALL insertNewFood('Hủ tiếu mực', 60000, 1, '2021-10-21');
 -- user
-CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "123456",'2019-11-20');
-CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "123456",'2019-12-31'); 
+CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "123456",'2019-11-20','admin');
+CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "123456",'2019-12-31','employee'); 
 -- bill
 INSERT INTO 
 	bill(total_money, total_amount, create_date)
@@ -196,72 +204,6 @@ BEGIN
 END; $$
 
 DELIMITER $$
-CREATE PROCEDURE findDateBill(
-IN create_date DATE
-)
-BEGIN
-  select * from bill where create_date=create_date;
-END; $$
-
-DELIMITER $$
-
-DELIMITER $$
-CREATE PROCEDURE findDateBill3(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_money ASC;
-END; $$
-
-DELIMITER $$
-
-DELIMITER $$
-CREATE PROCEDURE findDateBill4(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_money DESC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill1(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_amount ASC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill2(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by total_amount DESC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill5(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date=create_date0 order by create_date DESC;
-END; $$
-
-DELIMITER $$
-DELIMITER $$
-CREATE PROCEDURE findDateBill6(
-IN create_date0 DATE
-)
-BEGIN
-  select * from bill where create_date= create_date0 order by create_date ASC;
-END; $$
-
-DELIMITER $$
-
-DELIMITER $$
 CREATE PROCEDURE insertBill(
     total_amount int ,
     total_money FLOAT ,
@@ -315,3 +257,70 @@ BEGIN
 END; $$
 
 DELIMITER $$
+#
+DELIMITER $$
+CREATE PROCEDURE findDateBill01(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_amount asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill02(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_amount desc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill03(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_money asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill04(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date DESC,total_money desc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill11(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC,total_amount asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill12(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC,total_amount desc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill13(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC, total_money asc;
+END; $$
+DELIMITER $$
+DELIMITER $$
+CREATE PROCEDURE findDateBill14(
+IN create_date0 DATE
+)
+BEGIN
+  select * from bill where create_date= create_date0 order by create_date ASC, total_money desc;
+END; $$
+DELIMITER $$
+
+select * from food where food_name like "%com%"

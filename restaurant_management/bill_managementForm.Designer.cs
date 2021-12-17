@@ -29,6 +29,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.ID_Find = new System.Windows.Forms.TextBox();
@@ -39,16 +40,16 @@ namespace restaurant_management
             this.label5 = new System.Windows.Forms.Label();
             this.sum_txtbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Date_Find_Button = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.typecb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.selected_id_txtbox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.timecb = new System.Windows.Forms.ComboBox();
+            this.sortcb = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,14 @@ namespace restaurant_management
             this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.Location = new System.Drawing.Point(2, 0);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
@@ -104,7 +113,7 @@ namespace restaurant_management
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(522, 261);
+            this.button3.Location = new System.Drawing.Point(522, 276);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(171, 25);
             this.button3.TabIndex = 4;
@@ -117,7 +126,8 @@ namespace restaurant_management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(519, 191);
+            this.label4.Location = new System.Drawing.Point(522, 208);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 5;
@@ -125,7 +135,8 @@ namespace restaurant_management
             // 
             // bill_count_txtbox
             // 
-            this.bill_count_txtbox.Location = new System.Drawing.Point(579, 188);
+            this.bill_count_txtbox.Location = new System.Drawing.Point(579, 205);
+            this.bill_count_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bill_count_txtbox.Name = "bill_count_txtbox";
             this.bill_count_txtbox.Size = new System.Drawing.Size(114, 20);
             this.bill_count_txtbox.TabIndex = 7;
@@ -135,7 +146,8 @@ namespace restaurant_management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(522, 222);
+            this.label5.Location = new System.Drawing.Point(523, 238);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 5;
@@ -143,7 +155,8 @@ namespace restaurant_management
             // 
             // sum_txtbox
             // 
-            this.sum_txtbox.Location = new System.Drawing.Point(579, 217);
+            this.sum_txtbox.Location = new System.Drawing.Point(579, 235);
+            this.sum_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sum_txtbox.Name = "sum_txtbox";
             this.sum_txtbox.Size = new System.Drawing.Size(114, 20);
             this.sum_txtbox.TabIndex = 7;
@@ -153,51 +166,36 @@ namespace restaurant_management
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(522, 82);
+            this.label6.Location = new System.Drawing.Point(523, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Date:";
             // 
-            // Date_Find_Button
-            // 
-            this.Date_Find_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_Find_Button.Location = new System.Drawing.Point(522, 162);
-            this.Date_Find_Button.Name = "Date_Find_Button";
-            this.Date_Find_Button.Size = new System.Drawing.Size(171, 20);
-            this.Date_Find_Button.TabIndex = 8;
-            this.Date_Find_Button.Text = "Find by Date";
-            this.Date_Find_Button.UseVisualStyleBackColor = true;
-            this.Date_Find_Button.Click += new System.EventHandler(this.Date_Find_Button_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(579, 135);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(579, 82);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(114, 20);
             this.dateTimePicker1.TabIndex = 10;
             // 
-            // comboBox2
+            // typecb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Date",
+            this.typecb.FormattingEnabled = true;
+            this.typecb.Items.AddRange(new object[] {
+            "All",
             "Year",
-            "Month"});
-            this.comboBox2.Location = new System.Drawing.Point(579, 108);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(114, 21);
-            this.comboBox2.TabIndex = 11;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            "Month",
+            "Day",
+            "Date"});
+            this.typecb.Location = new System.Drawing.Point(579, 108);
+            this.typecb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.typecb.Name = "typecb";
+            this.typecb.Size = new System.Drawing.Size(114, 21);
+            this.typecb.TabIndex = 11;
+            this.typecb.SelectedIndexChanged += new System.EventHandler(this.typecb_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -208,14 +206,14 @@ namespace restaurant_management
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Filter:";
+            this.label2.Text = "Type:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(522, 245);
+            this.label7.Location = new System.Drawing.Point(522, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 13);
             this.label7.TabIndex = 5;
@@ -223,7 +221,7 @@ namespace restaurant_management
             // 
             // selected_id_txtbox
             // 
-            this.selected_id_txtbox.Location = new System.Drawing.Point(619, 242);
+            this.selected_id_txtbox.Location = new System.Drawing.Point(619, 257);
             this.selected_id_txtbox.Name = "selected_id_txtbox";
             this.selected_id_txtbox.Size = new System.Drawing.Size(74, 20);
             this.selected_id_txtbox.TabIndex = 7;
@@ -245,32 +243,52 @@ namespace restaurant_management
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(523, 84);
+            this.label9.Location = new System.Drawing.Point(523, 164);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Month:";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Time:";
             // 
-            // comboBox3
+            // timecb
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBox3.Location = new System.Drawing.Point(579, 82);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(114, 21);
-            this.comboBox3.TabIndex = 13;
+            this.timecb.FormattingEnabled = true;
+            this.timecb.Items.AddRange(new object[] {
+            "Lastest",
+            "Oldest"});
+            this.timecb.Location = new System.Drawing.Point(579, 161);
+            this.timecb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.timecb.Name = "timecb";
+            this.timecb.Size = new System.Drawing.Size(114, 21);
+            this.timecb.TabIndex = 14;
+            // 
+            // sortcb
+            // 
+            this.sortcb.FormattingEnabled = true;
+            this.sortcb.Items.AddRange(new object[] {
+            "Lowsest Amount Of Day",
+            "Highest Amount Of Day",
+            "Lowsest Money  Of Day",
+            "Highest Money Of Day"});
+            this.sortcb.Location = new System.Drawing.Point(579, 135);
+            this.sortcb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.sortcb.Name = "sortcb";
+            this.sortcb.Size = new System.Drawing.Size(114, 21);
+            this.sortcb.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Navy;
+            this.label10.Location = new System.Drawing.Point(657, 187);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "FIND";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // bill_managementForm
             // 
@@ -278,12 +296,11 @@ namespace restaurant_management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(697, 393);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.sortcb);
+            this.Controls.Add(this.timecb);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.typecb);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Date_Find_Button);
             this.Controls.Add(this.sum_txtbox);
             this.Controls.Add(this.selected_id_txtbox);
             this.Controls.Add(this.bill_count_txtbox);
@@ -293,6 +310,7 @@ namespace restaurant_management
             this.Controls.Add(this.button3);
             this.Controls.Add(this.ID_Find);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
@@ -300,6 +318,7 @@ namespace restaurant_management
             this.Controls.Add(this.dgv);
             this.Name = "bill_managementForm";
             this.Text = "bill_managementForm";
+            this.Load += new System.EventHandler(this.bill_managementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -318,15 +337,17 @@ namespace restaurant_management
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox sum_txtbox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Date_Find_Button;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox typecb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox selected_id_txtbox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
+
+        private System.Windows.Forms.ComboBox timecb;
+        private System.Windows.Forms.ComboBox sortcb;
+        private System.Windows.Forms.Label label10;
+
     }
 }
