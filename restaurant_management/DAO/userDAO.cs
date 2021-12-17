@@ -27,6 +27,13 @@ namespace restaurant_management.DAO
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
+        public DataTable getUserListByUserName(string username)
+        {
+            DataTable data;
+            string query = "select * from user where user_name = "+username;
+            data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
 
         public int insertNewUser(string firstName, string lastName,string phone, DateTime birthDay, string user_name, string user_password, DateTime create_date,int gender) {
             int result = 0;

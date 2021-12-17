@@ -127,5 +127,15 @@ namespace restaurant_management
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
         }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            dgv_user.DataSource = userDAO.Instance.getUserListByUserName(searchBtn.Text);
+        }
+
+        private void printTable_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
