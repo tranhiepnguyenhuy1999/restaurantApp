@@ -32,8 +32,8 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foodsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
@@ -50,14 +50,17 @@ namespace restaurant_management
             this.foodDetailsLabel = new System.Windows.Forms.Label();
             this.dataPanel = new System.Windows.Forms.Panel();
             this.searchBarPanel = new System.Windows.Forms.Panel();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.functionPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.foodsDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
             this.foodDetailsPanel.SuspendLayout();
             this.dataPanel.SuspendLayout();
             this.searchBarPanel.SuspendLayout();
+            this.functionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // foodsDataGridView
@@ -68,23 +71,23 @@ namespace restaurant_management
             this.foodsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.foodsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.foodsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.foodsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.foodsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.foodsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.foodsDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.foodsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.foodsDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.foodsDataGridView.GridColor = System.Drawing.Color.Black;
             this.foodsDataGridView.Location = new System.Drawing.Point(0, 33);
@@ -140,7 +143,7 @@ namespace restaurant_management
             this.deleteBtn.ForeColor = System.Drawing.Color.Black;
             this.deleteBtn.Location = new System.Drawing.Point(121, 142);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 42);
+            this.deleteBtn.Size = new System.Drawing.Size(75, 27);
             this.deleteBtn.TabIndex = 8;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -149,8 +152,7 @@ namespace restaurant_management
             // foodInformationPanel
             // 
             this.foodInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
-            this.foodInformationPanel.Controls.Add(this.manageTypeBtn);
-            this.foodInformationPanel.Controls.Add(this.addBtn);
+            this.foodInformationPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.foodInformationPanel.Controls.Add(this.typeLabel);
             this.foodInformationPanel.Controls.Add(this.updateBtn);
             this.foodInformationPanel.Controls.Add(this.typeComboBox);
@@ -159,19 +161,19 @@ namespace restaurant_management
             this.foodInformationPanel.Controls.Add(this.priceLabel);
             this.foodInformationPanel.Controls.Add(this.priceTextBox);
             this.foodInformationPanel.Controls.Add(this.nameTextBox);
-            this.foodInformationPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.foodInformationPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.foodInformationPanel.ForeColor = System.Drawing.Color.White;
-            this.foodInformationPanel.Location = new System.Drawing.Point(0, 63);
+            this.foodInformationPanel.Location = new System.Drawing.Point(0, 50);
             this.foodInformationPanel.Name = "foodInformationPanel";
             this.foodInformationPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.foodInformationPanel.Size = new System.Drawing.Size(213, 330);
+            this.foodInformationPanel.Size = new System.Drawing.Size(213, 180);
             this.foodInformationPanel.TabIndex = 2;
             // 
             // manageTypeBtn
             // 
             this.manageTypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageTypeBtn.ForeColor = System.Drawing.Color.Black;
-            this.manageTypeBtn.Location = new System.Drawing.Point(14, 278);
+            this.manageTypeBtn.Location = new System.Drawing.Point(16, 59);
             this.manageTypeBtn.Name = "manageTypeBtn";
             this.manageTypeBtn.Size = new System.Drawing.Size(182, 40);
             this.manageTypeBtn.TabIndex = 14;
@@ -183,7 +185,7 @@ namespace restaurant_management
             // 
             this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(14, 232);
+            this.addBtn.Location = new System.Drawing.Point(16, 13);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(182, 40);
             this.addBtn.TabIndex = 3;
@@ -207,7 +209,7 @@ namespace restaurant_management
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
             this.updateBtn.Location = new System.Drawing.Point(14, 142);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(75, 42);
+            this.updateBtn.Size = new System.Drawing.Size(75, 27);
             this.updateBtn.TabIndex = 11;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
@@ -227,6 +229,7 @@ namespace restaurant_management
             // foodDetailsPanel
             // 
             this.foodDetailsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.foodDetailsPanel.Controls.Add(this.functionPanel);
             this.foodDetailsPanel.Controls.Add(this.foodInformationPanel);
             this.foodDetailsPanel.Controls.Add(this.foodDetailsLabel);
             this.foodDetailsPanel.Dock = System.Windows.Forms.DockStyle.Right;
@@ -246,7 +249,7 @@ namespace restaurant_management
             this.foodDetailsLabel.Location = new System.Drawing.Point(0, 0);
             this.foodDetailsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.foodDetailsLabel.Name = "foodDetailsLabel";
-            this.foodDetailsLabel.Size = new System.Drawing.Size(213, 63);
+            this.foodDetailsLabel.Size = new System.Drawing.Size(213, 50);
             this.foodDetailsLabel.TabIndex = 3;
             this.foodDetailsLabel.Text = "Food Details";
             this.foodDetailsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -273,13 +276,16 @@ namespace restaurant_management
             this.searchBarPanel.Size = new System.Drawing.Size(479, 35);
             this.searchBarPanel.TabIndex = 1;
             // 
-            // searchTextBox
+            // label1
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(3, 7);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(243, 20);
-            this.searchTextBox.TabIndex = 0;
-            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(333, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "*Type food name to search";
             // 
             // searchBtn
             // 
@@ -292,16 +298,37 @@ namespace restaurant_management
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // label1
+            // searchTextBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(333, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "*Type food name to search";
+            this.searchTextBox.Location = new System.Drawing.Point(3, 7);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(243, 20);
+            this.searchTextBox.TabIndex = 0;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Black;
+            this.exportBtn.Location = new System.Drawing.Point(16, 105);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(182, 40);
+            this.exportBtn.TabIndex = 15;
+            this.exportBtn.Text = "Export Excel";
+            this.exportBtn.UseVisualStyleBackColor = true;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
+            // functionPanel
+            // 
+            this.functionPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.functionPanel.Controls.Add(this.exportBtn);
+            this.functionPanel.Controls.Add(this.addBtn);
+            this.functionPanel.Controls.Add(this.manageTypeBtn);
+            this.functionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.functionPanel.Location = new System.Drawing.Point(0, 227);
+            this.functionPanel.Name = "functionPanel";
+            this.functionPanel.Size = new System.Drawing.Size(213, 166);
+            this.functionPanel.TabIndex = 2;
             // 
             // foodManagementF
             // 
@@ -321,6 +348,7 @@ namespace restaurant_management
             this.dataPanel.ResumeLayout(false);
             this.searchBarPanel.ResumeLayout(false);
             this.searchBarPanel.PerformLayout();
+            this.functionPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -346,5 +374,7 @@ namespace restaurant_management
         private Button searchBtn;
         private TextBox searchTextBox;
         private Label label1;
+        private Button exportBtn;
+        private Panel functionPanel;
     }
 }
