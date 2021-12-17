@@ -17,6 +17,7 @@ namespace restaurant_management
         {
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
+            role_txtbox.Text = "employee";
         }
         public bool isValid(string s)
         {
@@ -69,6 +70,7 @@ namespace restaurant_management
             lastname_txtbox.Text = "";
             dateTimePicker1.Value = DateTime.Today;
             comboBox1.SelectedIndex = 0;
+            role_txtbox.Text = "employee";
         }
     }
 }

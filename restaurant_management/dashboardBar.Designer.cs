@@ -35,21 +35,19 @@
             this.btnCashOut = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.userPanel = new System.Windows.Forms.Panel();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.userIcon = new System.Windows.Forms.PictureBox();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.titleBar = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
             this.workspace = new System.Windows.Forms.Panel();
-
-            this.userIcon = new System.Windows.Forms.PictureBox();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.userPanel = new System.Windows.Forms.Panel();
             this.sideNav.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.titleBar.SuspendLayout();
+            this.userPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            this.userPanel.SuspendLayout();
-          
+            this.titleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // sideNav
@@ -169,15 +167,60 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-
             this.panelLogo.Controls.Add(this.userPanel);
-
             this.panelLogo.Controls.Add(this.logo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(200, 100);
             this.panelLogo.TabIndex = 0;
+            // 
+            // userPanel
+            // 
+            this.userPanel.Controls.Add(this.usernameLabel);
+            this.userPanel.Controls.Add(this.userIcon);
+            this.userPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.userPanel.Location = new System.Drawing.Point(0, 76);
+            this.userPanel.Name = "userPanel";
+            this.userPanel.Size = new System.Drawing.Size(200, 24);
+            this.userPanel.TabIndex = 3;
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.Color.White;
+            this.usernameLabel.Location = new System.Drawing.Point(54, 0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(146, 24);
+            this.usernameLabel.TabIndex = 2;
+            this.usernameLabel.Text = "label1";
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // userIcon
+            // 
+            this.userIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.userIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.userIcon.Image = global::restaurant_management.Properties.Resources.R;
+            this.userIcon.Location = new System.Drawing.Point(0, 0);
+            this.userIcon.Name = "userIcon";
+            this.userIcon.Size = new System.Drawing.Size(54, 24);
+            this.userIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userIcon.TabIndex = 1;
+            this.userIcon.TabStop = false;
+            this.userIcon.Click += new System.EventHandler(this.userIcon_Click);
+            // 
+            // logo
+            // 
+            this.logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logo.Image = global::restaurant_management.Properties.Resources.logo_uit_300x248;
+            this.logo.Location = new System.Drawing.Point(0, 0);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(200, 73);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
             // 
             // titleBar
             // 
@@ -213,54 +256,6 @@
             this.workspace.TabIndex = 2;
             this.workspace.Paint += new System.Windows.Forms.PaintEventHandler(this.workspace_Paint);
             // 
-
-            // userIcon
-            // 
-            this.userIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.userIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.userIcon.Image = global::restaurant_management.Properties.Resources.R;
-            this.userIcon.Location = new System.Drawing.Point(0, 0);
-            this.userIcon.Name = "userIcon";
-            this.userIcon.Size = new System.Drawing.Size(54, 24);
-            this.userIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userIcon.TabIndex = 1;
-            this.userIcon.TabStop = false;
-            // 
-            // logo
-            // 
-            this.logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.logo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logo.Image = global::restaurant_management.Properties.Resources.logo_uit_300x248;
-            this.logo.Location = new System.Drawing.Point(0, 0);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(200, 73);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 0;
-            this.logo.TabStop = false;
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(54, 0);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(146, 24);
-            this.usernameLabel.TabIndex = 2;
-            this.usernameLabel.Text = "label1";
-            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // userPanel
-            // 
-            this.userPanel.Controls.Add(this.usernameLabel);
-            this.userPanel.Controls.Add(this.userIcon);
-            this.userPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.userPanel.Location = new System.Drawing.Point(0, 76);
-            this.userPanel.Name = "userPanel";
-            this.userPanel.Size = new System.Drawing.Size(200, 24);
-            this.userPanel.TabIndex = 3;
-
-            // 
             // dashboardBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,12 +274,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.dashboard_FormClosed);
             this.sideNav.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-
-            this.titleBar.ResumeLayout(false);
+            this.userPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            this.userPanel.ResumeLayout(false);
-
+            this.titleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
