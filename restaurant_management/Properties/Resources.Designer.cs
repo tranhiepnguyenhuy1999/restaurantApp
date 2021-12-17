@@ -63,6 +63,16 @@ namespace restaurant_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap img_257423 {
+            get {
+                object obj = ResourceManager.GetObject("img_257423", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_uit_300x248 {
             get {
                 object obj = ResourceManager.GetObject("logo-uit-300x248", resourceCulture);
@@ -73,9 +83,9 @@ namespace restaurant_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_info {
+        internal static System.Drawing.Bitmap R {
             get {
-                object obj = ResourceManager.GetObject("user info", resourceCulture);
+                object obj = ResourceManager.GetObject("R", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -250,7 +250,12 @@
     <None Include="Resources\logo-uit-300x248.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user info.png" />
+
+    <None Include="Resources\img_257423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.png" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

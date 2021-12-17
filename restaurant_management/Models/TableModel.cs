@@ -12,6 +12,7 @@ namespace restaurant_management.Models
         public string Name { get; set; }
         public BillModel Bill { get; set; }
         public float TotalPrice { get; set; }
+        public bool Status { get; set; }
         public TableModel(int id, string name)
         {
             ID = id;
@@ -19,6 +20,7 @@ namespace restaurant_management.Models
             Random random = new Random();
             Bill = new BillModel(random.Next());
             TotalPrice = 0;
+            Status = false;
         }
         public void SetTotalPrice()
         {
