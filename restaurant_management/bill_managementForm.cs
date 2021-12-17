@@ -33,6 +33,17 @@ namespace restaurant_management
             }
             sum_txtbox.Text = sum.ToString();
         }
+        void findtotal1()
+        {
+            int count = dgv.Rows.Count-1;
+            long sum = 0;
+            bill_count_txtbox.Text = count.ToString();
+            for (int i = 0; i < count; i++)
+            {
+                sum += int.Parse(dgv.Rows[i].Cells[1].Value.ToString());
+            }
+            sum_txtbox.Text = sum.ToString();
+        }
         public bill_managementForm()
         {
             InitializeComponent();
@@ -41,7 +52,12 @@ namespace restaurant_management
             typecb.SelectedIndex = 0;
             sortcb.SelectedIndex = 0;
             timecb.SelectedIndex = 0;
+            dgv.Columns[0].HeaderText = "Id";
+            dgv.Columns[1].HeaderText = "Total money";
+            dgv.Columns[2].HeaderText = "Total amount";
+            dgv.Columns[3].HeaderText = "Date";
         }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -104,9 +120,47 @@ namespace restaurant_management
         }
         private void label10_Click(object sender, EventArgs e)
         {
-            dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
-            findtotal();
+            if(typecb.SelectedIndex==1)
+            {
+                timecb.Enabled = false;              
+                dgv.DataSource = billDAO.Instance.getListBillyy(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal1();
+                dgv.Columns[0].HeaderText = "Month";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+            }
+            else if(typecb.SelectedIndex == 2)
+            {
+                timecb.Enabled = false;
+                dgv.DataSource = billDAO.Instance.getListBillmm(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal1();
+                dgv.Columns[0].HeaderText = "Day";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+            }
+            else if(typecb.SelectedIndex == 0)
+            {
+                timecb.Enabled = true;
+                dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal();
+                dgv.Columns[0].HeaderText = "Id";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+                dgv.Columns[3].HeaderText = "Date";
+            }
+            else
+            {
+                timecb.Enabled = false;
+                dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal();
+                dgv.Columns[0].HeaderText = "Id";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+                dgv.Columns[3].HeaderText = "Date";
+            }
         }
+
+        
 
         private void typecb_SelectedIndexChanged(object sender, EventArgs e)
         {

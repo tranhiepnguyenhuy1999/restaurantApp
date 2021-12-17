@@ -103,155 +103,13 @@ namespace restaurant_management.DAO
                         datatb = DataProvider.Instance.ExecuteQuery(query);
                     }
                 }
-            }
-            else if(flag0==1) //year
-            {
-                if(flag1 == 0)
+                foreach (DataRow item in datatb.Rows)
                 {
-                    if (flag2 == 0)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date DESC,total_amount ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 1)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date DESC,total_amount DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 2)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date DESC,total_money ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 3)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date DESC,total_money DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
+                    Bill bill = new Bill(item);
+                    listbill.Add(bill);
                 }
-                else if (flag1 == 1)
-                {
-                    if (flag2 == 0)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date ASC,total_amount ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 1)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date ASC,total_amount DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 2)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date ASC,total_money ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 3)
-                    {
-                        string query = "SELECT * FROM bill WHERE year(create_date)=" + year + " order by create_date ASC,total_money DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                }
-            }
-            else if (flag0 == 2) //month
-            {
-                if(flag1 == 0)
-                {
-                    if (flag2 == 0)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date DESC,total_amount ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 1)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date DESC,total_amount DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 2)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" +month + " order by create_date DESC,total_money ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 3)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date DESC,total_money DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                }
-                else if (flag1 == 1)
-                {
-                    if (flag2 == 0)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date ASC,total_amount ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 1)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date ASC,total_amount DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 2)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date ASC,total_money ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 3)
-                    {
-                        string query = "SELECT * FROM bill WHERE month(create_date)=" + month + " order by create_date ASC,total_money DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                }
-            }
-            else if (flag0 == 3)//DAY
-            {
-                if(flag1 == 0)
-                {
-                    if (flag2 == 0)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date DESC,total_amount ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 1)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date DESC,total_amount DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 2)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date DESC,total_money ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 3)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date DESC,total_money DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                }
-                else if (flag1 == 1)
-                {
-                    if (flag2 == 0)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date ASC,total_amount ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 1)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date ASC,total_amount DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 2)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date ASC,total_money ASC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                    else if (flag2 == 3)
-                    {
-                        string query = "SELECT * FROM bill WHERE DAY(create_date)=" + day + " order by create_date ASC,total_money DESC";
-                        datatb = DataProvider.Instance.ExecuteQuery(query);
-                    }
-                }
-            }
-            else if (flag0 == 4)//date
+            }                    
+            else if (flag0 == 3)//date
             {
                 if (flag1 == 0)
                 {
@@ -299,16 +157,152 @@ namespace restaurant_management.DAO
                         datatb = DataProvider.Instance.ExecuteQuery(query, new object[] { create_day0 });
                     }
                 }
-            }
-            foreach (DataRow item in datatb.Rows)
-            {
-                Bill bill = new Bill(item);
-                listbill.Add(bill);
-            }
+                foreach (DataRow item in datatb.Rows)
+                {
+                    Bill bill = new Bill(item);
+                    listbill.Add(bill);
+                }
+            }   
             return listbill;
 
         }
-        public int insertNewBill(int total_amount, float @total_monney, DateTime @create_day)
+        public DataTable getListBillyy(DateTime create_day0, int flag0 = 0, int flag1 = 0, int flag2 = 0)
+        {
+            DataTable datatb = new DataTable();
+            int year0 = create_day0.Year;
+            string year = year0.ToString();
+            int month0 = create_day0.Month;
+            string month = month0.ToString();
+            int day0 = create_day0.Day;
+             if (flag0 == 1) //year
+            {
+                if (flag1 == 0)
+                {
+                    if (flag2 == 0)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_amount) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 1)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_amount) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 2)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_money) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 3)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_money) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                }
+                else if (flag1 == 1)
+                {
+                    if (flag2 == 0)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_amount) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 1)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_amount) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 2)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_money) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 3)
+                    {
+                        string query = "select month(create_date) as Month,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)="
+                            + year + " group by month(create_date) order by  sum(total_money) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                }
+            }
+            return datatb;
+        }
+        public DataTable getListBillmm(DateTime create_day0, int flag0 = 0, int flag1 = 0, int flag2 = 0)
+        {
+
+            DataTable datatb = new DataTable();
+            int year0 = create_day0.Year;
+            string year = year0.ToString();
+            int month0 = create_day0.Month;
+            string month = month0.ToString();
+            if (flag0 == 2) //month
+            {
+                if (flag1 == 0)
+                {
+                    if (flag2 == 0)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                             " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_amount) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 1)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                             " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_amount) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 2)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                              " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_money) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 3)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                              " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_money) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                }
+                else if (flag1 == 1)
+                {
+
+                    if (flag2 == 0)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                             " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_amount) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 1)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                             " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_amount) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 2)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                              " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_money) ASC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                    else if (flag2 == 3)
+                    {
+                        string query = "select day(create_date) as Day,sum(total_money) as Total_Money,sum(total_amount) as Total_Amount from bill WHERE year(create_date)=" + year +
+                              " and month(create_date) =" + month + " group by day(create_date) order by  sum(total_money) DESC";
+                        datatb = DataProvider.Instance.ExecuteQuery(query);
+                    }
+                }
+            }
+            return datatb;
+        }
+
+            public int insertNewBill(int total_amount, float @total_monney, DateTime @create_day)
         {
             int result = 0, id = 0;
             string query1 = "call  insertBill ( @total_amount , @total_monney , @create_day )";
@@ -328,6 +322,7 @@ namespace restaurant_management.DAO
             result = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { id_bill,amount, food_name, price });
             return result;
         }//chen vao bill dua vao id bill ,tra ve 0 thi chen k thanh cong khac 0 thi thanh cong
+
         public int insertNewBillWithBillDetails(List<BillDetailsModel> bill_details, int total_amount, float total_money)
         {
             int id = 0;
