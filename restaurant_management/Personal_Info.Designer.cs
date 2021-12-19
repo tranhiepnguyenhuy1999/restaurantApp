@@ -75,7 +75,6 @@ namespace restaurant_management
             // 
             this.phone_txtbox.Location = new System.Drawing.Point(94, 155);
             this.phone_txtbox.Name = "phone_txtbox";
-            this.phone_txtbox.ReadOnly = true;
             this.phone_txtbox.Size = new System.Drawing.Size(164, 20);
             this.phone_txtbox.TabIndex = 27;
             // 
@@ -83,7 +82,6 @@ namespace restaurant_management
             // 
             this.lastname_txtbox.Location = new System.Drawing.Point(94, 124);
             this.lastname_txtbox.Name = "lastname_txtbox";
-            this.lastname_txtbox.ReadOnly = true;
             this.lastname_txtbox.Size = new System.Drawing.Size(164, 20);
             this.lastname_txtbox.TabIndex = 28;
             // 
@@ -91,7 +89,6 @@ namespace restaurant_management
             // 
             this.firstname_txtbox.Location = new System.Drawing.Point(94, 88);
             this.firstname_txtbox.Name = "firstname_txtbox";
-            this.firstname_txtbox.ReadOnly = true;
             this.firstname_txtbox.Size = new System.Drawing.Size(164, 20);
             this.firstname_txtbox.TabIndex = 29;
             // 
@@ -216,9 +213,9 @@ namespace restaurant_management
             // update_btn
             // 
             this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_btn.Location = new System.Drawing.Point(139, 291);
+            this.update_btn.Location = new System.Drawing.Point(94, 291);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(119, 38);
+            this.update_btn.Size = new System.Drawing.Size(164, 38);
             this.update_btn.TabIndex = 34;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;

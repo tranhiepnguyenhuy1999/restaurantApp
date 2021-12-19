@@ -48,7 +48,7 @@ namespace restaurant_management
             this.label8 = new System.Windows.Forms.Label();
             this.phone_txtbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.role_txtbox = new System.Windows.Forms.TextBox();
+            this.rolecbo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -236,12 +236,17 @@ namespace restaurant_management
             this.label9.TabIndex = 0;
             this.label9.Text = "Role";
             // 
-            // role_txtbox
+            // rolecbo
             // 
-            this.role_txtbox.Location = new System.Drawing.Point(87, 301);
-            this.role_txtbox.Name = "role_txtbox";
-            this.role_txtbox.Size = new System.Drawing.Size(181, 20);
-            this.role_txtbox.TabIndex = 1;
+            this.rolecbo.FormattingEnabled = true;
+            this.rolecbo.Items.AddRange(new object[] {
+            "Admin",
+            "Manager",
+            "Employee"});
+            this.rolecbo.Location = new System.Drawing.Point(88, 301);
+            this.rolecbo.Name = "rolecbo";
+            this.rolecbo.Size = new System.Drawing.Size(181, 21);
+            this.rolecbo.TabIndex = 5;
             // 
             // add_user
             // 
@@ -249,6 +254,7 @@ namespace restaurant_management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(312, 364);
+            this.Controls.Add(this.rolecbo);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
@@ -265,12 +271,12 @@ namespace restaurant_management
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pass_txtbox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.role_txtbox);
             this.Controls.Add(this.user_txtbox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Name = "add_user";
             this.Text = "Add User";
+            this.Load += new System.EventHandler(this.add_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,6 +303,6 @@ namespace restaurant_management
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox phone_txtbox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox role_txtbox;
+        private System.Windows.Forms.ComboBox rolecbo;
     }
 }

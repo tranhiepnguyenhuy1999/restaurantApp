@@ -195,7 +195,7 @@
             this.usernameLabel.Size = new System.Drawing.Size(146, 24);
             this.usernameLabel.TabIndex = 2;
             this.usernameLabel.Text = "label1";
-            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // userIcon
             // 

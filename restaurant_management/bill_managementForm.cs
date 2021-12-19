@@ -148,10 +148,11 @@ namespace restaurant_management
             string check = UserInfo.Instance.Role;
             if (!(String.Equals(check,"admin")))
             {
-                dateTimePicker1.Enabled = false;
-                typecb.Enabled = false;
-                sortcb.Enabled = false;
-                timecb.Enabled = false;
+                dateTimePicker1.Visible = false;
+                typecb.Visible = false;
+                sortcb.Visible = false;
+                timecb.Visible = false;
+                find_btn.Visible = false;
             }
         }
 
