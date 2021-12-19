@@ -29,7 +29,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.add_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.firstname_txtbox = new System.Windows.Forms.TextBox();
@@ -249,14 +249,14 @@ namespace restaurant_management
             this.dgv_user.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.dgv_user.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_user.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_user.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_user.Location = new System.Drawing.Point(1, 29);
             this.dgv_user.Name = "dgv_user";
             this.dgv_user.ReadOnly = true;
@@ -315,7 +315,7 @@ namespace restaurant_management
             this.printTable_btn.Name = "printTable_btn";
             this.printTable_btn.Size = new System.Drawing.Size(119, 38);
             this.printTable_btn.TabIndex = 17;
-            this.printTable_btn.Text = "Convert to Excel";
+            this.printTable_btn.Text = "Export Excel";
             this.printTable_btn.UseVisualStyleBackColor = true;
             this.printTable_btn.Click += new System.EventHandler(this.printTable_btn_Click);
             // 

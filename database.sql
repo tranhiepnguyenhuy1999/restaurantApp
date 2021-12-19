@@ -127,8 +127,8 @@ CALL insertNewFood('Rau câu', 12000, 2, '2021-10-21');
 CALL insertNewFood('Bánh mì Bò Kho', 45000, 1, '2021-10-21');
 CALL insertNewFood('Hủ tiếu mực', 60000, 1, '2021-10-21');
 -- user
-CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "123456",'2019-11-20','admin');
-CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "123456",'2019-12-31','employee'); 
+CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "2251022057731868917119086224872421513662",'2019-11-20','admin');
+CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "2251022057731868917119086224872421513662",'2019-12-31','employee'); 
 -- bill
 INSERT INTO 
 	bill(total_money, total_amount, create_date)

@@ -294,7 +294,7 @@ namespace restaurant_management
             this.printTable_btn.Name = "printTable_btn";
             this.printTable_btn.Size = new System.Drawing.Size(119, 38);
             this.printTable_btn.TabIndex = 18;
-            this.printTable_btn.Text = "Convert to Excel";
+            this.printTable_btn.Text = "Export Excel";
             this.printTable_btn.UseVisualStyleBackColor = true;
             this.printTable_btn.Click += new System.EventHandler(this.printTable_btn_Click);
             // 
