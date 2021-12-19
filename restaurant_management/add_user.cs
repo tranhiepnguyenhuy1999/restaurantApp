@@ -16,8 +16,7 @@ namespace restaurant_management
         public add_user()
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 0;
-            role_txtbox.Text = "employee";
+            
         }
         public bool isValid(string s)
         {
@@ -36,7 +35,11 @@ namespace restaurant_management
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (pass_txtbox.Text != repass_txtbox.Text)
+            if (String.IsNullOrEmpty(pass_txtbox.Text))
+            {
+                MessageBox.Show("Password không được để trống");
+            }
+            else if (pass_txtbox.Text != repass_txtbox.Text)
             {
                MessageBox.Show("Re-pass phải trùng với pass");
             }
@@ -70,7 +73,13 @@ namespace restaurant_management
             lastname_txtbox.Text = "";
             dateTimePicker1.Value = DateTime.Today;
             comboBox1.SelectedIndex = 0;
-            role_txtbox.Text = "employee";
+            rolecbo.SelectedIndex = 2;
+        }
+
+        private void add_user_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+            rolecbo.SelectedIndex = 2;
         }
     }
 }

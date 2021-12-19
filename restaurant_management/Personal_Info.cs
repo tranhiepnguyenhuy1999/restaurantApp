@@ -23,7 +23,7 @@ namespace restaurant_management
         private void Personal_Info_Load(object sender, EventArgs e)
         {
             user_txtbox.Text = current_user.User_name;
-            pass_txtbox.Text = current_user.User_password;
+            pass_txtbox.Text = "";
             firstname_txtbox.Text = current_user.First_name;
             lastname_txtbox.Text = current_user.Last_name;
             phone_txtbox.Text = current_user.Phone;
@@ -43,6 +43,10 @@ namespace restaurant_management
 
         private void update_btn_Click(object sender, EventArgs e)
         {
+            if ((pass_txtbox.Enabled == true) || (String.IsNullOrEmpty(pass_txtbox.Text)) )
+            {
+                MessageBox.Show("Password không được để trống");
+            }
             if (isValid(phone_txtbox.Text))
             {
                 userDAO.Instance.updateUser(current_user.ID, current_user.First_name, current_user.Last_name, current_user.Phone, current_user.Birthday, current_user.User_name, current_user.User_password, current_user.Gender);

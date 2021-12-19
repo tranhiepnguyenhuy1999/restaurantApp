@@ -42,13 +42,17 @@ namespace restaurant_management
             if (int.Parse(dgv_user.Rows[num].Cells[6].Value.ToString()) == 0) cbo_gender.SelectedIndex = 0;
             else cbo_gender.SelectedIndex = 1;
             user_txtbox.Text = dgv_user.Rows[num].Cells[7].Value.ToString();
-            pass_txtbox.Text = dgv_user.Rows[num].Cells[8].Value.ToString();
+            pass_txtbox.Text = "";
         }
 
         private void update_btn_Click_1(object sender, EventArgs e)
         {
             int num = dgv_user.CurrentCell.RowIndex;
-            if (isValid(phone_txtbox.Text))
+            if ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text)) )
+            {
+                MessageBox.Show("Password không được để trống");
+            }
+            else if (isValid(phone_txtbox.Text))
             {
                 string gender = cbo_gender.SelectedItem.ToString();
                 int g;
