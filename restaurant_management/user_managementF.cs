@@ -34,6 +34,7 @@ namespace restaurant_management
         private void dgv_user_SelectionChanged(object sender, EventArgs e)
         {
             int num = dgv_user.CurrentCell.RowIndex;
+            string role = dgv_user.Rows[num].Cells[10].Value.ToString();
             DateTime date = Convert.ToDateTime(dgv_user.Rows[num].Cells[5].Value.ToString());
             firstname_txtbox.Text = dgv_user.Rows[num].Cells[1].Value.ToString();
             lastname_txtbox.Text = dgv_user.Rows[num].Cells[2].Value.ToString();
@@ -43,14 +44,19 @@ namespace restaurant_management
             else cbo_gender.SelectedIndex = 1;
             user_txtbox.Text = dgv_user.Rows[num].Cells[7].Value.ToString();
             pass_txtbox.Text = "";
+            rolecbo.SelectedIndex = rolecbo.FindString(role);
         }
 
         private void update_btn_Click_1(object sender, EventArgs e)
         {
             int num = dgv_user.CurrentCell.RowIndex;
-            if ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text)) )
+            if ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text)))
             {
                 MessageBox.Show("Password không được để trống");
+            }
+            else if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role=="admin"))
+            {
+                MessageBox.Show("Role được chọn không hợp lệ");
             }
             else if (isValid(phone_txtbox.Text))
             {
@@ -100,7 +106,10 @@ namespace restaurant_management
 
         private void user_managementF_Load(object sender, EventArgs e)
         {
-
+            if (UserInfo.Instance.Role == "admin")
+            {
+                rolecbo.Items.Add("admin");
+            }
         }
 
         private void delete_btn_Click(object sender, EventArgs e)

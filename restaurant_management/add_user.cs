@@ -73,13 +73,17 @@ namespace restaurant_management
             lastname_txtbox.Text = "";
             dateTimePicker1.Value = DateTime.Today;
             comboBox1.SelectedIndex = 0;
-            rolecbo.SelectedIndex = 2;
+            rolecbo.SelectedIndex = 1;
         }
 
         private void add_user_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            rolecbo.SelectedIndex = 2;
+            rolecbo.SelectedIndex = 1;
+            if (UserInfo.Instance.Role == "admin")
+            {
+                rolecbo.Items.Add("admin");
+            }
         }
     }
 }
