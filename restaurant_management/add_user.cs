@@ -45,9 +45,13 @@ namespace restaurant_management
             }
             else if (isValid(phone_txtbox.Text.ToString()) == false)
             {
-                MessageBox.Show("SĐT không hợp lệ");
+               MessageBox.Show("SĐT không hợp lệ");
             }
-            else
+            else  if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role == "admin"))
+            {
+               MessageBox.Show("Role được chọn không hợp lệ");
+            }
+                else
             {
                 DateTime date = dateTimePicker1.Value.Date;
                 string gender = comboBox1.SelectedItem.ToString();
