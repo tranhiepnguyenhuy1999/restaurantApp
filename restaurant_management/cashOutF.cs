@@ -45,10 +45,12 @@ namespace restaurant_management
 
                 Button button = new Button();
                 button.Size = new Size(100, 100);
-                button.BackColor = table.Status ? Color.Red : Color.Green;
+                button.BackColor = table.Status ? StatusColors.Occupied : StatusColors.Empty;
                 button.Text = table.Name;
                 button.Tag = Tables.IndexOf(table);
                 button.Click += button_Click;
+                
+                if (tablesFlowLayoutPanel.Enabled == false) button.BackColor = StatusColors.Disabled;
 
                 tableButtons.Add(button);
             }
@@ -127,6 +129,7 @@ namespace restaurant_management
         {
             if (typeComboBox.SelectedIndex == 0)
             {
+                if (tablesFlowLayoutPanel.Enabled == true) return;
                 tablesFlowLayoutPanel.Enabled = true;
                 billDetailsDataGridView.Enabled = false;
                 foodsComboBox.Enabled = false;
@@ -137,15 +140,24 @@ namespace restaurant_management
 
                 nameValueLabel.Text = "unknown";
                 totalPriceValueLabel.Text = "0";
+
+                //change tables status
+                tablesFlowLayoutPanel.Controls.Clear();
+                tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
             } 
             else
             {
+                if (tablesFlowLayoutPanel.Enabled == false && nameValueLabel.Text == Tables[0].Name) return;
                 tablesFlowLayoutPanel.Enabled = false;
                 nameValueLabel.Text = Tables[0].Name;
                 nameValueLabel.Tag = 0;
                 billDetailsDataGridView.DataSource = Tables[0].Bill.GetBillDetailsList();
                 totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
                 SetupDataGridView();
+
+                //change tables status
+                tablesFlowLayoutPanel.Controls.Clear();
+                tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
             }
         }
         private void printBillBtn_Click(object sender, EventArgs e)

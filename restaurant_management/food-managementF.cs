@@ -134,7 +134,7 @@ namespace restaurant_management
             LoadData(searchName);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exportBtn_Click(object sender, EventArgs e)
         {
             DAO.foodDAO.Instance.exportExcelListFood();
         }
