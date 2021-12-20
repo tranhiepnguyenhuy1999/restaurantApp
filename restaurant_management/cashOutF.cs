@@ -45,10 +45,12 @@ namespace restaurant_management
 
                 Button button = new Button();
                 button.Size = new Size(100, 100);
-                button.BackColor = SystemColors.Control;
+                button.BackColor = table.Status ? StatusColors.Occupied : StatusColors.Empty;
                 button.Text = table.Name;
                 button.Tag = Tables.IndexOf(table);
                 button.Click += button_Click;
+                
+                if (tablesFlowLayoutPanel.Enabled == false) button.BackColor = StatusColors.Disabled;
 
                 tableButtons.Add(button);
             }
@@ -82,6 +84,8 @@ namespace restaurant_management
 
         private void nameValueLabel_TextChanged(object sender, EventArgs e)
         {
+            if (nameValueLabel.Text == "unknown") return;
+
             billDetailsDataGridView.Enabled = true;
             foodsComboBox.Enabled = true;
             quantityNumericUpDown.Enabled = true;
@@ -114,11 +118,18 @@ namespace restaurant_management
 
             billDetailsDataGridView.DataSource = Tables[tableIndex].Bill.GetBillDetailsList();
             totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
+
+            //change tables status
+            if (Tables[tableIndex].Status == true) return;
+            Tables[tableIndex].Status = true;
+            tablesFlowLayoutPanel.Controls.Clear();
+            tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
         }
         private void typeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (typeComboBox.SelectedIndex == 0)
             {
+                if (tablesFlowLayoutPanel.Enabled == true) return;
                 tablesFlowLayoutPanel.Enabled = true;
                 billDetailsDataGridView.Enabled = false;
                 foodsComboBox.Enabled = false;
@@ -126,16 +137,27 @@ namespace restaurant_management
                 addBtn.Enabled = false;
                 deleteBillBtn.Enabled = false;
                 printBillBtn.Enabled = false;
+
+                nameValueLabel.Text = "unknown";
+                totalPriceValueLabel.Text = "0";
+
+                //change tables status
+                tablesFlowLayoutPanel.Controls.Clear();
+                tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
             } 
             else
             {
+                if (tablesFlowLayoutPanel.Enabled == false && nameValueLabel.Text == Tables[0].Name) return;
                 tablesFlowLayoutPanel.Enabled = false;
                 nameValueLabel.Text = Tables[0].Name;
                 nameValueLabel.Tag = 0;
-                totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
                 billDetailsDataGridView.DataSource = Tables[0].Bill.GetBillDetailsList();
                 totalPriceValueLabel.Text = Tables[0].TotalPrice.ToString();
                 SetupDataGridView();
+
+                //change tables status
+                tablesFlowLayoutPanel.Controls.Clear();
+                tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
             }
         }
         private void printBillBtn_Click(object sender, EventArgs e)
@@ -162,6 +184,13 @@ namespace restaurant_management
                 }
                 MessageBox.Show("Cập nhập thành công !");
             }
+
+            //change tables status
+            var tableIndex = int.Parse(nameValueLabel.Tag.ToString());
+            if (Tables[tableIndex].Status == false) return;
+            Tables[tableIndex].Status = false;
+            tablesFlowLayoutPanel.Controls.Clear();
+            tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
         }
 
         private void deleteBillBtn_Click(object sender, EventArgs e)
@@ -172,6 +201,12 @@ namespace restaurant_management
             totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
             billDetailsDataGridView.DataSource = Tables[tableIndex].Bill.GetBillDetailsList();
             totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
+
+            //change tables status
+            if (Tables[tableIndex].Status == false) return;
+            Tables[tableIndex].Status = false;
+            tablesFlowLayoutPanel.Controls.Clear();
+            tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
         }
     }
 }

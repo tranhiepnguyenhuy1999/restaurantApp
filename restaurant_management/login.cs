@@ -42,7 +42,7 @@ namespace restaurant_management
                     UserInfo.Instance.Username = user.User_name;
 
 
-                    dashboardBar dash = new dashboardBar();
+                    dashboardBar dash = new dashboardBar(txt_UserName.Text);
                     dash.ShowDialog();
                     this.Close();
 

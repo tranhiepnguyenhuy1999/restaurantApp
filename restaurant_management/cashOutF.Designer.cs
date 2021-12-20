@@ -32,6 +32,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableBillDetailsPanel = new System.Windows.Forms.Panel();
@@ -75,7 +76,7 @@ namespace restaurant_management
             this.panel1.Controls.Add(this.titlePanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(349, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 393);
             this.panel1.TabIndex = 1;
@@ -148,7 +149,7 @@ namespace restaurant_management
             this.addBtn.Enabled = false;
             this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.Location = new System.Drawing.Point(260, 239);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(76, 32);
             this.addBtn.TabIndex = 9;
@@ -173,15 +174,14 @@ namespace restaurant_management
             this.totalPriceValueLabel.Location = new System.Drawing.Point(22, 286);
             this.totalPriceValueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totalPriceValueLabel.Name = "totalPriceValueLabel";
-            this.totalPriceValueLabel.Size = new System.Drawing.Size(60, 16);
+            this.totalPriceValueLabel.Size = new System.Drawing.Size(0, 16);
             this.totalPriceValueLabel.TabIndex = 7;
-            this.totalPriceValueLabel.Text = "unknown";
             // 
             // deleteBillBtn
             // 
             this.deleteBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBillBtn.Location = new System.Drawing.Point(189, 314);
-            this.deleteBillBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteBillBtn.Margin = new System.Windows.Forms.Padding(2);
             this.deleteBillBtn.Name = "deleteBillBtn";
             this.deleteBillBtn.Size = new System.Drawing.Size(147, 32);
             this.deleteBillBtn.TabIndex = 6;
@@ -193,7 +193,7 @@ namespace restaurant_management
             // 
             this.printBillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printBillBtn.Location = new System.Drawing.Point(25, 314);
-            this.printBillBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.printBillBtn.Margin = new System.Windows.Forms.Padding(2);
             this.printBillBtn.Name = "printBillBtn";
             this.printBillBtn.Size = new System.Drawing.Size(147, 32);
             this.printBillBtn.TabIndex = 5;
@@ -209,9 +209,8 @@ namespace restaurant_management
             this.nameValueLabel.Location = new System.Drawing.Point(22, 25);
             this.nameValueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameValueLabel.Name = "nameValueLabel";
-            this.nameValueLabel.Size = new System.Drawing.Size(67, 16);
+            this.nameValueLabel.Size = new System.Drawing.Size(0, 16);
             this.nameValueLabel.TabIndex = 4;
-            this.nameValueLabel.Text = "unknown";
             this.nameValueLabel.TextChanged += new System.EventHandler(this.nameValueLabel_TextChanged);
             // 
             // billDetailsDataGridView
@@ -222,6 +221,14 @@ namespace restaurant_management
             this.billDetailsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.billDetailsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.billDetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.billDetailsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.billDetailsDataGridView.Enabled = false;
             this.billDetailsDataGridView.GridColor = System.Drawing.Color.Black;
             this.billDetailsDataGridView.Location = new System.Drawing.Point(25, 67);
@@ -271,7 +278,7 @@ namespace restaurant_management
             this.titlePanel.Controls.Add(this.tableBillLabel);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(0, 0);
-            this.titlePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.titlePanel.Margin = new System.Windows.Forms.Padding(2);
             this.titlePanel.Name = "titlePanel";
             this.titlePanel.Size = new System.Drawing.Size(348, 36);
             this.titlePanel.TabIndex = 0;

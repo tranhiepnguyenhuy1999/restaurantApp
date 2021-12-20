@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace restaurant_management
 {
@@ -118,47 +119,7 @@ namespace restaurant_management
             }
             else MessageBox.Show("Please enter number only");
         }
-        private void label10_Click(object sender, EventArgs e)
-        {
-            if(typecb.SelectedIndex==1)
-            {
-                timecb.Enabled = false;              
-                dgv.DataSource = billDAO.Instance.getListBillyy(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
-                findtotal1();
-                dgv.Columns[0].HeaderText = "Month";
-                dgv.Columns[1].HeaderText = "Total money";
-                dgv.Columns[2].HeaderText = "Total amount";
-            }
-            else if(typecb.SelectedIndex == 2)
-            {
-                timecb.Enabled = false;
-                dgv.DataSource = billDAO.Instance.getListBillmm(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
-                findtotal1();
-                dgv.Columns[0].HeaderText = "Day";
-                dgv.Columns[1].HeaderText = "Total money";
-                dgv.Columns[2].HeaderText = "Total amount";
-            }
-            else if(typecb.SelectedIndex == 0)
-            {
-                timecb.Enabled = true;
-                dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
-                findtotal();
-                dgv.Columns[0].HeaderText = "Id";
-                dgv.Columns[1].HeaderText = "Total money";
-                dgv.Columns[2].HeaderText = "Total amount";
-                dgv.Columns[3].HeaderText = "Date";
-            }
-            else
-            {
-                timecb.Enabled = false;
-                dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
-                findtotal();
-                dgv.Columns[0].HeaderText = "Id";
-                dgv.Columns[1].HeaderText = "Total money";
-                dgv.Columns[2].HeaderText = "Total amount";
-                dgv.Columns[3].HeaderText = "Date";
-            }
-        }
+
 
         
 
@@ -184,6 +145,125 @@ namespace restaurant_management
 
         private void bill_managementForm_Load(object sender, EventArgs e)
         {
+            string check = UserInfo.Instance.Role;
+            if (!(String.Equals(check,"admin")))
+            {
+                dateTimePicker1.Visible = false;
+                typecb.Visible = false;
+                sortcb.Visible = false;
+                timecb.Visible = false;
+                find_btn.Visible = false;
+            }
+        }
+
+        private void find_btn_Click(object sender, EventArgs e)
+        {
+            if (typecb.SelectedIndex == 1)
+            {
+                timecb.Enabled = false;
+                dgv.DataSource = billDAO.Instance.getListBillyy(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal1();
+                dgv.Columns[0].HeaderText = "Month";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+            }
+            else if (typecb.SelectedIndex == 2)
+            {
+                timecb.Enabled = false;
+                dgv.DataSource = billDAO.Instance.getListBillmm(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal1();
+                dgv.Columns[0].HeaderText = "Day";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+            }
+            else if (typecb.SelectedIndex == 0)
+            {
+                timecb.Enabled = true;
+                dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal();
+                dgv.Columns[0].HeaderText = "Id";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+                dgv.Columns[3].HeaderText = "Date";
+            }
+            else
+            {
+                timecb.Enabled = false;
+                dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
+                findtotal();
+                dgv.Columns[0].HeaderText = "Id";
+                dgv.Columns[1].HeaderText = "Total money";
+                dgv.Columns[2].HeaderText = "Total amount";
+                dgv.Columns[3].HeaderText = "Date";
+            }
+        }
+
+        private void printTable_btn_Click(object sender, EventArgs e)
+        {
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+
+            DataTable data = converter.ToDataTable(billDAO.Instance.getListBill());
+
+            try
+            {
+                if (data == null || data.Columns.Count == 0)
+                    throw new Exception("ExportToExcel: Null or empty input table!\n");
+
+                // load excel, and create a new workbook
+                var excelApp = new Excel.Application();
+                excelApp.Workbooks.Add();
+
+                // single worksheet
+                Excel._Worksheet workSheet = excelApp.ActiveSheet;
+
+                // column headings
+                for (var i = 0; i < data.Columns.Count; i++)
+                {
+                    workSheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                }
+
+                // rows
+                for (var i = 0; i < data.Rows.Count; i++)
+                {
+                    // to do: format datetime values before printing
+                    for (var j = 0; j < data.Columns.Count; j++)
+                    {
+                        if ((data.Rows[i][j] is DateTime?))
+                        {
+
+                            workSheet.Cells[i + 2, j + 1] = (data.Rows[i][j]).ToString();
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, j + 1] = data.Rows[i][j];
+                        }
+                    }
+                }
+
+                // check file path
+                if (!string.IsNullOrEmpty(""))
+                {
+                    try
+                    {
+                        workSheet.SaveAs("excelFilePath");
+                        excelApp.Quit();
+                        MessageBox.Show("Excel file saved!");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExportToExcel: Excel file could not be saved! Check filepath.\n"
+                                            + ex.Message);
+                    }
+                }
+                else
+                { // no file path is given
+                    excelApp.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExportToExcel: \n" + ex.Message);
+            }
         }
     }
 }

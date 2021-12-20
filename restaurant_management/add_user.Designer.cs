@@ -47,6 +47,8 @@ namespace restaurant_management
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.phone_txtbox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.rolecbo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -155,9 +157,9 @@ namespace restaurant_management
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(53, 305);
+            this.button1.Location = new System.Drawing.Point(53, 327);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 47);
+            this.button1.Size = new System.Drawing.Size(105, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
@@ -166,9 +168,9 @@ namespace restaurant_management
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(164, 305);
+            this.button2.Location = new System.Drawing.Point(164, 327);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 47);
+            this.button2.Size = new System.Drawing.Size(105, 25);
             this.button2.TabIndex = 2;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
@@ -198,6 +200,8 @@ namespace restaurant_management
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(88, 230);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
@@ -221,12 +225,36 @@ namespace restaurant_management
             this.phone_txtbox.Size = new System.Drawing.Size(181, 20);
             this.phone_txtbox.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(20, 304);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Role";
+            // 
+            // rolecbo
+            // 
+            this.rolecbo.FormattingEnabled = true;
+            this.rolecbo.Items.AddRange(new object[] {
+            "manager",
+            "employee",
+            "accountant"});
+            this.rolecbo.Location = new System.Drawing.Point(88, 301);
+            this.rolecbo.Name = "rolecbo";
+            this.rolecbo.Size = new System.Drawing.Size(181, 21);
+            this.rolecbo.TabIndex = 5;
+            // 
             // add_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(312, 364);
+            this.Controls.Add(this.rolecbo);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
@@ -244,9 +272,11 @@ namespace restaurant_management
             this.Controls.Add(this.pass_txtbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.user_txtbox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Name = "add_user";
             this.Text = "Add User";
+            this.Load += new System.EventHandler(this.add_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +302,7 @@ namespace restaurant_management
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox phone_txtbox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox rolecbo;
     }
 }

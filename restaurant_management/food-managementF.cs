@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace restaurant_management
 {
     public partial class foodManagementF : Form
@@ -134,9 +134,72 @@ namespace restaurant_management
             LoadData(searchName);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exportBtn_Click(object sender, EventArgs e)
         {
-            DAO.foodDAO.Instance.exportExcelListFood();
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+
+            DataTable data = converter.ToDataTable(Foods);
+
+            try
+            {
+                if (data == null || data.Columns.Count == 0)
+                    throw new Exception("ExportToExcel: Null or empty input table!\n");
+
+                // load excel, and create a new workbook
+                var excelApp = new Excel.Application();
+                excelApp.Workbooks.Add();
+
+                // single worksheet
+                Excel._Worksheet workSheet = excelApp.ActiveSheet;
+
+                // column headings
+                for (var i = 0; i < data.Columns.Count; i++)
+                {
+                    workSheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                }
+
+                // rows
+                for (var i = 0; i < data.Rows.Count; i++)
+                {
+                    // to do: format datetime values before printing
+                    for (var j = 0; j < data.Columns.Count; j++)
+                    {
+                        if ((data.Rows[i][j] is DateTime?))
+                        {
+
+                            workSheet.Cells[i + 2, j + 1] = (data.Rows[i][j]).ToString();
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, j + 1] = data.Rows[i][j];
+                        }
+                    }
+                }
+
+                // check file path
+                if (!string.IsNullOrEmpty(""))
+                {
+                    try
+                    {
+                        workSheet.SaveAs("excelFilePath");
+                        excelApp.Quit();
+                        MessageBox.Show("Excel file saved!");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExportToExcel: Excel file could not be saved! Check filepath.\n"
+                                            + ex.Message);
+                    }
+                }
+                else
+                { // no file path is given
+                    excelApp.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExportToExcel: \n" + ex.Message);
+            }
         }
     }
 }

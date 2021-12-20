@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace restaurant_management
 { 
     public partial class user_managementF : Form
@@ -35,6 +35,7 @@ namespace restaurant_management
         private void dgv_user_SelectionChanged(object sender, EventArgs e)
         {
             int num = dgv_user.CurrentCell.RowIndex;
+            string role = dgv_user.Rows[num].Cells[10].Value.ToString();
             DateTime date = Convert.ToDateTime(dgv_user.Rows[num].Cells[5].Value.ToString());
             firstname_txtbox.Text = dgv_user.Rows[num].Cells[1].Value.ToString();
             lastname_txtbox.Text = dgv_user.Rows[num].Cells[2].Value.ToString();
@@ -43,13 +44,22 @@ namespace restaurant_management
             if (int.Parse(dgv_user.Rows[num].Cells[6].Value.ToString()) == 0) cbo_gender.SelectedIndex = 0;
             else cbo_gender.SelectedIndex = 1;
             user_txtbox.Text = dgv_user.Rows[num].Cells[7].Value.ToString();
-            pass_txtbox.Text = dgv_user.Rows[num].Cells[8].Value.ToString();
+            pass_txtbox.Text = "";
+            rolecbo.SelectedIndex = rolecbo.FindString(role);
         }
 
         private void update_btn_Click_1(object sender, EventArgs e)
         {
             int num = dgv_user.CurrentCell.RowIndex;
-            if (isValid(phone_txtbox.Text))
+            if ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text)))
+            {
+                MessageBox.Show("Password không được để trống");
+            }
+            else if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role=="admin"))
+            {
+                MessageBox.Show("Role được chọn không hợp lệ");
+            }
+            else if (isValid(phone_txtbox.Text))
             {
                 string gender = cbo_gender.SelectedItem.ToString();
                 int g;
@@ -97,7 +107,10 @@ namespace restaurant_management
 
         private void user_managementF_Load(object sender, EventArgs e)
         {
-
+            if (UserInfo.Instance.Role == "admin")
+            {
+                rolecbo.Items.Add("admin");
+            }
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -127,6 +140,78 @@ namespace restaurant_management
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            if(searchTextBox.Text == null) dgv_user.DataSource = userDAO.Instance.getUserList();
+            else dgv_user.DataSource = userDAO.Instance.getUserList(searchTextBox.Text);
+        }
+
+        private void printTable_btn_Click(object sender, EventArgs e)
+        {
+            DataTable data = (DataTable)(dgv_user.DataSource);
+
+            try
+            {
+                if (data == null || data.Columns.Count == 0)
+                    throw new Exception("ExportToExcel: Null or empty input table!\n");
+
+                // load excel, and create a new workbook
+                var excelApp = new Excel.Application();
+                excelApp.Workbooks.Add();
+
+                // single worksheet
+                Excel._Worksheet workSheet = excelApp.ActiveSheet;
+
+                // column headings
+                for (var i = 0; i < data.Columns.Count; i++)
+                {
+                    workSheet.Cells[1, i + 1] = data.Columns[i].ColumnName;
+                }
+
+                // rows
+                for (var i = 0; i < data.Rows.Count; i++)
+                {
+                    // to do: format datetime values before printing
+                    for (var j = 0; j < data.Columns.Count; j++)
+                    {
+                        if ((data.Rows[i][j] is DateTime?))
+                        {
+
+                            workSheet.Cells[i + 2, j + 1] = (data.Rows[i][j]).ToString();
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, j + 1] = data.Rows[i][j];
+                        }
+                    }
+                }
+
+                // check file path
+                if (!string.IsNullOrEmpty(""))
+                {
+                    try
+                    {
+                        workSheet.SaveAs("excelFilePath");
+                        excelApp.Quit();
+                        MessageBox.Show("Excel file saved!");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExportToExcel: Excel file could not be saved! Check filepath.\n"
+                                            + ex.Message);
+                    }
+                }
+                else
+                { // no file path is given
+                    excelApp.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExportToExcel: \n" + ex.Message);
+            }
         }
     }
 }
