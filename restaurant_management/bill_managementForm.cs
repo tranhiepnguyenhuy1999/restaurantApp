@@ -17,11 +17,17 @@ namespace restaurant_management
     public partial class bill_managementForm : Form
     {
         int check;
+        public List<DTO.Bill> bills = new List<DTO.Bill>();
+        void SaveList()
+        {
+            bills = (List<DTO.Bill>) dgv.DataSource;
+        }
         void LoadListBill()
         {
 
             dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value,0,0,0);
             dateTimePicker1.Value = DateTime.Today;
+            SaveList();
         }
         void findtotal()
         {
@@ -110,12 +116,14 @@ namespace restaurant_management
             {
                 dgv.DataSource = billDAO.Instance.getListBill();
                 findtotal();
+                SaveList();
             }
             else if (IsDigit(ID_Find.Text))
             {
                 int num = int.Parse(ID_Find.Text.ToString());
                 dgv.DataSource = billDAO.Instance.getListBillById(num);
                 findtotal();
+                SaveList();
             }
             else MessageBox.Show("Please enter number only");
         }
@@ -163,6 +171,7 @@ namespace restaurant_management
                 timecb.Enabled = false;
                 dgv.DataSource = billDAO.Instance.getListBillyy(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal1();
+                SaveList();
                 dgv.Columns[0].HeaderText = "Month";
                 dgv.Columns[1].HeaderText = "Total money";
                 dgv.Columns[2].HeaderText = "Total amount";
@@ -172,6 +181,7 @@ namespace restaurant_management
                 timecb.Enabled = false;
                 dgv.DataSource = billDAO.Instance.getListBillmm(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal1();
+                SaveList();
                 dgv.Columns[0].HeaderText = "Day";
                 dgv.Columns[1].HeaderText = "Total money";
                 dgv.Columns[2].HeaderText = "Total amount";
@@ -181,6 +191,7 @@ namespace restaurant_management
                 timecb.Enabled = true;
                 dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal();
+                SaveList();
                 dgv.Columns[0].HeaderText = "Id";
                 dgv.Columns[1].HeaderText = "Total money";
                 dgv.Columns[2].HeaderText = "Total amount";
@@ -191,6 +202,7 @@ namespace restaurant_management
                 timecb.Enabled = false;
                 dgv.DataSource = billDAO.Instance.getListBill0(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal();
+                SaveList();
                 dgv.Columns[0].HeaderText = "Id";
                 dgv.Columns[1].HeaderText = "Total money";
                 dgv.Columns[2].HeaderText = "Total amount";
