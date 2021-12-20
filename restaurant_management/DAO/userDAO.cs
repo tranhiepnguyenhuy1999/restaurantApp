@@ -21,29 +21,39 @@ namespace restaurant_management.DAO
 
         private userDAO() { }
       
-        public DataTable getUserList (string role,string id)
+        public DataTable getUserList (string name="")
         {
+            string role = UserInfo.Instance.Role;
+            int id = UserInfo.Instance.ID;
             DataTable data;
             string query;
             if(role == "admin")
             {
-                query = "select * from user where id<>"+id;
+                if (!name.Equals(""))
+                {
+                    query = "SELECT * FROM user WHERE (LOWER(first_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%') OR  LOWER(last_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%')) AND id<>"+ id;
+                }
+                else
+                {
+                    query = "select * from user where id<>" + id;
+                }
+
                 data = DataProvider.Instance.ExecuteQuery(query);
             }
             else
             {
-                query = "select * from user where userRole<>'admin' and id<>"+id;
+                if (!name.Equals(""))
+                {
+                    query = "SELECT * FROM user WHERE (LOWER(first_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%') OR  LOWER(last_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%')) AND userRole<>'admin' AND id<>" + id;
+                }
+                else
+                {
+                    query = "select * from user where userRole<>'admin' and id<>" + id;
+                }
+
                 data = DataProvider.Instance.ExecuteQuery(query);
             }
-            if (!name.Equals(""))
-            {
-                query = "SELECT * FROM user WHERE LOWER(first_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%') OR  LOWER(last_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%')";
-            }
-            else
-            {
-                query = "select * from user";
-            }
-            data = DataProvider.Instance.ExecuteQuery(query);
+
             return data;
         }
         public int insertNewUser(string firstName, string lastName,string phone, DateTime birthDay, string user_name, string user_password, DateTime create_date,int gender) {
