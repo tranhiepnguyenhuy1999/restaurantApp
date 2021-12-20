@@ -43,14 +43,18 @@ namespace restaurant_management
 
         private void update_btn_Click(object sender, EventArgs e)
         {
-            if ((pass_txtbox.Enabled == true) || (String.IsNullOrEmpty(pass_txtbox.Text)) )
+            DateTime birthday0 = Convert.ToDateTime(birthday.Value);
+            if ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text)) )
             {
                 MessageBox.Show("Password không được để trống");
             }
-            if (isValid(phone_txtbox.Text))
+            else if (isValid(phone_txtbox.Text))
             {
-                userDAO.Instance.updateUser(current_user.ID, current_user.First_name, current_user.Last_name, current_user.Phone, current_user.Birthday, current_user.User_name, current_user.User_password, current_user.Gender);
-                MessageBox.Show("Cập nhật thành công!");
+
+                bool s = userDAO.Instance.updateUser(current_user.ID, firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday0,user_txtbox.Text, pass_txtbox.Text, cbo_gender.SelectedIndex);
+                if (s == true) {
+                    MessageBox.Show("Cập nhật thành công!");
+                }
             }
             else
             {
