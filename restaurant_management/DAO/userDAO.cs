@@ -20,11 +20,21 @@ namespace restaurant_management.DAO
         }
 
         private userDAO() { }
-
-        public DataTable getUserList (string name = "")
+      
+        public DataTable getUserList (string role,string id)
         {
             DataTable data;
             string query;
+            if(role == "admin")
+            {
+                query = "select * from user where id<>"+id;
+                data = DataProvider.Instance.ExecuteQuery(query);
+            }
+            else
+            {
+                query = "select * from user where userRole<>'admin' and id<>"+id;
+                data = DataProvider.Instance.ExecuteQuery(query);
+            }
             if (!name.Equals(""))
             {
                 query = "SELECT * FROM user WHERE LOWER(first_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%') OR  LOWER(last_name) LIKE CONCAT('%', CONVERT('" + name + "', BINARY), '%')";
@@ -119,7 +129,6 @@ namespace restaurant_management.DAO
         {
             string query = "delete from user where user_name=" + "'"+userName+ "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            System.Windows.Forms.MessageBox.Show("Xoa thanh cong!");
 
         }
         public int getidbyname(string user_name)
