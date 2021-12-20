@@ -240,9 +240,9 @@ namespace restaurant_management
             // 
             this.rolecbo.FormattingEnabled = true;
             this.rolecbo.Items.AddRange(new object[] {
-            "Admin",
-            "Manager",
-            "Employee"});
+            "manager",
+            "employee",
+            "accountant"});
             this.rolecbo.Location = new System.Drawing.Point(88, 301);
             this.rolecbo.Name = "rolecbo";
             this.rolecbo.Size = new System.Drawing.Size(181, 21);

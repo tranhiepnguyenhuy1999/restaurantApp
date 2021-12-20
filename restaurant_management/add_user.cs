@@ -45,9 +45,13 @@ namespace restaurant_management
             }
             else if (isValid(phone_txtbox.Text.ToString()) == false)
             {
-                MessageBox.Show("SĐT không hợp lệ");
+               MessageBox.Show("SĐT không hợp lệ");
             }
-            else
+            else  if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role == "admin"))
+            {
+               MessageBox.Show("Role được chọn không hợp lệ");
+            }
+                else
             {
                 DateTime date = dateTimePicker1.Value.Date;
                 string gender = comboBox1.SelectedItem.ToString();
@@ -73,13 +77,17 @@ namespace restaurant_management
             lastname_txtbox.Text = "";
             dateTimePicker1.Value = DateTime.Today;
             comboBox1.SelectedIndex = 0;
-            rolecbo.SelectedIndex = 2;
+            rolecbo.SelectedIndex = 1;
         }
 
         private void add_user_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            rolecbo.SelectedIndex = 2;
+            rolecbo.SelectedIndex = 1;
+            if (UserInfo.Instance.Role == "admin")
+            {
+                rolecbo.Items.Add("admin");
+            }
         }
     }
 }
