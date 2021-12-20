@@ -23,7 +23,7 @@ namespace restaurant_management.DAO
         public DataTable getUserList ()
         {
             DataTable data;
-            string query = "select * from user";
+            string query = "select * from user where userRole='employee' ";
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
