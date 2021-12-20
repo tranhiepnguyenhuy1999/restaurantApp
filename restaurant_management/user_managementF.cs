@@ -15,7 +15,8 @@ namespace restaurant_management
     {
         void LoadListUser()
         {
-            dgv_user.DataSource = userDAO.Instance.getUserList();
+            string id = UserInfo.Instance.ID.ToString();
+            dgv_user.DataSource = userDAO.Instance.getUserList(UserInfo.Instance.Role,id);
         }
         public user_managementF()
         {

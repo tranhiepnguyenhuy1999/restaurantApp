@@ -20,11 +20,20 @@ namespace restaurant_management.DAO
 
         private userDAO() { }
 
-        public DataTable getUserList ()
+        public DataTable getUserList (string role,string id)
         {
             DataTable data;
-            string query = "select * from user where userRole='employee' ";
-            data = DataProvider.Instance.ExecuteQuery(query);
+            string query;
+            if(role == "admin")
+            {
+                query = "select * from user where id<>"+id;
+                data = DataProvider.Instance.ExecuteQuery(query);
+            }
+            else
+            {
+                query = "select * from user where userRole<>'admin' and id<>"+id;
+                data = DataProvider.Instance.ExecuteQuery(query);
+            }
             return data;
         }
 
@@ -79,7 +88,6 @@ namespace restaurant_management.DAO
         {
             string query = "delete from user where user_name=" + "'"+userName+ "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            System.Windows.Forms.MessageBox.Show("Xoa thanh cong!");
 
         }
         public int getidbyname(string user_name)
