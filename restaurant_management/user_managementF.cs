@@ -217,5 +217,10 @@ namespace restaurant_management
                 throw new Exception("ExportToExcel: \n" + ex.Message);
             }
         }
+
+        private void dgv_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
     }
 }
