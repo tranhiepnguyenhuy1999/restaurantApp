@@ -119,7 +119,7 @@ namespace restaurant_management
             this.Controls.Add(this.totalBill_txtbox);
             this.Controls.Add(this.label4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "bill_detailForm";
             this.Text = "bill_detailForm";
             this.Load += new System.EventHandler(this.bill_detailForm_Load);
