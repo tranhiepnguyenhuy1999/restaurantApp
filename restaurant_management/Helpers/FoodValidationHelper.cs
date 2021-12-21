@@ -10,21 +10,21 @@ namespace restaurant_management.Helpers
     {
         public static bool isFoodValid(string name, string price, string type)
         {
+            float _price = 0;
             if (String.IsNullOrEmpty(name) ||
                 String.IsNullOrEmpty(price) ||
                 String.IsNullOrEmpty(type) ||
-                !IsFloatOrInt(price))
+                !IsFloatOrInt(price, ref _price))
             {
                 return false;
             }
-            return true;
+            return _price > 0 ? true : false;
         }
 
-        static bool IsFloatOrInt(string value)
+        static bool IsFloatOrInt(string value, ref float price)
         {
             int intValue;
-            float floatValue;
-            return Int32.TryParse(value, out intValue) || float.TryParse(value, out floatValue);
+            return Int32.TryParse(value, out intValue) || float.TryParse(value, out price);
         }
     }
 }

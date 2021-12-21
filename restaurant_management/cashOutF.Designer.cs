@@ -234,6 +234,7 @@ namespace restaurant_management
             this.billDetailsDataGridView.Location = new System.Drawing.Point(25, 67);
             this.billDetailsDataGridView.MultiSelect = false;
             this.billDetailsDataGridView.Name = "billDetailsDataGridView";
+            this.billDetailsDataGridView.ReadOnly = true;
             this.billDetailsDataGridView.RowHeadersVisible = false;
             this.billDetailsDataGridView.RowHeadersWidth = 62;
             this.billDetailsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
