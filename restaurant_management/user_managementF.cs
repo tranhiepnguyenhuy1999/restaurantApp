@@ -51,9 +51,13 @@ namespace restaurant_management
         private void update_btn_Click_1(object sender, EventArgs e)
         {
             int num = dgv_user.CurrentCell.RowIndex;
-            if ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text)))
+            if ( ((pass_txtbox.Enabled == true) && (String.IsNullOrEmpty(pass_txtbox.Text))) || String.IsNullOrEmpty(firstname_txtbox.Text) || String.IsNullOrEmpty(lastname_txtbox.Text) || String.IsNullOrEmpty(phone_txtbox.Text))
             {
-                MessageBox.Show("Password không được để trống");
+                MessageBox.Show("Thông tin không được để trống");
+            }
+            else if (dateTimePicker1.Value > DateTime.Today)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ");
             }
             else if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role=="admin"))
             {

@@ -152,6 +152,7 @@ namespace restaurant_management
             // 
             // cbo_gender
             // 
+            this.cbo_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_gender.FormattingEnabled = true;
             this.cbo_gender.Items.AddRange(new object[] {
             "Nam",
@@ -323,6 +324,7 @@ namespace restaurant_management
             // 
             // rolecbo
             // 
+            this.rolecbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rolecbo.FormattingEnabled = true;
             this.rolecbo.Items.AddRange(new object[] {
             "manager",

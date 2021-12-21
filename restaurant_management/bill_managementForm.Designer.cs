@@ -71,6 +71,7 @@ namespace restaurant_management
             this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.Location = new System.Drawing.Point(2, 0);
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowHeadersWidth = 62;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -139,6 +140,7 @@ namespace restaurant_management
             this.bill_count_txtbox.Location = new System.Drawing.Point(579, 223);
             this.bill_count_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bill_count_txtbox.Name = "bill_count_txtbox";
+            this.bill_count_txtbox.ReadOnly = true;
             this.bill_count_txtbox.Size = new System.Drawing.Size(114, 20);
             this.bill_count_txtbox.TabIndex = 7;
             // 
@@ -159,6 +161,7 @@ namespace restaurant_management
             this.sum_txtbox.Location = new System.Drawing.Point(579, 253);
             this.sum_txtbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sum_txtbox.Name = "sum_txtbox";
+            this.sum_txtbox.ReadOnly = true;
             this.sum_txtbox.Size = new System.Drawing.Size(114, 20);
             this.sum_txtbox.TabIndex = 7;
             // 
@@ -223,6 +226,7 @@ namespace restaurant_management
             // 
             this.selected_id_txtbox.Location = new System.Drawing.Point(619, 284);
             this.selected_id_txtbox.Name = "selected_id_txtbox";
+            this.selected_id_txtbox.ReadOnly = true;
             this.selected_id_txtbox.Size = new System.Drawing.Size(74, 20);
             this.selected_id_txtbox.TabIndex = 7;
             // 

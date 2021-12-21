@@ -189,6 +189,7 @@ namespace restaurant_management
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Nam",
@@ -238,6 +239,7 @@ namespace restaurant_management
             // 
             // rolecbo
             // 
+            this.rolecbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rolecbo.FormattingEnabled = true;
             this.rolecbo.Items.AddRange(new object[] {
             "manager",

@@ -35,7 +35,9 @@ namespace restaurant_management
             this.dgvdetail = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdetail)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // totalBill_txtbox
@@ -69,12 +71,13 @@ namespace restaurant_management
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvdetail.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvdetail.Location = new System.Drawing.Point(34, 50);
+            this.dgvdetail.Location = new System.Drawing.Point(0, 0);
             this.dgvdetail.Name = "dgvdetail";
+            this.dgvdetail.ReadOnly = true;
             this.dgvdetail.RowHeadersVisible = false;
             this.dgvdetail.RowHeadersWidth = 62;
             this.dgvdetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdetail.Size = new System.Drawing.Size(378, 157);
+            this.dgvdetail.Size = new System.Drawing.Size(378, 172);
             this.dgvdetail.TabIndex = 9;
             // 
             // ID
@@ -95,23 +98,33 @@ namespace restaurant_management
             this.label1.TabIndex = 30;
             this.label1.Text = "Bill ID";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvdetail);
+            this.panel1.ForeColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(34, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(378, 175);
+            this.panel1.TabIndex = 32;
+            // 
             // bill_detailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(487, 324);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.totalBill_txtbox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dgvdetail);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "bill_detailForm";
             this.Text = "bill_detailForm";
             this.Load += new System.EventHandler(this.bill_detailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdetail)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +136,6 @@ namespace restaurant_management
         private System.Windows.Forms.DataGridView dgvdetail;
         private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
