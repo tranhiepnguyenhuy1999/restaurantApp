@@ -15,7 +15,7 @@ namespace restaurant_management
 {
     public partial class cashOutF : Form
     {
-        private List<TableModel> Tables;
+        public List<TableModel> Tables;
         private List<DTO.Food> Foods = new List<DTO.Food>();
         private List<int> FoodIdList = new List<int>();
         private List<string> FoodNameList = new List<string>();

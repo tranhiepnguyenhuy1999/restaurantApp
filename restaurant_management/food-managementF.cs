@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -89,7 +90,7 @@ namespace restaurant_management
                 typeComboBox.SelectedIndex.ToString()
             ))
             {
-                MessageBox.Show("Please fill all data.");
+                MessageBox.Show("Please fill all with valid data.");
                 return;
             }
 
@@ -199,6 +200,21 @@ namespace restaurant_management
             catch (Exception ex)
             {
                 throw new Exception("ExportToExcel: \n" + ex.Message);
+            }
+        }
+
+        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

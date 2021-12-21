@@ -45,7 +45,7 @@ namespace restaurant_management.DAO
            
             try
             {
-                result = DataProvider.Instance.ExecuteNonQuery(proc, new object[] { id, kind_name, from_age, to_age, create_date.ToShortDateString()});
+                result = DataProvider.Instance.ExecuteNonQuery(proc, new object[] { id, kind_name, from_age, to_age, create_date.ToString("yyyy-MM-dd HH:mm") });
             }
             catch(MySql.Data.MySqlClient.MySqlException error)
             {

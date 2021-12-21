@@ -29,7 +29,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.typesDataGridView = new System.Windows.Forms.DataGridView();
             this.foodInformationPanel = new System.Windows.Forms.Panel();
             this.toAgeNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -40,6 +40,8 @@ namespace restaurant_management
             this.nameLabel = new System.Windows.Forms.Label();
             this.fromAgeLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.typesDataGridView)).BeginInit();
             this.foodInformationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toAgeNumericUpDown)).BeginInit();
@@ -48,17 +50,19 @@ namespace restaurant_management
             // 
             // typesDataGridView
             // 
+            this.typesDataGridView.AllowUserToAddRows = false;
+            this.typesDataGridView.AllowUserToDeleteRows = false;
             this.typesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.typesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.typesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.typesDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.typesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.typesDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.typesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.typesDataGridView.MultiSelect = false;
@@ -67,10 +71,13 @@ namespace restaurant_management
             this.typesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.typesDataGridView.Size = new System.Drawing.Size(473, 175);
             this.typesDataGridView.TabIndex = 0;
+            this.typesDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.typesDataGridView_RowEnter);
             // 
             // foodInformationPanel
             // 
             this.foodInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.foodInformationPanel.Controls.Add(this.updateBtn);
+            this.foodInformationPanel.Controls.Add(this.deleteBtn);
             this.foodInformationPanel.Controls.Add(this.toAgeNumericUpDown);
             this.foodInformationPanel.Controls.Add(this.fromAgeNumericUpDown);
             this.foodInformationPanel.Controls.Add(this.toAgeLabel);
@@ -114,7 +121,7 @@ namespace restaurant_management
             // addBtn
             // 
             this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(340, 28);
+            this.addBtn.Location = new System.Drawing.Point(292, 28);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 50);
             this.addBtn.TabIndex = 11;
@@ -125,7 +132,7 @@ namespace restaurant_management
             // cancelBtn
             // 
             this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(340, 100);
+            this.cancelBtn.Location = new System.Drawing.Point(385, 100);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 50);
             this.cancelBtn.TabIndex = 8;
@@ -162,6 +169,28 @@ namespace restaurant_management
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(120, 20);
             this.nameTextBox.TabIndex = 5;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Location = new System.Drawing.Point(292, 100);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 50);
+            this.deleteBtn.TabIndex = 15;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.Location = new System.Drawing.Point(385, 28);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(75, 50);
+            this.updateBtn.TabIndex = 16;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // foodType_popupF
             // 
@@ -200,5 +229,7 @@ namespace restaurant_management
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label fromAgeLabel;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }

@@ -61,6 +61,7 @@ namespace restaurant_management
             if (currentChildForm != null)
             {
                 if (currentChildForm.Name == childForm.Name) return;
+                if (currentChildForm.Name == "cashOutF") Tables = (currentChildForm as cashOutF).Tables;
                 currentChildForm.Close();
             }
             currentChildForm = childForm;

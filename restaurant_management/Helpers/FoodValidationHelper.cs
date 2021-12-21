@@ -21,10 +21,20 @@ namespace restaurant_management.Helpers
             return _price > 0 ? true : false;
         }
 
+        public static bool isAgeRangeValid(decimal from, decimal to)
+        {
+            if (String.IsNullOrEmpty(from.ToString()) ||
+                String.IsNullOrEmpty(to.ToString()))
+            {
+                return false;
+            }
+            if (from > to) return false;
+            return true;
+        }
+
         static bool IsFloatOrInt(string value, ref float price)
         {
-            int intValue;
-            return Int32.TryParse(value, out intValue) || float.TryParse(value, out price);
+            return float.TryParse(value, out price);
         }
     }
 }

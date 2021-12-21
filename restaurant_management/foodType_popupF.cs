@@ -1,4 +1,6 @@
-﻿using System;
+﻿using restaurant_management.DAO;
+using restaurant_management.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace restaurant_management
 {
     public partial class foodType_popupF : Form
     {
+        private int selectedRow = -1;
         public foodType_popupF(List<DTO.Kind> TypeList)
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace restaurant_management
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(nameTextBox.Text) || fromAgeNumericUpDown.Value > toAgeNumericUpDown.Value)
+            if (String.IsNullOrEmpty(nameTextBox.Text) || !FoodValidationHelper.isAgeRangeValid(fromAgeNumericUpDown.Value, toAgeNumericUpDown.Value))
             {
                 MessageBox.Show("Please fill all with valid data.");
                 return;
@@ -37,7 +40,7 @@ namespace restaurant_management
 
             int idCount = typesDataGridView.Rows.Count;
             DAO.kindDAO.Instance.insertKind(
-                idCount, 
+                idCount + 1, 
                 nameTextBox.Text, 
                 int.Parse(fromAgeNumericUpDown.Value.ToString()), 
                 int.Parse(toAgeNumericUpDown.Value.ToString()),
@@ -54,6 +57,41 @@ namespace restaurant_management
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(nameTextBox.Text) || !FoodValidationHelper.isAgeRangeValid(fromAgeNumericUpDown.Value, toAgeNumericUpDown.Value))
+            {
+                MessageBox.Show("Please fill all with valid data.");
+                return;
+            }
+
+            //kindDAO.Instance.updateProps(
+            //    int.Parse(typesDataGridView.Rows[selectedRow].Cells[0].Value.ToString()),
+            //    nameTextBox.Text,
+            //    fromAgeNumericUpDown.Value,
+            //    toAgeNumericUpDown.Value
+            //);
+
+            typesDataGridView.Rows[selectedRow].Cells[1].Value = nameTextBox.Text;
+            typesDataGridView.Rows[selectedRow].Cells[2].Value = fromAgeNumericUpDown.Value;
+            typesDataGridView.Rows[selectedRow].Cells[3].Value = toAgeNumericUpDown.Value;
+        }
+
+        private void typesDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            nameTextBox.Text = typesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            fromAgeNumericUpDown.Value = int.Parse(typesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+            toAgeNumericUpDown.Value = int.Parse(typesDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            //kindDAO.Instance.deleteKind(int.Parse(typesDataGridView.Rows[selectedRow].Cells[0].Value.ToString());
+
+            typesDataGridView.DataSource = kindDAO.Instance.getListKind();
         }
     }
 }
