@@ -61,6 +61,7 @@ namespace restaurant_management
             // 
             // cbo_gender
             // 
+            this.cbo_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_gender.FormattingEnabled = true;
             this.cbo_gender.Items.AddRange(new object[] {
             "Nam",
