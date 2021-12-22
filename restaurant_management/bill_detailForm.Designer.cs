@@ -30,22 +30,26 @@ namespace restaurant_management
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.totalBill_txtbox = new System.Windows.Forms.TextBox();
+            this.amount_txtbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvdetail = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.sum_txtbox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.date_txtbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdetail)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // totalBill_txtbox
+            // amount_txtbox
             // 
-            this.totalBill_txtbox.Location = new System.Drawing.Point(253, 223);
-            this.totalBill_txtbox.Name = "totalBill_txtbox";
-            this.totalBill_txtbox.Size = new System.Drawing.Size(159, 20);
-            this.totalBill_txtbox.TabIndex = 28;
+            this.amount_txtbox.Location = new System.Drawing.Point(253, 223);
+            this.amount_txtbox.Name = "amount_txtbox";
+            this.amount_txtbox.Size = new System.Drawing.Size(159, 20);
+            this.amount_txtbox.TabIndex = 28;
             // 
             // label4
             // 
@@ -54,9 +58,9 @@ namespace restaurant_management
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(120, 226);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Total bills:";
+            this.label4.Text = "Total amount:";
             // 
             // dgvdetail
             // 
@@ -107,6 +111,42 @@ namespace restaurant_management
             this.panel1.Size = new System.Drawing.Size(378, 175);
             this.panel1.TabIndex = 32;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(120, 252);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Total sum:";
+            // 
+            // sum_txtbox
+            // 
+            this.sum_txtbox.Location = new System.Drawing.Point(253, 249);
+            this.sum_txtbox.Name = "sum_txtbox";
+            this.sum_txtbox.Size = new System.Drawing.Size(159, 20);
+            this.sum_txtbox.TabIndex = 28;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(120, 278);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Create date:";
+            // 
+            // date_txtbox
+            // 
+            this.date_txtbox.Location = new System.Drawing.Point(253, 275);
+            this.date_txtbox.Name = "date_txtbox";
+            this.date_txtbox.Size = new System.Drawing.Size(159, 20);
+            this.date_txtbox.TabIndex = 28;
+            // 
             // bill_detailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -116,7 +156,11 @@ namespace restaurant_management
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.totalBill_txtbox);
+            this.Controls.Add(this.date_txtbox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.sum_txtbox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.amount_txtbox);
             this.Controls.Add(this.label4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -131,11 +175,15 @@ namespace restaurant_management
         }
 
         #endregion
-        private System.Windows.Forms.TextBox totalBill_txtbox;
+        private System.Windows.Forms.TextBox amount_txtbox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvdetail;
         private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox sum_txtbox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox date_txtbox;
     }
 }

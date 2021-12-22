@@ -15,6 +15,9 @@ namespace restaurant_management
     public partial class bill_detailForm : Form
     {
         public string temp;
+        public string total_amount;
+        public string total_money;
+        public DateTime create_date;
         //public delegate void SendMessage(string Message);
         //public SendMessage Sender;
         public bill_detailForm()
@@ -30,8 +33,9 @@ namespace restaurant_management
             dgvdetail.DataSource = detailBillDAO.Instance.getListBillById(id_check);
             dgvdetail.Columns[0].Visible = false;
             dgvdetail.Columns[2].Visible = false;
-            int rc = dgvdetail.Rows.Count;
-            totalBill_txtbox.Text = rc.ToString();
+            amount_txtbox.Text = total_amount;
+            sum_txtbox.Text = total_money;
+            date_txtbox.Text = create_date.ToString("dd/MM/yyyy");
         }
         /*private void GetMessage(string message)
 {

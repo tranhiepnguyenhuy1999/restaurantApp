@@ -34,18 +34,7 @@ namespace restaurant_management
 
         private void dgv_user_SelectionChanged(object sender, EventArgs e)
         {
-            int num = dgv_user.CurrentCell.RowIndex;
-            string role = dgv_user.Rows[num].Cells[10].Value.ToString();
-            DateTime date = Convert.ToDateTime(dgv_user.Rows[num].Cells[5].Value.ToString());
-            firstname_txtbox.Text = dgv_user.Rows[num].Cells[1].Value.ToString();
-            lastname_txtbox.Text = dgv_user.Rows[num].Cells[2].Value.ToString();
-            phone_txtbox.Text = dgv_user.Rows[num].Cells[3].Value.ToString();
-            dateTimePicker1.Value = date.Date;
-            if (int.Parse(dgv_user.Rows[num].Cells[6].Value.ToString()) == 0) cbo_gender.SelectedIndex = 0;
-            else cbo_gender.SelectedIndex = 1;
-            user_txtbox.Text = dgv_user.Rows[num].Cells[7].Value.ToString();
-            pass_txtbox.Text = "";
-            rolecbo.SelectedIndex = rolecbo.FindString(role);
+
         }
 
         private void update_btn_Click_1(object sender, EventArgs e)
@@ -221,6 +210,41 @@ namespace restaurant_management
         private void dgv_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
+            else
+            {
+                int num = dgv_user.CurrentCell.RowIndex;
+                string role = dgv_user.Rows[num].Cells[10].Value.ToString();
+                DateTime date = Convert.ToDateTime(dgv_user.Rows[num].Cells[5].Value.ToString());
+                firstname_txtbox.Text = dgv_user.Rows[num].Cells[1].Value.ToString();
+                lastname_txtbox.Text = dgv_user.Rows[num].Cells[2].Value.ToString();
+                phone_txtbox.Text = dgv_user.Rows[num].Cells[3].Value.ToString();
+                dateTimePicker1.Value = date.Date;
+                if (int.Parse(dgv_user.Rows[num].Cells[6].Value.ToString()) == 0) cbo_gender.SelectedIndex = 0;
+                else cbo_gender.SelectedIndex = 1;
+                user_txtbox.Text = dgv_user.Rows[num].Cells[7].Value.ToString();
+                pass_txtbox.Text = "";
+                rolecbo.SelectedIndex = rolecbo.FindString(role);
+                if ((rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role) && !(UserInfo.Instance.Role == "admin") && (user_txtbox.Text != UserInfo.Instance.Username))
+                {
+                    pass_change_btn.Enabled = false;
+                    firstname_txtbox.ReadOnly = true;
+                    lastname_txtbox.ReadOnly = true;
+                    phone_txtbox.ReadOnly = true;
+                    dateTimePicker1.Enabled = false;
+                    cbo_gender.Enabled = false;
+                    rolecbo.Enabled = false;
+                }
+                else
+                {
+                    pass_change_btn.Enabled = true;
+                    firstname_txtbox.ReadOnly = false;
+                    lastname_txtbox.ReadOnly = false;
+                    phone_txtbox.ReadOnly = false;
+                    dateTimePicker1.Enabled = true;
+                    cbo_gender.Enabled = true;
+                    rolecbo.Enabled = true;
+                }
+            }
         }
     }
 }
