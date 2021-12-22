@@ -35,9 +35,9 @@ namespace restaurant_management
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(pass_txtbox.Text))
+            if (String.IsNullOrEmpty(pass_txtbox.Text) || String.IsNullOrEmpty(user_txtbox.Text) || String.IsNullOrEmpty(firstname_txtbox.Text) || String.IsNullOrEmpty(lastname_txtbox.Text) || String.IsNullOrEmpty(phone_txtbox.Text) || String.IsNullOrEmpty(repass_txtbox.Text))
             {
-                MessageBox.Show("Password không được để trống");
+                MessageBox.Show("Thông tin không được để trống");
             }
             else if (pass_txtbox.Text != repass_txtbox.Text)
             {
@@ -50,6 +50,14 @@ namespace restaurant_management
             else  if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role == "admin"))
             {
                MessageBox.Show("Role được chọn không hợp lệ");
+            }
+            else if (dateTimePicker1.Value > DateTime.Today)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ");
+            }
+            else if (check_user_valid(user_txtbox.Text) == false)
+            {
+                MessageBox.Show("Tài khoản đã tồn tại");
             }
                 else
             {
@@ -88,6 +96,13 @@ namespace restaurant_management
             {
                 rolecbo.Items.Add("admin");
             }
+        }
+        public bool check_user_valid(string s)
+        {
+            int check = userDAO.Instance.getidbyname(s);
+            if (check != 0)
+                return false;
+            else return true;
         }
     }
 }
