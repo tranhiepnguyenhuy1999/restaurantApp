@@ -214,7 +214,7 @@ namespace restaurant_management
         {
             ListtoDataTableConverter converter = new ListtoDataTableConverter();
 
-            DataTable data = converter.ToDataTable(billDAO.Instance.getListBill());
+            DataTable data = converter.ToDataTable(bills);
 
             try
             {

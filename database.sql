@@ -128,7 +128,11 @@ CALL insertNewFood('Bánh mì Bò Kho', 45000, 1, '2021-10-21');
 CALL insertNewFood('Hủ tiếu mực', 60000, 1, '2021-10-21');
 -- user
 CALL insertUser('Như', 'Trần Thị', '0915330370','2019-05-15',"admin", "2251022057731868917119086224872421513662",'2019-11-20','admin');
-CALL insertUser('Huy', 'Trần','0123456789','2019-08-01',"employee", "2251022057731868917119086224872421513662",'2019-12-31','employee'); 
+CALL insertUser('Hoa', 'NguyễnThị','0123456789','2019-08-01',"employee", "2251022057731868917119086224872421513662",'2019-12-31','employee'); 
+CALL insertUser('Lan', 'Trần Thị Phương','0123456789','2019-08-01',"employee1", "2251022057731868917119086224872421513662",'2019-12-31','employee'); 
+CALL insertUser('Sơn', 'Bành','0123456789','2019-08-01',"employee2", "2251022057731868917119086224872421513662",'2019-12-31','employee'); 
+CALL insertUser('Lương', 'Văn','0123456789','2019-08-01',"manager", "2251022057731868917119086224872421513662",'2019-12-31','manager'); 
+CALL insertUser('Chính', 'Trần','0123456789','2019-08-01',"accountant", "2251022057731868917119086224872421513662",'2019-12-31','accountant'); 
 -- bill
 INSERT INTO 
 	bill(total_money, total_amount, create_date)
@@ -322,3 +326,33 @@ BEGIN
   select * from bill where create_date= create_date0 order by create_date ASC, total_money desc;
 END; $$
 DELIMITER $$
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS updateKind $$
+CREATE PROCEDURE updateKind(
+	IN in_id INT,
+	IN in_kind_name NVARCHAR(100),
+	IN in_from_age INT,
+    IN in_to_age INT
+)
+BEGIN
+   update kind
+	set
+	kind_name= in_kind_name, from_age= in_from_age, to_age= in_to_age
+	where
+	id= in_id;
+END; $$
+DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS deleteKind $$
+CREATE PROCEDURE deleteKind(
+	IN in_id INT
+)
+BEGIN
+	delete from food 
+    where id_kind= in_id;
+    delete from  kind
+	where id= in_id;
+END; $$
+DELIMITER ;

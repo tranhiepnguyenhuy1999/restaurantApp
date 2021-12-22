@@ -54,5 +54,39 @@ namespace restaurant_management.DAO
 
             return result > 0 ? true : false;
         }
+
+        public bool updateKind(int id, string kind_name, int from_age, int to_age)
+        {
+            int result = 0;
+            string proc = "call updateKind ( @in_id , @in_kind_name , @in_from_age , @in_to_age )";
+
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(proc, new object[] { id, kind_name, from_age, to_age});
+            }
+            catch (MySql.Data.MySqlClient.MySqlException error)
+            {
+                return false;
+            }
+
+            return result > 0 ? true : false;
+        }
+
+        public bool deleteKind(int id)
+        {
+            int result = 0;
+            string proc = "call deleteKind ( @in_id)";
+
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(proc, new object[] { id });
+            }
+            catch (MySql.Data.MySqlClient.MySqlException error)
+            {
+                return false;
+            }
+
+            return result > 0 ? true : false;
+        }
     }
 }
