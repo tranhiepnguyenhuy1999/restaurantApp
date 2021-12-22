@@ -32,7 +32,7 @@ namespace restaurant_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableBillDetailsPanel = new System.Windows.Forms.Panel();
@@ -116,6 +116,7 @@ namespace restaurant_management
             // 
             // typeComboBox
             // 
+            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Items.AddRange(new object[] {
             "Tại bàn",
@@ -159,6 +160,7 @@ namespace restaurant_management
             // 
             // foodsComboBox
             // 
+            this.foodsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.foodsComboBox.Enabled = false;
             this.foodsComboBox.FormattingEnabled = true;
             this.foodsComboBox.Location = new System.Drawing.Point(25, 245);
@@ -221,19 +223,20 @@ namespace restaurant_management
             this.billDetailsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.billDetailsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.billDetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.billDetailsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.billDetailsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.billDetailsDataGridView.Enabled = false;
             this.billDetailsDataGridView.GridColor = System.Drawing.Color.Black;
             this.billDetailsDataGridView.Location = new System.Drawing.Point(25, 67);
             this.billDetailsDataGridView.MultiSelect = false;
             this.billDetailsDataGridView.Name = "billDetailsDataGridView";
+            this.billDetailsDataGridView.ReadOnly = true;
             this.billDetailsDataGridView.RowHeadersVisible = false;
             this.billDetailsDataGridView.RowHeadersWidth = 62;
             this.billDetailsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

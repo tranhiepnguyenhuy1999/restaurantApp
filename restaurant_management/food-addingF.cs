@@ -35,7 +35,7 @@ namespace restaurant_management
                 typeComboBox.SelectedItem.ToString()
             ))
             {
-                MessageBox.Show("Please fill all data.");
+                MessageBox.Show("Please fill all with valid data.");
                 return;
             }
 
@@ -46,6 +46,21 @@ namespace restaurant_management
         private void foodAddingForm_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

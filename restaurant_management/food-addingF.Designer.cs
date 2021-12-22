@@ -82,6 +82,7 @@ namespace restaurant_management
             // 
             // typeComboBox
             // 
+            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Items.AddRange(new object[] {
             "Table 1",
@@ -131,6 +132,7 @@ namespace restaurant_management
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(120, 20);
             this.priceTextBox.TabIndex = 6;
+            this.priceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTextBox_KeyPress);
             // 
             // nameTextBox
             // 
