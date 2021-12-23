@@ -37,7 +37,6 @@ namespace restaurant_management
             switch (role)
             {
                 case UserRoles.Admin:
-                case UserRoles.Manager:
                     btnFood.Enabled = true;
                     btnFood.Cursor = Cursors.Hand;
                     btnCashOut.Enabled = true;
@@ -47,9 +46,21 @@ namespace restaurant_management
                     btnEmployees.Enabled = true;
                     btnEmployees.Cursor = Cursors.Hand;
                     break;
+                case UserRoles.Manager:
+                    btnFood.Enabled = true;
+                    btnFood.Cursor = Cursors.Hand;
+                    btnBill.Enabled = true;
+                    btnBill.Cursor = Cursors.Hand;
+                    btnEmployees.Enabled = true;
+                    btnEmployees.Cursor = Cursors.Hand;
+                    break;
                 case UserRoles.Employee:
                     btnCashOut.Enabled = true;
                     btnCashOut.Cursor = Cursors.Hand;
+                    btnBill.Enabled = true;
+                    btnBill.Cursor = Cursors.Hand;
+                    break;
+                case UserRoles.Accountant:
                     btnBill.Enabled = true;
                     btnBill.Cursor = Cursors.Hand;
                     break;
@@ -92,7 +103,8 @@ namespace restaurant_management
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show("Are you sure want to exit the application?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes) Close();
         }
 
         private void btnFood_Click(object sender, EventArgs e)
