@@ -75,7 +75,7 @@ namespace restaurant_management.DAO
         public bool deleteKind(int id)
         {
             int result = 0;
-            string proc = "call deleteKind ( @in_id)";
+            string proc = "call deleteKind ( @in_id )";
 
             try
             {
