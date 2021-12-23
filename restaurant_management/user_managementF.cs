@@ -48,10 +48,6 @@ namespace restaurant_management
             {
                 MessageBox.Show("Ngày sinh không hợp lệ");
             }
-            else if (rolecbo.SelectedItem.ToString() == UserInfo.Instance.Role || !(UserInfo.Instance.Role=="admin"))
-            {
-                MessageBox.Show("Role được chọn không hợp lệ");
-            }
             else if (isValid(phone_txtbox.Text))
             {
                 string gender = cbo_gender.SelectedItem.ToString();
