@@ -17,6 +17,7 @@ namespace restaurant_management
     public partial class bill_managementForm : Form
     {
         int check;
+        int row;
         public List<DTO.Bill> bills = new List<DTO.Bill>();
         void SaveList()
         {
@@ -87,13 +88,16 @@ namespace restaurant_management
             {
                 bill_detailForm frm = new bill_detailForm();
                 frm.temp = selected_id_txtbox.Text;
+                frm.total_money = dgv.Rows[row].Cells[1].Value.ToString();
+                frm.total_amount = dgv.Rows[row].Cells[2].Value.ToString();
+                frm.create_date = Convert.ToDateTime(dgv.Rows[row].Cells[3].Value.ToString());
                 frm.ShowDialog();
             }
         }
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-            int num = dgv.CurrentCell.RowIndex;
-            selected_id_txtbox.Text = dgv.Rows[num].Cells[0].Value.ToString();
+            row = dgv.CurrentCell.RowIndex;
+            selected_id_txtbox.Text = dgv.Rows[row].Cells[0].Value.ToString();
         }
 
         private void ID_Find_TextChanged(object sender, EventArgs e)
