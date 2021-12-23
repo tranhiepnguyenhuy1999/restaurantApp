@@ -67,12 +67,12 @@ namespace restaurant_management
                 return;
             }
 
-            //kindDAO.Instance.updateProps(
-            //    int.Parse(typesDataGridView.Rows[selectedRow].Cells[0].Value.ToString()),
-            //    nameTextBox.Text,
-            //    fromAgeNumericUpDown.Value,
-            //    toAgeNumericUpDown.Value
-            //);
+            kindDAO.Instance.updateKind(
+                int.Parse(typesDataGridView.Rows[selectedRow].Cells[0].Value.ToString()),
+                nameTextBox.Text,
+                int.Parse(fromAgeNumericUpDown.Value.ToString()),
+                int.Parse(toAgeNumericUpDown.Value.ToString())
+            );
 
             typesDataGridView.Rows[selectedRow].Cells[1].Value = nameTextBox.Text;
             typesDataGridView.Rows[selectedRow].Cells[2].Value = fromAgeNumericUpDown.Value;
@@ -89,7 +89,7 @@ namespace restaurant_management
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            //kindDAO.Instance.deleteKind(int.Parse(typesDataGridView.Rows[selectedRow].Cells[0].Value.ToString());
+            kindDAO.Instance.deleteKind(int.Parse(typesDataGridView.Rows[selectedRow].Cells[0].Value.ToString()));
 
             typesDataGridView.DataSource = kindDAO.Instance.getListKind();
         }

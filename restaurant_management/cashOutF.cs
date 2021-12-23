@@ -46,11 +46,16 @@ namespace restaurant_management
                 Button button = new Button();
                 button.Size = new Size(100, 100);
                 button.BackColor = table.Status ? StatusColors.Occupied : StatusColors.Empty;
+                button.ForeColor = Color.White;
                 button.Text = table.Name;
                 button.Tag = Tables.IndexOf(table);
                 button.Click += button_Click;
-                
-                if (tablesFlowLayoutPanel.Enabled == false) button.BackColor = StatusColors.Disabled;
+
+                if (tablesFlowLayoutPanel.Enabled == false)
+                {
+                    button.BackColor = StatusColors.Disabled;
+                    button.ForeColor = Color.White;
+                }
 
                 tableButtons.Add(button);
             }
