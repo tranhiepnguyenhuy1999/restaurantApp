@@ -213,5 +213,25 @@ namespace restaurant_management
             tablesFlowLayoutPanel.Controls.Clear();
             tablesFlowLayoutPanel.Controls.AddRange(PrepareTables().ToArray());
         }
+
+        private void childrenCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (childrenCheckBox.Checked)
+            {
+                Foods = foodDAO.Instance.getListFood("", true);
+            } else
+            {
+                Foods = foodDAO.Instance.getListFood("", false);
+            }
+
+            FoodIdList = new List<int>();
+            FoodNameList = new List<string>();
+            foreach (var food in Foods)
+            {
+                FoodIdList.Add(food.ID);
+                FoodNameList.Add(food.Food_name);
+            }
+            foodsComboBox.DataSource = FoodNameList;
+        }
     }
 }

@@ -38,6 +38,8 @@ namespace restaurant_management
         {
             Foods = foodDAO.Instance.getListFood(name);
             TypeList = kindDAO.Instance.getListKind();
+            TypeIdList = new List<int>();
+            TypeNameList = new List<string>();
             foreach (var type in TypeList)
             {
                 TypeIdList.Add(type.ID);
