@@ -31,14 +31,18 @@ namespace restaurant_management.DAO
             return result;
         }
 
-        public List<DTO.Food> getListFood(string name = "")
+        public List<DTO.Food> getListFood(string name = "", bool isChildren= false)
         {
             string query;
-            if(!name.Equals(""))
+            if (isChildren) {
+               query = "select food.id, food_name, price, id_kind , food.create_date from food, kind where from_age <= 6 and id_kind= kind.id";
+            }
+            else if(!name.Equals(""))
             {
                 query = "SELECT * FROM food WHERE LOWER(food_name) LIKE CONCAT('%', CONVERT('"+name+"', BINARY), '%') ";
             }
             else query = "select * from food";
+            // call query
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             return data.AsEnumerable().Select(m => new DTO.Food()

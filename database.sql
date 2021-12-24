@@ -110,13 +110,15 @@ END; $$
 DELIMITER ;
 
 INSERT INTO 
-	kind(kind_name, create_date)
+	kind(kind_name, from_age, to_age, create_date)
 	VALUES	
-	('Món ăn', '2021-10-20'),
-	('Tráng miệng', '2021-10-20'),
-	('Thức uống', '2021-10-20');
+	('Món ăn', 0, 90, '2021-10-20'),
+	('Tráng miệng', 0, 90, '2021-10-20'),
+	('Thức uống', 0, 90,'2021-10-20'),
+	('Món ăn người lớn', 7, 90, '2021-10-20');
+
 -- food
-CALL insertNewFood('Lẩu cá', 250000, 1, '2021-10-20');
+CALL insertNewFood('Lẩu cá', 250000, 4, '2021-10-20');
 CALL insertNewFood('Thịt kho', 30000, 1, '2021-10-21');
 CALL insertNewFood('Canh chua cá kho tộ', 100000, 1, '2021-10-21');
 CALL insertNewFood('Cơm tấm', 35000, 1, '2021-10-21');
