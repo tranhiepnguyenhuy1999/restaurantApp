@@ -51,6 +51,7 @@ namespace restaurant_management
             this.nameLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.tableBillLabel = new System.Windows.Forms.Label();
+            this.childrenCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tableBillDetailsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
@@ -84,6 +85,7 @@ namespace restaurant_management
             // tableBillDetailsPanel
             // 
             this.tableBillDetailsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.tableBillDetailsPanel.Controls.Add(this.childrenCheckBox);
             this.tableBillDetailsPanel.Controls.Add(this.typeLabel);
             this.tableBillDetailsPanel.Controls.Add(this.typeComboBox);
             this.tableBillDetailsPanel.Controls.Add(this.quantityNumericUpDown);
@@ -163,9 +165,9 @@ namespace restaurant_management
             this.foodsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.foodsComboBox.Enabled = false;
             this.foodsComboBox.FormattingEnabled = true;
-            this.foodsComboBox.Location = new System.Drawing.Point(25, 245);
+            this.foodsComboBox.Location = new System.Drawing.Point(92, 245);
             this.foodsComboBox.Name = "foodsComboBox";
-            this.foodsComboBox.Size = new System.Drawing.Size(185, 21);
+            this.foodsComboBox.Size = new System.Drawing.Size(118, 21);
             this.foodsComboBox.TabIndex = 8;
             // 
             // totalPriceValueLabel
@@ -301,6 +303,18 @@ namespace restaurant_management
             this.tableBillLabel.Text = "Table Bill";
             this.tableBillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // childrenCheckBox
+            // 
+            this.childrenCheckBox.AutoSize = true;
+            this.childrenCheckBox.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.childrenCheckBox.Location = new System.Drawing.Point(25, 247);
+            this.childrenCheckBox.Name = "childrenCheckBox";
+            this.childrenCheckBox.Size = new System.Drawing.Size(64, 17);
+            this.childrenCheckBox.TabIndex = 14;
+            this.childrenCheckBox.Text = "Children";
+            this.childrenCheckBox.UseVisualStyleBackColor = true;
+            this.childrenCheckBox.CheckedChanged += new System.EventHandler(this.childrenCheckBox_CheckedChanged);
+            // 
             // cashOutF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,5 +357,6 @@ namespace restaurant_management
         private ComboBox foodsComboBox;
         private Label typeLabel;
         private ComboBox typeComboBox;
+        private CheckBox childrenCheckBox;
     }
 }
