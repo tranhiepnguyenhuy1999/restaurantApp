@@ -190,8 +190,14 @@ namespace restaurant_management
                 MessageBox.Show("Cập nhập thành công !");
             }
 
-            //change tables status
             var tableIndex = int.Parse(nameValueLabel.Tag.ToString());
+            Tables[tableIndex].Bill = new BillModel(Tables[tableIndex].Bill.ID);
+            Tables[tableIndex].SetTotalPrice();
+            totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
+            billDetailsDataGridView.DataSource = Tables[tableIndex].Bill.GetBillDetailsList();
+            totalPriceValueLabel.Text = Tables[tableIndex].TotalPrice.ToString();
+
+            //change tables status
             if (Tables[tableIndex].Status == false) return;
             Tables[tableIndex].Status = false;
             tablesFlowLayoutPanel.Controls.Clear();
