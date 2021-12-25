@@ -66,6 +66,7 @@ namespace restaurant_management
                 dgv_user.Rows[num].Cells[5].Value = birthday.Date.ToString("dd/MM/yyyy");
                 dgv_user.Rows[num].Cells[7].Value = user_txtbox.Text;
                 dgv_user.Rows[num].Cells[8].Value = pass_txtbox.Text;
+                dgv_user.Rows[num].Cells[10].Value = rolecbo.SelectedItem.ToString();
                 LoadListUser();
                 MessageBox.Show("Cập nhập thành công !");
             }
