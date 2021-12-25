@@ -58,7 +58,7 @@ namespace restaurant_management
                     g = 0;
                 DateTime birthday = Convert.ToDateTime(dateTimePicker1.Value);
                 int id = userDAO.Instance.getidbyname(user_txtbox.Text);
-                bool s=userDAO.Instance.updateUser(id, firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday, user_txtbox.Text, pass_txtbox.Text, g);
+                bool s=userDAO.Instance.updateUser(id, firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday, user_txtbox.Text, pass_txtbox.Text, g,rolecbo.SelectedItem.ToString());
                 //userDAO.Instance.updateUser(int.Parse(dgv_user.Rows[num].Cells[0].Value.ToString()), firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday, user_txtbox.Text, pass_txtbox.Text,g);
                 dgv_user.Rows[num].Cells[1].Value = firstname_txtbox.Text;
                 dgv_user.Rows[num].Cells[2].Value = lastname_txtbox.Text;
