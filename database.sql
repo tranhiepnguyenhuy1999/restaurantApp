@@ -251,15 +251,16 @@ IN id0 int,
 IN first_name NVARCHAR(100),
 IN last_name NVARCHAR(100),
 IN phone CHAR(10),
-IN birthday DATE,
+IN birthday DATETIME,
 IN user_name VARCHAR(100),
 IN user_password  VARCHAR(100),
-in gender int
+in gender int,
+IN userRole NVARCHAR(100)
 )
 BEGIN
   update user
    set first_name=first_name,last_name=last_name,phone=phone,birthday=birthday,
-   user_name=user_name,user_password=user_password,gender=gender
+   user_name=user_name,user_password=user_password,gender=gender, userRole=userRole
    where id=id0;
 END; $$
 

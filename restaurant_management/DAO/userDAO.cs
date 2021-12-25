@@ -78,7 +78,7 @@ namespace restaurant_management.DAO
                 
         }
 
-        public bool updateUser(int id0,string first_name,string last_name ,string phone,DateTime birthday, string user_name, string user_password,int gender)
+        public bool updateUser(int id0,string first_name,string last_name ,string phone,DateTime birthday, string user_name, string user_password,int gender, string role)
         {
             byte[] temp = ASCIIEncoding.ASCII.GetBytes(user_password);
             byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
@@ -91,8 +91,8 @@ namespace restaurant_management.DAO
             }
 
             int result = 0;
-            string query = "call updateUser0 ( @id0 ,  @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @gender )";
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id0, first_name, last_name ,phone, birthday.ToString("yyyy-MM-dd HH:mm"), user_name, hashPassword, gender });
+            string query = "call updateUser0 ( @id0 ,  @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @gender , @userRole )";
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id0, first_name, last_name ,phone, birthday.ToString("yyyy-MM-dd HH:mm"), user_name, hashPassword, gender, role });
             if (result == 0)
                 return false;
             return true;
