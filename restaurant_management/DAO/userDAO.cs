@@ -90,10 +90,9 @@ namespace restaurant_management.DAO
                 hashPassword += item;
             }
 
-
             int result = 0;
             string query = "call updateUser0 ( @id0 ,  @first_name , @last_name , @phone , @birthday , @user_name , @user_password , @gender )";
-            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id0, first_name, last_name ,phone, birthday,user_name, hashPassword, gender });
+            result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id0, first_name, last_name ,phone, birthday.ToString("yyyy-MM-dd HH:mm"), user_name, hashPassword, gender });
             if (result == 0)
                 return false;
             return true;
