@@ -184,9 +184,10 @@ namespace restaurant_management
             if (typecb.SelectedIndex == 1)
             {
                 timecb.Enabled = false;
+                isDataTable = true;
+                SaveList(true);
                 dgv.DataSource = billDAO.Instance.getListBillyy(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal1();
-                SaveList();
                 dgv.Columns[0].HeaderText = "Month";
                 dgv.Columns[1].HeaderText = "Total money";
                 dgv.Columns[2].HeaderText = "Total amount";
@@ -194,9 +195,10 @@ namespace restaurant_management
             else if (typecb.SelectedIndex == 2)
             {
                 timecb.Enabled = false;
+                isDataTable = true;
+                SaveList(true);
                 dgv.DataSource = billDAO.Instance.getListBillmm(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal1();
-                SaveList();
                 dgv.Columns[0].HeaderText = "Day";
                 dgv.Columns[1].HeaderText = "Total money";
                 dgv.Columns[2].HeaderText = "Total amount";
