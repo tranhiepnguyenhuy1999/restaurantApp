@@ -31,8 +31,8 @@ namespace restaurant_management
         private void btn_login_Click(object sender, EventArgs e)
         {
             DTO.User user = userDAO.Instance.GetIdByUsernamePwd(txt_UserName.Text, txt_pwd.Text);
-            try
-            {
+            //try
+            //{
                 if (user != null)
                 {
                     this.Hide();
@@ -51,11 +51,11 @@ namespace restaurant_management
                 {
                     MessageBox.Show("Incorrect Username or Password");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Có vấn đề với cơ sở dữ liệu");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Có vấn đề với cơ sở dữ liệu");
+            //}
         }
 
         private void login_Load(object sender, EventArgs e)

@@ -18,11 +18,22 @@ namespace restaurant_management
     {
         int check;
         int row;
+        bool isDataTable;
         public List<DTO.Bill> bills = new List<DTO.Bill>();
-        void SaveList()
+
+        void SaveList(bool isdatatable=false)
         {
-            bills = (List<DTO.Bill>) dgv.DataSource;
+            if (isdatatable)
+            {
+                isDataTable = true;
+            }
+            else
+            {
+                isDataTable = false;
+                bills = (List<DTO.Bill>)dgv.DataSource;
+            }
         }
+
         void LoadListBill()
         {
 
@@ -216,9 +227,19 @@ namespace restaurant_management
 
         private void printTable_btn_Click(object sender, EventArgs e)
         {
-            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            DataTable data;
 
-            DataTable data = converter.ToDataTable(bills);
+            if (isDataTable)
+            {
+                 data = (DataTable)(dgv.DataSource);
+            }
+            else
+            {
+                ListtoDataTableConverter converter = new ListtoDataTableConverter();
+
+                data = converter.ToDataTable(bills);
+            }
+
 
             try
             {
