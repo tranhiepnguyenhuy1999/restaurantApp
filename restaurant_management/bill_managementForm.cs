@@ -184,7 +184,6 @@ namespace restaurant_management
             if (typecb.SelectedIndex == 1)
             {
                 timecb.Enabled = false;
-                isDataTable = true;
                 SaveList(true);
                 dgv.DataSource = billDAO.Instance.getListBillyy(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal1();
@@ -195,7 +194,6 @@ namespace restaurant_management
             else if (typecb.SelectedIndex == 2)
             {
                 timecb.Enabled = false;
-                isDataTable = true;
                 SaveList(true);
                 dgv.DataSource = billDAO.Instance.getListBillmm(dateTimePicker1.Value, typecb.SelectedIndex, timecb.SelectedIndex, sortcb.SelectedIndex);
                 findtotal1();
