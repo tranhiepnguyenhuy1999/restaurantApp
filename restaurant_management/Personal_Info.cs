@@ -51,7 +51,7 @@ namespace restaurant_management
             else if (isValid(phone_txtbox.Text))
             {
 
-                bool s = userDAO.Instance.updateUser(current_user.ID, firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday0,user_txtbox.Text, pass_txtbox.Text, cbo_gender.SelectedIndex);
+                bool s = userDAO.Instance.updateUser(current_user.ID, firstname_txtbox.Text, lastname_txtbox.Text, phone_txtbox.Text, birthday0,user_txtbox.Text, pass_txtbox.Text, cbo_gender.SelectedIndex,role_txtbox.Text);
                 if (s == true) {
                     MessageBox.Show("Cập nhật thành công!");
                 }
